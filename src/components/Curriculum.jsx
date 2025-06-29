@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Curriculum = () => {
-  const [activeVideo, setActiveVideo] = useState(null);
 
   const curriculumItems = [
     {
@@ -56,13 +55,6 @@ const Curriculum = () => {
     }
   ];
 
-  const openVideo = (vimeoId, title) => {
-    setActiveVideo({ vimeoId, title });
-  };
-
-  const closeVideo = () => {
-    setActiveVideo(null);
-  };
 
   return (
     <>
@@ -94,98 +86,6 @@ const Curriculum = () => {
           transform: translateY(-50%);
         }
 
-        .video-preview {
-          position: relative;
-          background: linear-gradient(135deg, #1a98d5 0%, #1565c0 100%);
-          border-radius: 12px;
-          padding: 1rem;
-          margin-top: 1rem;
-          cursor: pointer;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          border: 2px solid #1a98d5;
-        }
-
-        .video-preview:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(26, 152, 213, 0.3);
-          background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
-        }
-
-        .play-button {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: white;
-          font-weight: 600;
-          font-size: 0.875rem;
-        }
-
-        .play-icon {
-          width: 32px;
-          height: 32px;
-          background: rgba(255, 255, 255, 0.2);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.3s ease;
-        }
-
-        .video-preview:hover .play-icon {
-          background: rgba(255, 255, 255, 0.3);
-        }
-
-        .video-modal {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.9);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-          padding: 2rem;
-        }
-
-        .video-container {
-          position: relative;
-          width: 100%;
-          max-width: 800px;
-          aspect-ratio: 16/9;
-          background: #000;
-          border-radius: 12px;
-          overflow: hidden;
-        }
-
-        .video-container iframe {
-          width: 100%;
-          height: 100%;
-          border: none;
-        }
-
-        .close-button {
-          position: absolute;
-          top: -50px;
-          right: 0;
-          background: none;
-          border: none;
-          color: white;
-          font-size: 2rem;
-          cursor: pointer;
-          z-index: 1001;
-        }
-
-        @media (max-width: 768px) {
-          .video-modal {
-            padding: 1rem;
-          }
-          .close-button {
-            top: -40px;
-            font-size: 1.5rem;
-          }
-        }
       `}</style>
       
       <section className="section">
@@ -202,10 +102,72 @@ const Curriculum = () => {
             <p style={{ 
               color: 'var(--text-secondary)', 
               maxWidth: '600px', 
-              margin: '0 auto' 
+              margin: '0 auto',
+              marginBottom: '3rem'
             }}>
               体系的に設計された学習プログラムで、確実にスキルアップできます
             </p>
+
+            {/* 動画セクション */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginBottom: '4rem'
+            }}>
+              {curriculumItems
+                .filter(item => item.hasVideo)
+                .map((item, index) => (
+                  <div key={index} style={{
+                    background: 'white',
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div style={{
+                      position: 'relative',
+                      paddingBottom: '56.25%', // 16:9 aspect ratio
+                      height: 0,
+                      background: '#000'
+                    }}>
+                      <iframe
+                        src={`https://player.vimeo.com/video/${item.vimeoId}?autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1`}
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          border: 'none'
+                        }}
+                        allow="autoplay; fullscreen"
+                        title={item.videoTitle}
+                      />
+                    </div>
+                    <div style={{
+                      padding: '1.5rem',
+                      textAlign: 'center'
+                    }}>
+                      <h4 style={{
+                        fontSize: '1.125rem',
+                        fontWeight: '600',
+                        marginBottom: '0.5rem',
+                        color: '#1a98d5'
+                      }}>
+                        {item.videoTitle}
+                      </h4>
+                      <p style={{
+                        fontSize: '0.875rem',
+                        color: '#666',
+                        margin: 0
+                      }}>
+                        {item.title}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+            </div>
           </div>
 
           <div className="grid grid-3">
@@ -230,45 +192,9 @@ const Curriculum = () => {
                     <li key={featureIndex}>{feature}</li>
                   ))}
                 </ul>
-                
-                {item.hasVideo && (
-                  <div 
-                    className="video-preview"
-                    onClick={() => openVideo(item.vimeoId, item.videoTitle)}
-                  >
-                    <div className="play-button">
-                      <div className="play-icon">
-                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
-                          <path d="M12 7L0 14V0L12 7Z" fill="white"/>
-                        </svg>
-                      </div>
-                      <span>プレビュー動画を再生</span>
-                    </div>
-                    <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.8)', marginTop: '0.5rem' }}>
-                      {item.videoTitle}
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
-          
-          {/* Video Modal */}
-          {activeVideo && (
-            <div className="video-modal" onClick={closeVideo}>
-              <div className="video-container" onClick={(e) => e.stopPropagation()}>
-                <button className="close-button" onClick={closeVideo}>
-                  ×
-                </button>
-                <iframe
-                  src={`https://player.vimeo.com/video/${activeVideo.vimeoId}?autoplay=1&title=0&byline=0&portrait=0&muted=1`}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title={activeVideo.title}
-                />
-              </div>
-            </div>
-          )}
         </div>
       </section>
     </>
