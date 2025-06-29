@@ -1,74 +1,75 @@
-import { motion } from 'framer-motion';
+import React from 'react';
 
 const SocialProof = () => {
-  const stats = [
-    {
-      number: '19,000+',
-      label: 'Instagramフォロワー',
-      icon: '📸'
-    },
-    {
-      number: '30本超',
-      label: '有料ライブセミナー累計',
-      icon: '🎥'
-    },
-    {
-      number: '150名超',
-      label: 'オンラインスクール会員',
-      icon: '👨‍🎓'
-    }
-  ];
-
   return (
-    <section className="py-20 bg-brand">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            多くの理学療法士に選ばれています
-          </h2>
-          <p className="text-blue-100 text-lg">
-            信頼できる実績とコミュニティ
-          </p>
-        </motion.div>
+    <>
+      <style jsx>{`
+        .stats-card {
+          text-align: center;
+          background: rgba(255,255,255,0.1);
+          border-radius: var(--border-radius);
+          padding: 2.5rem 2rem;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255,255,255,0.2);
+        }
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8"
-            >
-              <div className="text-4xl mb-4">{stat.icon}</div>
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                {stat.number}
-              </div>
-              <div className="text-blue-100 font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
+        .stats-number {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          display: block;
+        }
+
+        .stats-label {
+          color: rgba(255,255,255,0.8);
+          font-weight: 500;
+        }
+      `}</style>
+      
+      <section className="section section-blue">
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{ 
+              fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
+              fontWeight: '700',
+              lineHeight: '1.1',
+              marginBottom: '1rem'
+            }}>
+              多くの理学療法士に選ばれています
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.8)' }}>
+              信頼できる実績とコミュニティ
+            </p>
+          </div>
+
+          <div className="grid grid-3">
+            <div className="stats-card">
+              <span className="stats-number">19,000+</span>
+              <div className="stats-label">Instagramフォロワー</div>
+            </div>
+
+            <div className="stats-card">
+              <span className="stats-number">30本超</span>
+              <div className="stats-label">有料ライブセミナー累計</div>
+            </div>
+
+            <div className="stats-card">
+              <span className="stats-number">150名超</span>
+              <div className="stats-label">オンラインスクール会員</div>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <p style={{ 
+              color: 'rgba(255,255,255,0.8)', 
+              fontSize: '0.875rem' 
+            }}>
+              ※2023年時点のデータです
+            </p>
+          </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <p className="text-blue-100 text-sm">
-            ※2023年時点のデータです
-          </p>
-        </motion.div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -1,218 +1,449 @@
-import { motion } from 'framer-motion';
+import React from 'react';
 
 const Pricing = () => {
   const features = [
-    { icon: '📚', text: '毎週更新の記事・動画・ツール集' },
-    { icon: '💬', text: '講師への質問し放題（24時間以内回答）' },
-    { icon: '🎥', text: 'ライブセミナー無料参加（月1回開催）' },
-    { icon: '📼', text: '過去30本超のセミナー見放題' },
-    { icon: '👥', text: '150名超の専門コミュニティ参加' },
-    { icon: '📱', text: '専用評価アプリ利用権' },
-    { icon: '🔄', text: '新コンテンツ優先アクセス' },
-    { icon: '📋', text: '実践チェックリスト・ツール集' }
+    '記事・動画・ツール集への無制限アクセス',
+    '質問BOXでの講師への質問し放題',
+    'ライブセミナー無料参加',
+    'アーカイブ動画見放題',
+    '150名超のコミュニティ参加',
+    '専用評価アプリの利用',
+    '毎月の新コンテンツ追加'
   ];
 
-  const bonuses = [
-    { icon: '🎁', text: '7日間完全無料体験', highlight: true },
-    { icon: '📖', text: '肩関節完全ガイドブック（PDF・50ページ）', highlight: true },
-    { icon: '📖', text: '腰部疾患対応ガイドブック（PDF・45ページ）', highlight: true },
-    { icon: '⏰', text: '限定！238分特別セミナー動画', highlight: true }
+  const annualPlanBenefits = [
+    '7日間無料体験',
+    '16%割引（4,760円お得）',
+    '年1回決済で支払い管理が楽',
+    '月額換算2,083円の圧倒的コスパ',
+    '学習継続率が向上',
+    '月額プランへの変更可能'
   ];
+
+  const handleStartTrial = () => {
+    // Redirect to signup page or modal
+    console.log('Starting free trial...');
+  };
 
   return (
-    <section id="pricing" className="section-spacing bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
-      <div className="container mx-auto container-padding">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            💰 お得な料金プラン
+    <>
+      <style jsx>{`
+        .pricing-card {
+          background: var(--white);
+          border-radius: 1.5rem;
+          box-shadow: var(--shadow-xl);
+          overflow: hidden;
+          max-width: 600px;
+          margin: 0 auto;
+          border: 1px solid var(--gray-200);
+        }
+
+        .pricing-header {
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+          color: var(--white);
+          padding: 1.5rem;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        .pricing-body {
+          padding: 3rem 2.5rem;
+        }
+
+        .price-display {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+        }
+
+        .price-amount {
+          font-size: 3rem;
+          font-weight: 700;
+          color: var(--primary-color);
+        }
+
+        .price-period {
+          color: var(--text-secondary);
+          margin-left: 0.5rem;
+          font-size: 1.125rem;
+        }
+
+        .highlight-box {
+          background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+          border: 1px solid #f59e0b;
+          border-radius: var(--border-radius);
+          padding: 1.5rem;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+
+        .highlight-title {
+          color: #92400e;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+          color: #b45309;
+        }
+
+        .feature-list {
+          list-style: none;
+          padding: 0;
+        }
+
+        .feature-list li {
+          padding: 0.75rem 0;
+          display: flex;
+          align-items: flex-start;
+          border-bottom: 1px solid var(--gray-100);
+        }
+
+        .feature-list li:last-child {
+          border-bottom: none;
+        }
+
+        .feature-list li::before {
+          content: "✓";
+          color: var(--primary-color);
+          font-weight: bold;
+          margin-right: 0.75rem;
+          margin-top: 0.125rem;
+          flex-shrink: 0;
+        }
+      `}</style>
+      
+      <section id="pricing" className="section section-gray">
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{ 
+              fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
+              fontWeight: '700',
+              lineHeight: '1.1',
+              marginBottom: '1rem'
+            }}>
+              料金プラン
+            </h2>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              シンプルで分かりやすい月額制
+            </p>
           </div>
-          <h2 className="text-section-title text-gray-900 mb-6">
-            <span className="text-indigo-600">月額たった2,980円</span>で
-            <br />プロの技術が身につく
-          </h2>
-          <p className="text-body-large text-gray-600 max-w-3xl mx-auto">
-            コーヒー1杯分の値段で、一生使える専門スキルを習得
-          </p>
-        </motion.div>
 
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            {/* Popular Badge */}
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-                🏆 最も人気のプラン
-              </span>
-            </div>
-
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-indigo-200">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center py-10">
-                <div className="text-4xl mb-4">🎓</div>
-                <h3 className="text-4xl font-bold mb-3">Exthera-School プレミアム</h3>
-                <p className="text-indigo-100 text-xl mb-4">理学療法士のための実践スキル習得プラン</p>
-                <div className="bg-white/20 rounded-xl p-4 inline-block">
-                  <p className="text-lg font-bold">✨ 臨床で即使える技術が身につく唯一のスクール</p>
-                </div>
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '2rem', 
+            maxWidth: '800px', 
+            margin: '0 auto' 
+          }}>
+            {/* 年間プラン（推奨） */}
+            <div 
+              className="pricing-card" 
+              style={{ 
+                position: 'relative', 
+                border: '3px solid var(--primary-color)', 
+                transform: 'scale(1.02)' 
+              }}
+            >
+              <div style={{
+                position: 'absolute',
+                top: '-15px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                color: 'white',
+                padding: '0.5rem 2rem',
+                borderRadius: '50px',
+                fontWeight: '700',
+                fontSize: '0.875rem',
+                boxShadow: 'var(--shadow-lg)'
+              }}>
+                🏆 最もお得・推奨プラン
               </div>
               
-              {/* Pricing */}
-              <div className="p-10 text-center border-b border-gray-100">
-                <div className="mb-6">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <span className="text-gray-500 text-2xl line-through">¥9,800</span>
-                    <span className="bg-red-500 text-white px-4 py-2 rounded-full text-lg font-bold animate-pulse">🔥 70%OFF</span>
-                  </div>
-                  <p className="text-gray-600">通常価格から大幅割引中！</p>
-                </div>
-                
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 mb-6">
-                  <div className="flex items-center justify-center mb-4">
-                    <span className="text-7xl font-extrabold text-indigo-600">¥2,980</span>
-                    <span className="text-gray-600 ml-3 text-2xl">/月</span>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-4 mt-6">
-                    <div className="bg-white p-4 rounded-xl border border-indigo-200">
-                      <p className="text-indigo-600 font-bold text-lg">わずか1日あたり</p>
-                      <p className="text-3xl font-bold text-indigo-600">99円</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-xl border border-green-200">
-                      <p className="text-green-600 font-bold text-lg">コーヒー1杯分で</p>
-                      <p className="text-lg text-green-600">一生使える技術を習得</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white px-12 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-xl hover:shadow-2xl mb-4 w-full max-w-md"
-                >
-                  🚀 今すぐ7日間無料で始める
-                </motion.button>
-                <p className="text-sm text-gray-500">
-                  クレジットカード不要・いつでも解約可能
-                </p>
+              <div className="pricing-header" style={{
+                background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)'
+              }}>
+                <span style={{ fontSize: '1.125rem', fontWeight: '700' }}>
+                  年間プラン - 圧倒的にお得！
+                </span>
               </div>
 
-              {/* Features Grid */}
-              <div className="p-10 grid md:grid-cols-2 gap-10">
-                <div>
-                  <div className="bg-indigo-50 p-6 rounded-2xl mb-6">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-3 flex items-center">
-                      <span className="bg-indigo-100 text-indigo-600 p-3 rounded-xl mr-4 text-2xl">📚</span>
-                      月額2,980円で利用できる全サービス
-                    </h4>
-                    <p className="text-gray-600 text-base">
-                      通常の参考書1冊分の料金で、これだけのサービスが使い放題：
-                    </p>
-                  </div>
+              <div className="pricing-body">
+                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '700', 
+                    marginBottom: '1rem' 
+                  }}>
+                    Exthera-School 年間メンバーシップ
+                  </h3>
                   
-                  <div className="space-y-3">
-                    {features.map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className="bg-white p-4 rounded-xl border border-gray-200 hover:border-indigo-300 transition-colors"
-                      >
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">{feature.icon}</span>
-                          <span className="text-gray-800 font-medium text-base">{feature.text}</span>
-                        </div>
-                      </motion.div>
-                    ))}
+                  <div style={{
+                    background: 'var(--gray-50)',
+                    borderRadius: 'var(--border-radius)',
+                    padding: '1.5rem',
+                    marginBottom: '1.5rem'
+                  }}>
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      marginBottom: '1rem'
+                    }}>
+                      <div style={{
+                        textDecoration: 'line-through',
+                        color: 'var(--text-light)',
+                        fontSize: '1.25rem'
+                      }}>
+                        ¥29,760
+                      </div>
+                      <div style={{
+                        background: '#dc2626',
+                        color: 'white',
+                        padding: '0.25rem 0.75rem',
+                        borderRadius: '50px',
+                        fontSize: '0.875rem',
+                        fontWeight: '700'
+                      }}>
+                        16%OFF
+                      </div>
+                    </div>
+                    <div className="price-display">
+                      <span className="price-amount" style={{ fontSize: '4rem' }}>¥25,000</span>
+                      <span className="price-period" style={{ fontSize: '1.25rem' }}>/年</span>
+                    </div>
+                    <p style={{
+                      color: 'var(--primary-color)',
+                      fontWeight: '600',
+                      marginTop: '0.5rem'
+                    }}>
+                      月額換算：わずか¥2,083/月
+                    </p>
                   </div>
                 </div>
 
-                <div>
-                  <div className="bg-yellow-50 p-6 rounded-2xl mb-6">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-3 flex items-center">
-                      <span className="bg-yellow-100 text-yellow-600 p-3 rounded-xl mr-4 text-2xl">🎁</span>
-                      今だけの特典
+                <div className="highlight-box" style={{
+                  background: 'linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)',
+                  borderColor: '#10b981'
+                }}>
+                  <div style={{ textAlign: 'center' }}>
+                    <h4 style={{
+                      color: '#065f46',
+                      fontWeight: '700',
+                      marginBottom: '1rem'
+                    }}>
+                      💰 年間プランがお得な理由
                     </h4>
-                    <p className="text-gray-600 text-base">
-                      入会と同時に、これらを全てプレゼント：
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    {bonuses.map((bonus, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className={`p-4 rounded-xl border-2 ${bonus.highlight ? 'bg-green-50 border-green-300' : 'bg-gray-50 border-gray-200'}`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">{bonus.icon}</span>
-                          <span className={`font-medium text-base ${bonus.highlight ? 'text-green-800' : 'text-gray-800'}`}>
-                            {bonus.text}
-                          </span>
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                      gap: '1rem',
+                      textAlign: 'left'
+                    }}>
+                      <div style={{
+                        background: 'rgba(255,255,255,0.7)',
+                        padding: '1rem',
+                        borderRadius: '8px'
+                      }}>
+                        <div style={{
+                          color: '#059669',
+                          fontWeight: '700',
+                          fontSize: '1.125rem',
+                          marginBottom: '0.5rem'
+                        }}>
+                          💳 支払いの手間削減
                         </div>
-                      </motion.div>
-                    ))}
+                        <p style={{
+                          color: '#065f46',
+                          fontSize: '0.875rem',
+                          margin: '0'
+                        }}>
+                          年1回の決済で完了<br />毎月の課金通知なし
+                        </p>
+                      </div>
+                      <div style={{
+                        background: 'rgba(255,255,255,0.7)',
+                        padding: '1rem',
+                        borderRadius: '8px'
+                      }}>
+                        <div style={{
+                          color: '#059669',
+                          fontWeight: '700',
+                          fontSize: '1.125rem',
+                          marginBottom: '0.5rem'
+                        }}>
+                          📈 学習継続率UP
+                        </div>
+                        <p style={{
+                          color: '#065f46',
+                          fontSize: '0.875rem',
+                          margin: '0'
+                        }}>
+                          年間契約で解約を忘れて<br />しっかり学習継続
+                        </p>
+                      </div>
+                      <div style={{
+                        background: 'rgba(255,255,255,0.7)',
+                        padding: '1rem',
+                        borderRadius: '8px'
+                      }}>
+                        <div style={{
+                          color: '#059669',
+                          fontWeight: '700',
+                          fontSize: '1.125rem',
+                          marginBottom: '0.5rem'
+                        }}>
+                          💰 圧倒的コスパ
+                        </div>
+                        <p style={{
+                          color: '#065f46',
+                          fontSize: '0.875rem',
+                          margin: '0'
+                        }}>
+                          月額換算2,083円<br />コーヒー1杯分で専門学習
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Urgency Section */}
-              <div className="bg-gradient-to-r from-red-50 to-pink-50 border-t border-gray-100 p-8">
-                <div className="text-center">
-                  <h4 className="text-2xl font-bold text-red-800 mb-4 flex items-center justify-center">
-                    <span className="animate-pulse mr-2">⚡</span>
-                    限定キャンペーン実施中
-                    <span className="animate-pulse ml-2">⚡</span>
-                  </h4>
-                  <p className="text-red-700 text-lg mb-4">
-                    先着<span className="font-bold text-2xl text-red-600">100名限定</span>で70%OFF！
+                <div className="grid grid-2" style={{ marginBottom: '2rem' }}>
+                  <div>
+                    <h4 style={{
+                      fontSize: '1.125rem',
+                      fontWeight: '600',
+                      marginBottom: '1rem'
+                    }}>
+                      全コンテンツ利用可能
+                    </h4>
+                    <ul className="feature-list">
+                      {features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 style={{
+                      fontSize: '1.125rem',
+                      fontWeight: '600',
+                      marginBottom: '1rem'
+                    }}>
+                      年間プランのメリット
+                    </h4>
+                    <ul className="feature-list">
+                      {annualPlanBenefits.map((benefit, index) => (
+                        <li key={index} style={{ color: '#059669' }}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div style={{ textAlign: 'center' }}>
+                  <button 
+                    onClick={handleStartTrial}
+                    className="btn btn-primary" 
+                    style={{
+                      width: '100%',
+                      maxWidth: '400px',
+                      marginBottom: '1rem',
+                      fontSize: '1.125rem',
+                      padding: '1.25rem 2rem'
+                    }}
+                  >
+                    年間プランで7日間無料体験を始める
+                  </button>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    fontSize: '0.875rem'
+                  }}>
+                    クレジットカード不要・7日以内なら完全無料
                   </p>
-                  <div className="bg-white rounded-lg p-4 inline-block">
-                    <div className="text-sm text-gray-600 mb-2">キャンペーン終了まで</div>
-                    <div className="text-3xl font-bold text-red-600">あと48時間</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Money Back Guarantee */}
-              <div className="bg-gray-50 p-6 text-center">
-                <div className="flex items-center justify-center space-x-4">
-                  <div className="flex items-center">
-                    <span className="text-green-500 text-xl mr-2">✓</span>
-                    <span className="text-gray-700 font-medium">7日間返金保証</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-green-500 text-xl mr-2">✓</span>
-                    <span className="text-gray-700 font-medium">いつでも解約OK</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-green-500 text-xl mr-2">✓</span>
-                    <span className="text-gray-700 font-medium">継続率98%</span>
-                  </div>
                 </div>
               </div>
             </div>
-          </motion.div>
+
+            {/* 月額プラン */}
+            <div className="pricing-card" style={{ opacity: '0.85' }}>
+              <div className="pricing-header" style={{
+                background: 'var(--gray-100)',
+                color: 'var(--text-primary)'
+              }}>
+                <span style={{ fontSize: '0.875rem', fontWeight: '600' }}>月額プラン</span>
+              </div>
+
+              <div className="pricing-body" style={{ padding: '2rem 2.5rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                  <h3 style={{
+                    fontSize: '1.25rem',
+                    fontWeight: '700',
+                    marginBottom: '1rem'
+                  }}>
+                    月額メンバーシップ
+                  </h3>
+                  <div className="price-display">
+                    <span style={{
+                      fontSize: '2.5rem',
+                      fontWeight: '700',
+                      color: 'var(--text-primary)'
+                    }}>
+                      ¥2,480
+                    </span>
+                    <span className="price-period">/月</span>
+                  </div>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    fontSize: '0.875rem',
+                    marginTop: '0.5rem'
+                  }}>
+                    年間合計：¥29,760
+                  </p>
+                </div>
+
+                <div style={{
+                  background: '#fef2f2',
+                  border: '1px solid #fecaca',
+                  borderRadius: 'var(--border-radius)',
+                  padding: '1rem',
+                  marginBottom: '1.5rem',
+                  textAlign: 'center'
+                }}>
+                  <p style={{
+                    color: '#dc2626',
+                    fontSize: '0.875rem',
+                    margin: '0'
+                  }}>
+                    年間プランと比較して<strong>4,760円高く</strong>なります
+                  </p>
+                </div>
+
+                <div style={{ textAlign: 'center' }}>
+                  <button 
+                    onClick={handleStartTrial}
+                    className="btn btn-secondary"
+                    style={{ width: '100%', maxWidth: '400px' }}
+                  >
+                    月額プランで開始
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+              <p style={{
+                color: 'var(--text-secondary)',
+                fontSize: '0.875rem'
+              }}>
+                ※どちらのプランでも7日間の無料体験が可能です
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
