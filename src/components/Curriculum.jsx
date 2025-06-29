@@ -57,12 +57,8 @@ const Curriculum = () => {
   ];
 
   const openVideo = (vimeoId, title) => {
-    console.log('Opening video:', vimeoId, title);
     setActiveVideo({ vimeoId, title });
   };
-  
-  // Debug: Log curriculum items
-  console.log('Curriculum items:', curriculumItems);
 
   const closeVideo = () => {
     setActiveVideo(null);
@@ -203,19 +199,6 @@ const Curriculum = () => {
             }}>
               学習コンテンツ
             </h2>
-            
-            {/* テスト用動画ボタン */}
-            <div style={{ 
-              background: '#1a98d5', 
-              color: 'white', 
-              padding: '1rem', 
-              borderRadius: '8px', 
-              cursor: 'pointer',
-              marginBottom: '2rem',
-              display: 'inline-block'
-            }} onClick={() => openVideo('1097080751', 'テスト動画')}>
-              🎥 テスト動画ボタン - クリックしてください
-            </div>
             <p style={{ 
               color: 'var(--text-secondary)', 
               maxWidth: '600px', 
@@ -278,7 +261,7 @@ const Curriculum = () => {
                   ×
                 </button>
                 <iframe
-                  src={`https://player.vimeo.com/video/${activeVideo.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
+                  src={`https://player.vimeo.com/video/${activeVideo.vimeoId}?autoplay=1&title=0&byline=0&portrait=0&muted=1`}
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
                   title={activeVideo.title}
