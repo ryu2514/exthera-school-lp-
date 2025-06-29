@@ -41,8 +41,8 @@ const CTA = ({ variant = 'primary' }) => {
   const textClass = isPrimary ? 'text-white' : 'text-white';
 
   return (
-    <section className={`py-20 ${bgClass}`}>
-      <div className="container mx-auto px-4">
+    <section className={`section-spacing ${bgClass}`}>
+      <div className="container mx-auto container-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const CTA = ({ variant = 'primary' }) => {
             🎉 先着100名限定キャンペーン実施中
           </div>
           
-          <h2 className={`text-3xl md:text-4xl font-bold ${textClass} mb-6`}>
+          <h2 className={`text-section-title ${textClass} mb-6`}>
             {isPrimary ? 
               <>無料で7日間<br /><span className="text-yellow-300">プロの技術を体験</span></> : 
               '患者さんに喜ばれる理学療法士になりませんか？'
@@ -62,7 +62,7 @@ const CTA = ({ variant = 'primary' }) => {
           </h2>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 max-w-2xl mx-auto">
-            <p className={`text-lg mb-4 ${isPrimary ? 'text-white' : 'text-gray-200'} font-medium`}>
+            <p className={`text-body-large mb-4 ${isPrimary ? 'text-white' : 'text-gray-200'} font-medium`}>
               {isPrimary ? 
                 '無料体験でこれらを全てお試しいただけます：' :
                 'Exthera-Schoolなら、こんなことが可能になります：'

@@ -6,7 +6,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-blue-800 to-cyan-600 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-blue-800 to-cyan-600 overflow-hidden section-spacing">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
@@ -26,7 +26,7 @@ const Hero = () => {
         </div>
       </nav>
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
+      <div className="container mx-auto container-padding py-16 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,37 +43,72 @@ const Hero = () => {
             🎉 限定キャンペーン実施中！22大特典プレゼント
           </motion.div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+          <h1 className="text-hero text-white mb-8">
             <span className="block mb-2">📚 臨床1年目から</span>
             <span className="block text-yellow-300 mb-2">患者さんに喜ばれる</span>
             <span className="block">理学療法士になる</span>
           </h1>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-12 max-w-4xl mx-auto">
-            <h2 className="text-xl md:text-2xl text-white mb-4 font-bold">
-              ✨ こんな悩みはありませんか？
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4 text-blue-100 text-lg">
-              <div className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">❌</span>
-                <span>教科書通りにやっても効果が出ない</span>
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 mb-12 max-w-5xl mx-auto shadow-2xl border border-white/20">
+            <div className="text-center mb-6">
+              <div className="inline-block bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                ⚠️ よくある悩み
               </div>
-              <div className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">❌</span>
-                <span>患者さんに何を指導していいか迷う</span>
+              <h2 className="text-2xl md:text-3xl text-gray-900 mb-2 font-bold">
+                こんな経験ありませんか？
+              </h2>
+              <p className="text-gray-600">理学療法士1年目によくある4つの悩み</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-red-50 p-6 rounded-2xl border-l-4 border-red-400">
+                <div className="flex items-start gap-3">
+                  <span className="text-red-500 text-2xl mt-1">😰</span>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-2">教科書通りでも効果が出ない</h3>
+                    <p className="text-gray-700 text-sm">学んだ通りにやっているのに、患者さんの症状が改善しない...</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">❌</span>
-                <span>先輩に質問するのが申し訳ない</span>
+              
+              <div className="bg-orange-50 p-6 rounded-2xl border-l-4 border-orange-400">
+                <div className="flex items-start gap-3">
+                  <span className="text-orange-500 text-2xl mt-1">🤔</span>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-2">何を指導すべきか迷う</h3>
+                    <p className="text-gray-700 text-sm">患者さんに適切なエクササイズを選択できない...</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">❌</span>
-                <span>自分の技術に自信が持てない</span>
+              
+              <div className="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-400">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-500 text-2xl mt-1">😅</span>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-2">先輩に質問しづらい</h3>
+                    <p className="text-gray-700 text-sm">忙しい先輩に何度も質問するのが申し訳ない...</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-400">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-500 text-2xl mt-1">😔</span>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-2">技術に自信が持てない</h3>
+                    <p className="text-gray-700 text-sm">自分の評価や治療が正しいのか不安...</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="mt-6 text-center">
-              <p className="text-yellow-300 text-xl font-bold">
-                → 月額2,980円で全て解決できます！
+            
+            <div className="text-center bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-2xl">
+              <div className="text-3xl mb-2">✨</div>
+              <p className="text-xl font-bold mb-2">
+                月額2,980円で全ての悩みを解決！
+              </p>
+              <p className="text-green-100">
+                150名の仲間と一緒に、確実にスキルアップできます
               </p>
             </div>
           </div>
@@ -83,7 +118,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-8 mb-12"
+            className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12"
           >
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-yellow-300">19,000+</div>
