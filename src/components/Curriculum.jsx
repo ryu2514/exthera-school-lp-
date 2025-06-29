@@ -58,35 +58,6 @@ const Curriculum = () => {
 
   return (
     <>
-      <style jsx="true">{`
-        .content-features {
-          list-style: none;
-          padding: 0;
-        }
-
-        .content-features li {
-          font-size: 0.875rem;
-          color: var(--text-light);
-          margin: 0.5rem 0;
-          display: flex;
-          align-items: center;
-          padding-left: 1rem;
-          position: relative;
-        }
-
-        .content-features li::before {
-          content: "";
-          width: 4px;
-          height: 4px;
-          background: var(--primary-color);
-          border-radius: 50%;
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-
-      `}</style>
       
       <section className="section">
         <div className="container">
@@ -170,25 +141,80 @@ const Curriculum = () => {
             </div>
           </div>
 
-          <div className="grid grid-3">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '2rem'
+          }}>
             {curriculumItems.map((item, index) => (
-              <div key={index} className="card">
+              <div key={index} style={{
+                background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                borderRadius: '20px',
+                padding: '2rem',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(26,152,213,0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '4px',
+                  background: 'linear-gradient(90deg, #1a98d5 0%, #2196f3 100%)'
+                }}></div>
                 <h3 style={{ 
-                  fontSize: '1.25rem', 
+                  fontSize: '1.375rem', 
                   fontWeight: '700', 
-                  marginBottom: '1rem' 
+                  marginBottom: '1rem',
+                  color: '#1e293b'
                 }}>
                   {item.title}
                 </h3>
                 <p style={{ 
-                  color: 'var(--text-secondary)', 
-                  marginBottom: '1rem' 
+                  color: '#64748b', 
+                  marginBottom: '1.5rem',
+                  lineHeight: '1.6'
                 }}>
                   {item.description}
                 </p>
-                <ul className="content-features">
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
                   {item.features.map((feature, featureIndex) => (
-                    <li key={featureIndex}>{feature}</li>
+                    <li key={featureIndex} style={{
+                      fontSize: '0.9rem',
+                      color: '#475569',
+                      margin: '0.75rem 0',
+                      display: 'flex',
+                      alignItems: 'center',
+                      paddingLeft: '1.5rem',
+                      position: 'relative'
+                    }}>
+                      <span style={{
+                        position: 'absolute',
+                        left: 0,
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        width: '8px',
+                        height: '8px',
+                        background: 'linear-gradient(135deg, #1a98d5 0%, #2196f3 100%)',
+                        borderRadius: '50%'
+                      }}></span>
+                      {feature}
+                    </li>
                   ))}
                 </ul>
               </div>
