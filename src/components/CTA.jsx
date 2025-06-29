@@ -50,19 +50,43 @@ const CTA = ({ variant = 'primary' }) => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
+          <div className="inline-block bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            🎉 先着100名限定キャンペーン実施中
+          </div>
+          
           <h2 className={`text-3xl md:text-4xl font-bold ${textClass} mb-6`}>
             {isPrimary ? 
-              '今すぐ7日間無料体験を始めましょう' : 
-              '運動療法のスキルアップを始めませんか？'
+              <>無料で7日間<br /><span className="text-yellow-300">プロの技術を体験</span></> : 
+              '患者さんに喜ばれる理学療法士になりませんか？'
             }
           </h2>
           
-          <p className={`text-lg mb-8 ${isPrimary ? 'text-blue-100' : 'text-gray-300'}`}>
-            {isPrimary ? 
-              'クレジットカード不要・いつでも解約可能。まずは22大特典を受け取って価値を体験してください。' :
-              'Exthera-Schoolで、臨床現場で迷わない理学療法を身につけましょう。'
-            }
-          </p>
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 max-w-2xl mx-auto">
+            <p className={`text-lg mb-4 ${isPrimary ? 'text-white' : 'text-gray-200'} font-medium`}>
+              {isPrimary ? 
+                '無料体験でこれらを全てお試しいただけます：' :
+                'Exthera-Schoolなら、こんなことが可能になります：'
+              }
+            </p>
+            <div className="grid md:grid-cols-2 gap-3 text-left">
+              <div className="flex items-start gap-2">
+                <span className="text-yellow-300 font-bold mt-1">✓</span>
+                <span className={`text-sm ${isPrimary ? 'text-blue-100' : 'text-gray-300'}`}>患者さんの症状を正確に評価</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-yellow-300 font-bold mt-1">✓</span>
+                <span className={`text-sm ${isPrimary ? 'text-blue-100' : 'text-gray-300'}`}>効果的なエクササイズを選択</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-yellow-300 font-bold mt-1">✓</span>
+                <span className={`text-sm ${isPrimary ? 'text-blue-100' : 'text-gray-300'}`}>臨床で自信を持って治療に取り組む</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-yellow-300 font-bold mt-1">✓</span>
+                <span className={`text-sm ${isPrimary ? 'text-blue-100' : 'text-gray-300'}`}>患者さんから「効果が出た」と感謝される</span>
+              </div>
+            </div>
+          </div>
 
           {!isSubmitted ? (
             <motion.form
@@ -95,9 +119,21 @@ const CTA = ({ variant = 'primary' }) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-white text-brand hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? '送信中...' : '7日間無料体験を始める'}
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    送信中...
+                  </>
+                ) : (
+                  <>
+                    🚀 今すぐ7日間無料で始める
+                  </>
+                )}
               </button>
               
               <p className={`text-sm mt-4 ${isPrimary ? 'text-blue-100' : 'text-gray-400'}`}>

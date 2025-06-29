@@ -43,16 +43,40 @@ const Hero = () => {
             🎉 限定キャンペーン実施中！22大特典プレゼント
           </motion.div>
 
-          <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-8 leading-tight">
-            <span className="block">臨床1年目でも</span>
-            <span className="block text-yellow-300">確実に結果が出る</span>
-            <span className="block">運動療法スクール</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+            <span className="block mb-2">📚 臨床1年目から</span>
+            <span className="block text-yellow-300 mb-2">患者さんに喜ばれる</span>
+            <span className="block">理学療法士になる</span>
           </h1>
           
-          <h2 className="text-xl md:text-3xl text-blue-100 mb-12 font-medium leading-relaxed">
-            "現場で迷わない" 理学療法を、<br className="hidden md:block" />
-            <span className="text-yellow-300 font-bold">最短ルート</span>で身につける
-          </h2>
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-12 max-w-4xl mx-auto">
+            <h2 className="text-xl md:text-2xl text-white mb-4 font-bold">
+              ✨ こんな悩みはありませんか？
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4 text-blue-100 text-lg">
+              <div className="flex items-start gap-2">
+                <span className="text-red-400 mt-1">❌</span>
+                <span>教科書通りにやっても効果が出ない</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-400 mt-1">❌</span>
+                <span>患者さんに何を指導していいか迷う</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-400 mt-1">❌</span>
+                <span>先輩に質問するのが申し訳ない</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-400 mt-1">❌</span>
+                <span>自分の技術に自信が持てない</span>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-yellow-300 text-xl font-bold">
+                → 月額2,980円で全て解決できます！
+              </p>
+            </div>
+          </div>
 
           {/* Stats */}
           <motion.div

@@ -60,7 +60,10 @@ const Pricing = () => {
               {/* Header */}
               <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center py-8">
                 <h3 className="text-3xl font-bold mb-2">Exthera-School プレミアム</h3>
-                <p className="text-indigo-100">全機能使い放題プラン</p>
+                <p className="text-indigo-100 text-lg">理学療法士のための実践スキル習得プラン</p>
+                <div className="mt-4 bg-white/20 rounded-lg p-3 inline-block">
+                  <p className="text-sm font-medium">✨ 臨床で即使える技術が身につく唯一のスクール</p>
+                </div>
               </div>
               
               {/* Pricing */}
@@ -73,9 +76,14 @@ const Pricing = () => {
                   <span className="text-6xl font-extrabold text-indigo-600">¥2,980</span>
                   <span className="text-gray-600 ml-2 text-xl">/月</span>
                 </div>
-                <p className="text-gray-600 mb-6">
-                  1日あたり <span className="font-bold text-indigo-600">わずか99円</span>
-                </p>
+                <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                  <p className="text-gray-800 text-lg font-medium mb-2">
+                    1日あたり <span className="font-bold text-indigo-600 text-xl">わずか99円</span>
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    コーヒー1杯分で、一生使える専門技術を習得
+                  </p>
+                </div>
 
                 {/* CTA Button */}
                 <motion.button
@@ -95,8 +103,11 @@ const Pricing = () => {
                 <div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <span className="bg-indigo-100 text-indigo-600 p-2 rounded-lg mr-3">📚</span>
-                    利用できる全機能
+                    月額2,980円で利用できる全サービス
                   </h4>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    通常の参考書1冊分の料金で、これだけのサービスが使い放題：
+                  </p>
                   <div className="space-y-4">
                     {features.map((feature, index) => (
                       <motion.div
