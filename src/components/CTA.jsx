@@ -10,7 +10,7 @@ const CTA = ({ variant = 'primary' }) => {
 
   return (
     <>
-      <style jsx>{`
+      <style jsx="true">{`
         .features-grid {
           display: flex;
           flex-wrap: wrap;

@@ -124,7 +124,7 @@ const SocialProof = () => {
 
   return (
     <>
-      <style jsx>{`
+      <style jsx="true">{`
         .stats-card {
           text-align: center;
           background: rgba(255,255,255,0.15);

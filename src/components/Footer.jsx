@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <>
-      <style jsx>{`
+      <style jsx="true">{`
         .footer {
           background: var(--section-dark);
           color: var(--white);
