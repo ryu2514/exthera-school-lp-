@@ -4,7 +4,6 @@ const Curriculum = () => {
 
   const curriculumItems = [
     {
-      icon: '記',
       title: 'Weekly Articles',
       description: '機能解剖・運動連鎖・評価手順',
       features: ['週1回以上の新記事', '体系的な学習構成', '実践的な内容'],
@@ -13,14 +12,12 @@ const Curriculum = () => {
       videoTitle: '記事・ショートセミナー'
     },
     {
-      icon: '動',
       title: 'Video Library',
       description: '部位別エクササイズ解説（肩・腰・骨盤帯…）',
       features: ['部位別の詳細解説', '動画による実技指導', '繰り返し学習可能'],
       hasVideo: false
     },
     {
-      icon: 'ツ',
       title: 'Tool Kit',
       description: 'マインドマップ・評価チェックリスト',
       features: ['実践的なツール', 'ダウンロード可能', '臨床での活用'],
@@ -29,21 +26,18 @@ const Curriculum = () => {
       videoTitle: 'セミナー/マインドマップ'
     },
     {
-      icon: 'ラ',
       title: 'Live Seminars',
       description: '月1回 Zoom＋アーカイブ',
       features: ['月1回のライブ開催', 'アーカイブ見放題', 'リアルタイム質疑応答'],
       hasVideo: false
     },
     {
-      icon: 'コ',
       title: 'Community',
       description: '限定Instagram/@exthera.school & 質問BOX',
       features: ['150名超のコミュニティ', '講師への質問し放題', '仲間との情報交換'],
       hasVideo: false
     },
     {
-      icon: 'ア',
       title: '呼吸評価アプリ',
       description: '呼吸機能不全の評価アプリ',
       features: ['専用評価アプリ', '臨床での活用', '効率的な評価'],
@@ -52,7 +46,6 @@ const Curriculum = () => {
       videoTitle: '呼吸評価アプリ'
     },
     {
-      icon: '足',
       title: '足関節捻挫アプリ',
       description: '足関節捻挫の評価アプリ',
       features: ['専用評価アプリ', '臨床での活用', '効率的な評価'],
@@ -180,7 +173,6 @@ const Curriculum = () => {
           <div className="grid grid-3">
             {curriculumItems.map((item, index) => (
               <div key={index} className="card">
-                <div className="card-icon">{item.icon}</div>
                 <h3 style={{ 
                   fontSize: '1.25rem', 
                   fontWeight: '700', 
