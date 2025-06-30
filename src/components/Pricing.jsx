@@ -130,6 +130,189 @@ const Pricing = () => {
             </p>
           </div>
 
+          {/* プラン比較表 */}
+          <div style={{
+            background: 'white',
+            borderRadius: '16px',
+            padding: '2rem',
+            marginBottom: '3rem',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+            overflow: 'auto'
+          }}>
+            <h3 style={{
+              textAlign: 'center',
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              marginBottom: '2rem',
+              color: '#1a98d5'
+            }}>
+              📋 プラン比較表
+            </h3>
+            
+            <table style={{
+              width: '100%',
+              borderCollapse: 'collapse',
+              fontSize: '0.9rem'
+            }}>
+              <thead>
+                <tr>
+                  <th style={{
+                    padding: '1rem 0.5rem',
+                    textAlign: 'left',
+                    borderBottom: '2px solid #e5e7eb',
+                    fontWeight: '600',
+                    color: '#374151'
+                  }}>
+                    サービス内容
+                  </th>
+                  <th style={{
+                    padding: '1rem 0.5rem',
+                    textAlign: 'center',
+                    borderBottom: '2px solid #e5e7eb',
+                    fontWeight: '700',
+                    color: '#059669',
+                    background: 'linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      background: '#059669',
+                      color: 'white',
+                      padding: '0.25rem 0.75rem',
+                      borderRadius: '50px',
+                      fontSize: '0.75rem',
+                      fontWeight: '700'
+                    }}>
+                      おすすめ
+                    </div>
+                    年間プラン<br/>
+                    <span style={{ fontSize: '1.25rem' }}>¥25,000/年</span><br/>
+                    <span style={{ fontSize: '0.8rem', color: '#065f46' }}>(月額換算 ¥2,083)</span>
+                  </th>
+                  <th style={{
+                    padding: '1rem 0.5rem',
+                    textAlign: 'center',
+                    borderBottom: '2px solid #e5e7eb',
+                    fontWeight: '600',
+                    color: '#374151'
+                  }}>
+                    月額プラン<br/>
+                    <span style={{ fontSize: '1.25rem' }}>¥2,480/月</span><br/>
+                    <span style={{ fontSize: '0.8rem', color: '#6b7280' }}>(年間 ¥29,760)</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {features.map((feature, index) => (
+                  <tr key={index} style={{
+                    borderBottom: '1px solid #f3f4f6'
+                  }}>
+                    <td style={{
+                      padding: '0.75rem 0.5rem',
+                      color: '#374151'
+                    }}>
+                      {feature}
+                    </td>
+                    <td style={{
+                      padding: '0.75rem 0.5rem',
+                      textAlign: 'center',
+                      background: '#f0fdf4',
+                      color: '#059669',
+                      fontWeight: '700',
+                      fontSize: '1.2rem'
+                    }}>
+                      ✓
+                    </td>
+                    <td style={{
+                      padding: '0.75rem 0.5rem',
+                      textAlign: 'center',
+                      color: '#059669',
+                      fontWeight: '700',
+                      fontSize: '1.2rem'
+                    }}>
+                      ✓
+                    </td>
+                  </tr>
+                ))}
+                <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
+                  <td style={{ padding: '0.75rem 0.5rem', color: '#374151' }}>
+                    7日間無料体験
+                  </td>
+                  <td style={{
+                    padding: '0.75rem 0.5rem',
+                    textAlign: 'center',
+                    background: '#f0fdf4',
+                    color: '#059669',
+                    fontWeight: '700',
+                    fontSize: '1.2rem'
+                  }}>
+                    ✓
+                  </td>
+                  <td style={{
+                    padding: '0.75rem 0.5rem',
+                    textAlign: 'center',
+                    color: '#059669',
+                    fontWeight: '700',
+                    fontSize: '1.2rem'
+                  }}>
+                    ✓
+                  </td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
+                  <td style={{ padding: '0.75rem 0.5rem', color: '#374151' }}>
+                    16%割引 (4,760円お得)
+                  </td>
+                  <td style={{
+                    padding: '0.75rem 0.5rem',
+                    textAlign: 'center',
+                    background: '#f0fdf4',
+                    color: '#059669',
+                    fontWeight: '700',
+                    fontSize: '1.2rem'
+                  }}>
+                    ✓
+                  </td>
+                  <td style={{
+                    padding: '0.75rem 0.5rem',
+                    textAlign: 'center',
+                    color: '#dc2626',
+                    fontWeight: '700',
+                    fontSize: '1.2rem'
+                  }}>
+                    ✗
+                  </td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
+                  <td style={{ padding: '0.75rem 0.5rem', color: '#374151' }}>
+                    年1回決済で支払い管理が楽
+                  </td>
+                  <td style={{
+                    padding: '0.75rem 0.5rem',
+                    textAlign: 'center',
+                    background: '#f0fdf4',
+                    color: '#059669',
+                    fontWeight: '700',
+                    fontSize: '1.2rem'
+                  }}>
+                    ✓
+                  </td>
+                  <td style={{
+                    padding: '0.75rem 0.5rem',
+                    textAlign: 'center',
+                    color: '#dc2626',
+                    fontWeight: '700',
+                    fontSize: '1.2rem'
+                  }}>
+                    ✗
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
@@ -224,19 +407,80 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                <h4 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  marginBottom: '1rem',
-                  color: '#065f46'
+                <div style={{
+                  background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+                  border: '2px solid #10b981',
+                  borderRadius: 'var(--border-radius)',
+                  padding: '1.5rem',
+                  marginBottom: '2rem',
+                  textAlign: 'center'
                 }}>
-                  📋 利用できるサービス
-                </h4>
-                <ul className="feature-list" style={{ marginBottom: '2rem' }}>
-                  {features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
+                  <h4 style={{
+                    color: '#065f46',
+                    fontWeight: '700',
+                    fontSize: '1.25rem',
+                    marginBottom: '1rem'
+                  }}>
+                    🏆 年間プランだけの特別メリット
+                  </h4>
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gap: '1rem',
+                    textAlign: 'left'
+                  }}>
+                    <div style={{
+                      background: 'rgba(255,255,255,0.8)',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      border: '1px solid #bbf7d0'
+                    }}>
+                      <div style={{
+                        color: '#059669',
+                        fontWeight: '700',
+                        marginBottom: '0.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
+                      }}>
+                        💰 <span>4,760円お得</span>
+                      </div>
+                      <p style={{
+                        color: '#065f46',
+                        fontSize: '0.875rem',
+                        margin: '0'
+                      }}>
+                        月額プランより16%割引<br/>
+                        コーヒー約16杯分の節約
+                      </p>
+                    </div>
+                    <div style={{
+                      background: 'rgba(255,255,255,0.8)',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      border: '1px solid #bbf7d0'
+                    }}>
+                      <div style={{
+                        color: '#059669',
+                        fontWeight: '700',
+                        marginBottom: '0.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
+                      }}>
+                        📱 <span>支払い管理が楽</span>
+                      </div>
+                      <p style={{
+                        color: '#065f46',
+                        fontSize: '0.875rem',
+                        margin: '0'
+                      }}>
+                        年1回の決済で完了<br/>
+                        毎月の課金通知なし
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
                 <div style={{
                   background: 'linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)',
@@ -346,18 +590,30 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                <h4 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  marginBottom: '1rem'
+                <div style={{
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: 'var(--border-radius)',
+                  padding: '1.5rem',
+                  marginBottom: '2rem',
+                  textAlign: 'center'
                 }}>
-                  📋 利用できるサービス
-                </h4>
-                <ul className="feature-list" style={{ marginBottom: '2rem' }}>
-                  {features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
+                  <h4 style={{
+                    color: '#374151',
+                    fontWeight: '700',
+                    marginBottom: '1rem'
+                  }}>
+                    📋 利用できるサービス
+                  </h4>
+                  <p style={{
+                    color: '#6b7280',
+                    fontSize: '0.875rem',
+                    margin: '0'
+                  }}>
+                    年間プランと同じ全てのサービスをご利用いただけます<br/>
+                    ※詳細は上記の比較表をご確認ください
+                  </p>
+                </div>
 
                 <div style={{
                   background: '#fef2f2',
