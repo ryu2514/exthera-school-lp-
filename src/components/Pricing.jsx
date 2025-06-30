@@ -126,7 +126,7 @@ const Pricing = () => {
               料金プラン
             </h2>
             <p style={{ color: 'var(--text-secondary)' }}>
-              シンプルで分かりやすい月額制
+              年間プランなら<strong style={{ color: 'var(--primary-color)' }}>16%OFF</strong>・<strong style={{ color: 'var(--primary-color)' }}>4,760円もお得</strong>に学習できます
             </p>
           </div>
 
@@ -408,18 +408,6 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                <h4 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  marginBottom: '1rem'
-                }}>
-                  📋 利用できるサービス
-                </h4>
-                <ul className="feature-list" style={{ marginBottom: '2rem' }}>
-                  {features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
 
                 <div style={{
                   background: '#fef2f2',
@@ -470,13 +458,58 @@ const Pricing = () => {
               </div>
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-              <p style={{
-                color: 'var(--text-secondary)',
+            {/* 共通サービス内容 */}
+            <div style={{
+              background: 'var(--gray-50)',
+              borderRadius: '12px',
+              padding: '1.5rem',
+              marginTop: '2rem',
+              border: '1px solid var(--gray-200)'
+            }}>
+              <h4 style={{
+                fontSize: '1rem',
+                fontWeight: '600',
+                marginBottom: '1rem',
+                color: 'var(--text-primary)',
+                textAlign: 'center'
+              }}>
+                📋 どちらのプランでも利用できるサービス
+              </h4>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '0.5rem',
                 fontSize: '0.875rem'
               }}>
-                ※どちらのプランでも7日間の無料体験が可能です
-              </p>
+                {features.map((feature, index) => (
+                  <div key={index} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: 'var(--text-secondary)',
+                    padding: '0.25rem 0'
+                  }}>
+                    <span style={{
+                      color: 'var(--primary-color)',
+                      marginRight: '0.5rem',
+                      fontSize: '0.75rem'
+                    }}>✓</span>
+                    {feature}
+                  </div>
+                ))}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: 'var(--text-secondary)',
+                  padding: '0.25rem 0'
+                }}>
+                  <span style={{
+                    color: 'var(--primary-color)',
+                    marginRight: '0.5rem',
+                    fontSize: '0.75rem'
+                  }}>✓</span>
+                  7日間無料体験
+                </div>
+              </div>
             </div>
           </div>
         </div>
