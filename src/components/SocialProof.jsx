@@ -129,7 +129,7 @@ const SocialProof = () => {
           text-align: center;
           background: rgba(255,255,255,0.15);
           border-radius: var(--border-radius);
-          padding: 2rem 1.5rem;
+          padding: 1rem 0.75rem;
           backdrop-filter: blur(15px);
           border: 1px solid rgba(255,255,255,0.2);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -153,15 +153,15 @@ const SocialProof = () => {
         }
 
         .platform-icon {
-          font-size: 2rem;
-          margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+          margin-bottom: 0.25rem;
           display: block;
         }
 
         .stats-number {
-          font-size: 2.5rem;
+          font-size: 1.5rem;
           font-weight: 700;
-          margin-bottom: 0.25rem;
+          margin-bottom: 0.1rem;
           display: block;
           background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
           -webkit-background-clip: text;
@@ -172,14 +172,14 @@ const SocialProof = () => {
         .platform-name {
           color: rgba(255,255,255,0.9);
           font-weight: 600;
-          font-size: 0.9rem;
-          margin-bottom: 0.25rem;
+          font-size: 0.7rem;
+          margin-bottom: 0.1rem;
         }
 
         .stats-label {
           color: rgba(255,255,255,0.7);
           font-weight: 400;
-          font-size: 0.8rem;
+          font-size: 0.6rem;
         }
 
         .live-indicator {
@@ -210,10 +210,19 @@ const SocialProof = () => {
 
         @media (max-width: 768px) {
           .stats-card {
-            padding: 1.5rem 1rem;
+            padding: 0.75rem 0.5rem;
           }
           .stats-number {
-            font-size: 2rem;
+            font-size: 1.25rem;
+          }
+          .platform-icon {
+            font-size: 1rem;
+          }
+          .platform-name {
+            font-size: 0.65rem;
+          }
+          .stats-label {
+            font-size: 0.55rem;
           }
         }
       `}</style>
@@ -240,9 +249,9 @@ const SocialProof = () => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1.5rem',
-            maxWidth: '1200px',
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            gap: '0.75rem',
+            maxWidth: '1000px',
             margin: '0 auto'
           }}>
             {socialPlatforms.map((platform, index) => (

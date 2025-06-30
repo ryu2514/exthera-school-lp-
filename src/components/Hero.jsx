@@ -7,47 +7,21 @@ const Hero = () => {
 
   return (
     <>
-      <style jsx global>{`
+      <style jsx>{`
         .hero {
-          min-height: 100vh;
-          background-image: url('/assets/1.png');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           padding: 4rem 0;
-          position: relative;
-          overflow: hidden;
+          background: linear-gradient(135deg, rgba(26, 152, 213, 0.08) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(26, 152, 213, 0.05) 100%);
         }
 
-        .hero::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.5);
-          z-index: 1;
-        }
-
-        .hero .container {
-          position: relative;
-          z-index: 2;
+        .hero-image {
+          text-align: center;
+          margin-bottom: 4rem;
         }
 
         .hero-content {
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          padding: 3rem 2rem;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          text-align: center;
           max-width: 800px;
           margin: 0 auto;
-          text-align: center;
         }
 
         .hero h1 {
@@ -55,13 +29,16 @@ const Hero = () => {
           font-weight: 700;
           margin-bottom: 2rem;
           line-height: 1.2;
-          color: #1a98d5;
+          background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         .hero h2 {
           font-size: clamp(1.25rem, 3vw, 1.5rem);
           margin-bottom: 3rem;
-          color: #333;
+          color: var(--text-secondary);
           font-weight: 400;
         }
 
@@ -83,11 +60,24 @@ const Hero = () => {
       
       <section className="hero">
         <div className="container">
+          <div className="hero-image">
+            <img 
+              src="/assets/1.png" 
+              alt="Exthera School オンラインスクール" 
+              style={{ 
+                maxWidth: '100%', 
+                height: 'auto',
+                borderRadius: '16px',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+              }} 
+            />
+          </div>
+          
           <div className="hero-content">
             <h1>
               臨床1年目でも再現できる運動療法を、<br />
               体系的に・継続的に学べる<br />
-              <span style={{ color: '#1a98d5' }}>オンラインスクール</span>
+              <span style={{ color: 'var(--primary-color)' }}>オンラインスクール</span>
             </h1>
 
             <h2>
@@ -109,11 +99,7 @@ const Hero = () => {
               </button>
             </div>
 
-            <p style={{ 
-              color: '#666', 
-              fontSize: '1.1rem',
-              marginTop: '1rem'
-            }}>
+            <p style={{ color: 'var(--text-secondary)' }}>
               22大特典・238分のセミナー動画を無料プレゼント
             </p>
           </div>
