@@ -38,20 +38,12 @@ const Curriculum = () => {
       hasVideo: false
     },
     {
-      title: '呼吸評価アプリ',
-      description: '呼吸機能不全の評価アプリ',
-      features: ['専用評価アプリ', '臨床での活用', '効率的な評価'],
+      title: '統合評価アプリ',
+      description: '呼吸機能不全・足関節捻挫・腰痛の3つの評価を統合したアプリ',
+      features: ['3つの評価機能を統合', '臨床での活用', '効率的な評価', '一つのアプリで複数対応'],
       hasVideo: true,
       vimeoId: '1097081032',
-      videoTitle: '呼吸評価アプリ'
-    },
-    {
-      title: '足関節捻挫アプリ',
-      description: '足関節捻挫の評価アプリ',
-      features: ['専用評価アプリ', '臨床での活用', '効率的な評価'],
-      hasVideo: true,
-      vimeoId: '1097081089',
-      videoTitle: '足関節捻挫アプリ'
+      videoTitle: '評価アプリ（呼吸・足関節・腰痛）'
     }
   ];
 
@@ -86,6 +78,7 @@ const Curriculum = () => {
               gap: '2rem',
               marginBottom: '4rem'
             }}>
+              {/* 既存の動画 */}
               {curriculumItems
                 .filter(item => item.hasVideo)
                 .map((item, index) => (
@@ -138,6 +131,56 @@ const Curriculum = () => {
                     </div>
                   </div>
                 ))}
+              
+              {/* 足関節捻挫アプリの追加動画 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'relative',
+                  paddingBottom: '56.25%', // 16:9 aspect ratio
+                  height: 0,
+                  background: '#000'
+                }}>
+                  <iframe
+                    src={`https://player.vimeo.com/video/1097081089?autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1`}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      border: 'none'
+                    }}
+                    allow="autoplay; fullscreen"
+                    title="足関節捻挫アプリ"
+                  />
+                </div>
+                <div style={{
+                  padding: '1.5rem',
+                  textAlign: 'center'
+                }}>
+                  <h4 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '600',
+                    marginBottom: '0.5rem',
+                    color: '#1a98d5'
+                  }}>
+                    足関節捻挫アプリ
+                  </h4>
+                  <p style={{
+                    fontSize: '0.875rem',
+                    color: '#666',
+                    margin: 0
+                  }}>
+                    評価アプリ
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
