@@ -100,7 +100,7 @@ const Hero = () => {
             </div>
 
             <p style={{ color: 'var(--text-secondary)' }}>
-              22大特典・238分のセミナー動画を無料プレゼント
+              理学療法の専門知識を体系的に学べるオンラインスクール
             </p>
           </div>
         </div>

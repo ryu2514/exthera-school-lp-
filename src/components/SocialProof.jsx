@@ -88,35 +88,30 @@ const SocialProof = () => {
     {
       name: 'Instagram',
       count: instagramCount,
-      icon: '📸',
       color: '#E4405F',
       description: 'フォロワー'
     },
     {
       name: 'TikTok', 
       count: tiktokCount,
-      icon: '🎵',
       color: '#FF0050',
       description: 'フォロワー'
     },
     {
       name: 'X (Twitter)',
       count: xCount,
-      icon: '🐦',
       color: '#1DA1F2',
       description: 'フォロワー'
     },
     {
       name: 'YouTube',
       count: youtubeCount,
-      icon: '🎥',
       color: '#FF0000',
       description: 'チャンネル登録者'
     },
     {
       name: 'Threads',
       count: threadsCount,
-      icon: '🧵',
       color: '#000000',
       description: 'フォロワー'
     }
@@ -152,11 +147,6 @@ const SocialProof = () => {
           background: var(--platform-color, rgba(255,255,255,0.3));
         }
 
-        .platform-icon {
-          font-size: 1.2rem;
-          margin-bottom: 0.25rem;
-          display: block;
-        }
 
         .stats-number {
           font-size: 1.5rem;
@@ -215,9 +205,6 @@ const SocialProof = () => {
           .stats-number {
             font-size: 1.25rem;
           }
-          .platform-icon {
-            font-size: 1rem;
-          }
           .platform-name {
             font-size: 0.65rem;
           }
@@ -263,7 +250,6 @@ const SocialProof = () => {
                   animationDelay: `${index * 0.1}s`
                 }}
               >
-                <span className="platform-icon">{platform.icon}</span>
                 <span className="stats-number">
                   {platform.count.toLocaleString()}
                 </span>

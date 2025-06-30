@@ -56,7 +56,7 @@ const CTA = ({ variant = 'primary' }) => {
               fontSize: '1.125rem'
             }}>
               {isPrimary ? 
-                'クレジットカード不要・いつでも解約可能。まずは22大特典を受け取って価値を体験してください。' :
+                'クレジットカード不要・いつでも解約可能。まずは価値を体験してください。' :
                 'Exthera-Schoolで、臨床現場で迷わない理学療法を身につけましょう。'
               }
             </p>
@@ -87,11 +87,11 @@ const CTA = ({ variant = 'primary' }) => {
             <div className="features-grid">
               <div className="feature-badge">
                 <span className="feature-dot"></span>
-                <span>22大特典付き</span>
+                <span>7日間完全無料</span>
               </div>
               <div className="feature-badge">
                 <span className="feature-dot"></span>
-                <span>238分のセミナー動画</span>
+                <span>300本超のコンテンツ</span>
               </div>
               <div className="feature-badge">
                 <span className="feature-dot"></span>
