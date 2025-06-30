@@ -36,6 +36,19 @@ const Benefits = () => {
           }}>
             Exthera-Schoolが選ばれる5つの理由
           </h2>
+          
+          <div style={{ marginTop: '2rem' }}>
+            <img 
+              src="/assets/3.png" 
+              alt="選ばれる5つの理由" 
+              style={{ 
+                maxWidth: '100%', 
+                height: 'auto',
+                borderRadius: '16px',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+              }} 
+            />
+          </div>
         </div>
 
         <div className="grid grid-3">

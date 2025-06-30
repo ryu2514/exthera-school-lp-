@@ -72,35 +72,55 @@ const Hero = () => {
       
       <section className="hero">
         <div className="container">
-          <div className="hero-content">
-            <h1>
-              臨床1年目でも再現できる運動療法を、<br />
-              体系的に・継続的に学べる<br />
-              <span style={{ color: 'var(--primary-color)' }}>オンラインスクール</span>
-            </h1>
+          <div className="hero-content" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: '1fr 1fr', 
+            gap: '3rem', 
+            alignItems: 'center' 
+          }}>
+            <div>
+              <h1>
+                臨床1年目でも再現できる運動療法を、<br />
+                体系的に・継続的に学べる<br />
+                <span style={{ color: 'var(--primary-color)' }}>オンラインスクール</span>
+              </h1>
 
-            <h2>
-              "現場で迷わない" 理学療法を、最短ルートで手に入れる。
-            </h2>
+              <h2>
+                "現場で迷わない" 理学療法を、最短ルートで手に入れる。
+              </h2>
 
-            <div className="hero-cta">
-              <button 
-                onClick={() => scrollToSection('pricing')} 
-                className="btn btn-primary"
-              >
-                7日間無料体験を始める
-              </button>
-              <button 
-                onClick={() => scrollToSection('benefits')} 
-                className="btn btn-secondary"
-              >
-                詳細を見る
-              </button>
+              <div className="hero-cta">
+                <button 
+                  onClick={() => scrollToSection('pricing')} 
+                  className="btn btn-primary"
+                >
+                  7日間無料体験を始める
+                </button>
+                <button 
+                  onClick={() => scrollToSection('benefits')} 
+                  className="btn btn-secondary"
+                >
+                  詳細を見る
+                </button>
+              </div>
+
+              <p style={{ color: 'var(--text-secondary)' }}>
+                22大特典・238分のセミナー動画を無料プレゼント
+              </p>
             </div>
-
-            <p style={{ color: 'var(--text-secondary)' }}>
-              22大特典・238分のセミナー動画を無料プレゼント
-            </p>
+            
+            <div style={{ textAlign: 'center' }}>
+              <img 
+                src="/assets/1.png" 
+                alt="Exthera School オンラインスクール" 
+                style={{ 
+                  maxWidth: '100%', 
+                  height: 'auto',
+                  borderRadius: '16px',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+                }} 
+              />
+            </div>
           </div>
         </div>
       </section>
