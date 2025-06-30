@@ -148,18 +148,19 @@ const Pricing = () => {
             >
               <div style={{
                 position: 'absolute',
-                top: '-15px',
+                top: '-12px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
                 color: 'white',
-                padding: '0.5rem 2rem',
+                padding: '0.4rem 1.5rem',
                 borderRadius: '50px',
                 fontWeight: '700',
-                fontSize: '0.875rem',
-                boxShadow: 'var(--shadow-lg)'
+                fontSize: '0.8rem',
+                boxShadow: 'var(--shadow-lg)',
+                zIndex: 10
               }}>
-                🏆 最もお得・推奨プラン
+                🏆 最もお得
               </div>
               
               <div className="pricing-header" style={{
