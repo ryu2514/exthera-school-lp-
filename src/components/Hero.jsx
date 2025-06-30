@@ -7,14 +7,16 @@ const Hero = () => {
 
   return (
     <>
-      <style jsx>{`
+      <style jsx global>{`
         .hero {
           min-height: 100vh;
-          background: linear-gradient(135deg, rgba(26, 152, 213, 0.08) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(26, 152, 213, 0.05) 100%);
+          background-image: url('/assets/1.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
           display: flex;
           align-items: center;
           justify-content: center;
-          text-align: center;
           padding: 4rem 0;
           position: relative;
           overflow: hidden;
@@ -27,13 +29,25 @@ const Hero = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a98d5' fill-opacity='0.03'%3E%3Ccircle cx='9' cy='9' r='1'/%3E%3Ccircle cx='49' cy='49' r='1'/%3E%3Ccircle cx='29' cy='29' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-          z-index: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 1;
+        }
+
+        .hero .container {
+          position: relative;
+          z-index: 2;
         }
 
         .hero-content {
-          position: relative;
-          z-index: 1;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          padding: 3rem 2rem;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
         }
 
         .hero h1 {
@@ -41,16 +55,13 @@ const Hero = () => {
           font-weight: 700;
           margin-bottom: 2rem;
           line-height: 1.2;
-          background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: #1a98d5;
         }
 
         .hero h2 {
           font-size: clamp(1.25rem, 3vw, 1.5rem);
           margin-bottom: 3rem;
-          color: var(--text-secondary);
+          color: #333;
           font-weight: 400;
         }
 
@@ -72,55 +83,39 @@ const Hero = () => {
       
       <section className="hero">
         <div className="container">
-          <div className="hero-content" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: '1fr 1fr', 
-            gap: '3rem', 
-            alignItems: 'center' 
-          }}>
-            <div>
-              <h1>
-                臨床1年目でも再現できる運動療法を、<br />
-                体系的に・継続的に学べる<br />
-                <span style={{ color: 'var(--primary-color)' }}>オンラインスクール</span>
-              </h1>
+          <div className="hero-content">
+            <h1>
+              臨床1年目でも再現できる運動療法を、<br />
+              体系的に・継続的に学べる<br />
+              <span style={{ color: '#1a98d5' }}>オンラインスクール</span>
+            </h1>
 
-              <h2>
-                "現場で迷わない" 理学療法を、最短ルートで手に入れる。
-              </h2>
+            <h2>
+              "現場で迷わない" 理学療法を、最短ルートで手に入れる。
+            </h2>
 
-              <div className="hero-cta">
-                <button 
-                  onClick={() => scrollToSection('pricing')} 
-                  className="btn btn-primary"
-                >
-                  7日間無料体験を始める
-                </button>
-                <button 
-                  onClick={() => scrollToSection('benefits')} 
-                  className="btn btn-secondary"
-                >
-                  詳細を見る
-                </button>
-              </div>
-
-              <p style={{ color: 'var(--text-secondary)' }}>
-                22大特典・238分のセミナー動画を無料プレゼント
-              </p>
+            <div className="hero-cta">
+              <button 
+                onClick={() => scrollToSection('pricing')} 
+                className="btn btn-primary"
+              >
+                7日間無料体験を始める
+              </button>
+              <button 
+                onClick={() => scrollToSection('benefits')} 
+                className="btn btn-secondary"
+              >
+                詳細を見る
+              </button>
             </div>
-            
-            <div style={{ textAlign: 'center' }}>
-              <img 
-                src="/assets/1.png" 
-                alt="Exthera School オンラインスクール" 
-                style={{ 
-                  maxWidth: '100%', 
-                  height: 'auto',
-                  borderRadius: '16px',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-                }} 
-              />
-            </div>
+
+            <p style={{ 
+              color: '#666', 
+              fontSize: '1.1rem',
+              marginTop: '1rem'
+            }}>
+              22大特典・238分のセミナー動画を無料プレゼント
+            </p>
           </div>
         </div>
       </section>
