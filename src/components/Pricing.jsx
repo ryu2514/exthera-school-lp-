@@ -358,7 +358,7 @@ const Pricing = () => {
                     color: 'var(--text-secondary)',
                     fontSize: '0.875rem'
                   }}>
-                    クレジットカード不要・7日以内なら完全無料
+                    7日以内なら完全無料
                   </p>
                 </div>
               </div>
@@ -453,7 +453,7 @@ const Pricing = () => {
                     color: 'var(--text-secondary)',
                     fontSize: '0.875rem'
                   }}>
-                    クレジットカード不要・7日以内なら完全無料
+                    7日以内なら完全無料
                   </p>
                 </div>
               </div>
