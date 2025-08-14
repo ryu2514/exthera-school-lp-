@@ -1,5 +1,6 @@
 import Hero from './components/Hero'
 import Benefits from './components/Benefits'
+import SocialProof from './components/SocialProof'
 import Curriculum from './components/Curriculum'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
@@ -20,6 +21,7 @@ function App() {
       
       <Hero />
       <Benefits />
+      <SocialProof />
       <Curriculum />
       <Testimonials />
       <Pricing />
