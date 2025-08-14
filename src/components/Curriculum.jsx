@@ -21,7 +21,9 @@ const Curriculum = () => {
       title: 'ライブセミナー',
       description: '月1回 Zoom＋アーカイブ',
       features: ['月1回のライブ開催', 'アーカイブ見放題', 'リアルタイム質疑応答'],
-      hasVideo: false
+      hasVideo: true,
+      vimeoId: '1097080842',
+      videoTitle: 'セミナー/マインドマップ'
     },
     {
       title: 'コミュニティ',
@@ -30,12 +32,20 @@ const Curriculum = () => {
       hasVideo: false
     },
     {
-      title: '統合評価アプリ',
+      title: '呼吸評価アプリ',
       description: '呼吸機能不全・足関節捻挫・腰痛の3つの評価を統合したアプリ',
       features: ['3つの評価機能を統合', '臨床での活用', '効率的な評価', '一つのアプリで複数対応'],
       hasVideo: true,
       vimeoId: '1097081032',
       videoTitle: '評価アプリ（呼吸・足関節・腰痛）'
+    },
+    {
+      title: '腰椎分析アプリ',
+      description: '腰椎の詳細な分析機能を搭載したアプリ',
+      features: ['腰椎専門の分析機能', '詳細な評価レポート', '臨床での活用', '効率的な腰椎評価'],
+      hasVideo: true,
+      vimeoId: '1110000982',
+      videoTitle: '腰椎分析アプリ'
     }
   ];
 
