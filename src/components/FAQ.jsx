@@ -31,7 +31,7 @@ const FAQ = () => {
   };
 
   const handleStartTrial = () => {
-    console.log('Starting free trial...');
+    window.open('https://www.instagram.com/ryuju.pt', '_blank');
   };
 
   return (
