@@ -206,8 +206,8 @@ const Pricing = () => {
                         fontSize: '4.5rem',
                         fontWeight: '900',
                         color: 'var(--primary-color)',
-                        lineHeight: '1',
-                        marginBottom: '0.5rem'
+                        lineHeight: '0.9',
+                        marginBottom: '1rem'
                       }}>
                         ¥25,000
                       </div>
