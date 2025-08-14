@@ -38,6 +38,7 @@
     line-height: 1.7;
     color: var(--text-primary);
     background-color: var(--white);
+    overflow-x: hidden;
   }
 }
 
@@ -46,6 +47,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section {
@@ -257,6 +260,7 @@
   
   .container {
     padding: 0 1rem;
+    max-width: 100%;
   }
   
   .grid-3 {
@@ -265,5 +269,16 @@
   
   .card {
     padding: 2rem;
+  }
+  
+  /* 横スクロールコンテンツの調整 */
+  body, html {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }

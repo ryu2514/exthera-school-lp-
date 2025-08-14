@@ -86,7 +86,7 @@ const Hero = () => {
 
             <div className="hero-cta">
               <button 
-                onClick={() => window.open('https://exthera-school.com/in-school/', '_blank')} 
+                onClick={() => window.open('https://utage-system.com/page/acfwKIRNjmv7', '_blank')} 
                 className="btn btn-primary"
               >
                 7日間無料体験を始める
