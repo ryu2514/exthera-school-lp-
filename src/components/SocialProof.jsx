@@ -45,6 +45,22 @@ const SocialProof = () => {
             <p className="follower-description">
               各SNSプラットフォームで理学療法士コミュニティを形成
             </p>
+            
+            {/* Instagram プロフィール画像 */}
+            <div style={{ marginTop: '2rem' }}>
+              <img 
+                src="/assets/instagram-profile.png" 
+                alt="Instagram プロフィール" 
+                style={{
+                  width: '300px',
+                  maxWidth: '90%',
+                  height: 'auto',
+                  borderRadius: '20px',
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+                  border: '3px solid rgba(255, 255, 255, 0.2)'
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
