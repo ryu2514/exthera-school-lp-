@@ -68,21 +68,9 @@ const Footer = () => {
               </p>
             </div>
 
-            <div>
-              <h4>サービス</h4>
-              <ul className="footer-links">
-                <li><a href="#">記事・動画コンテンツ</a></li>
-                <li><a href="#">ライブセミナー</a></li>
-                <li><a href="#">コミュニティ</a></li>
-                <li><a href="#">評価アプリ</a></li>
-              </ul>
-            </div>
 
           </div>
 
-          <div className="footer-bottom">
-            <p>&copy; 2024 Exthera-School by Ryuju Kobayashi, PT. All rights reserved.</p>
-          </div>
         </div>
       </footer>
     </>
