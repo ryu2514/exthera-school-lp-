@@ -4,8 +4,7 @@ const CTA = ({ variant = 'primary' }) => {
   const isPrimary = variant === 'primary';
   
   const handleStartTrial = () => {
-    console.log('Starting free trial...');
-    // Redirect to signup page or modal
+    window.open('https://exthera-school.com/in-school/', '_blank');
   };
 
   return (

@@ -21,8 +21,7 @@ const Pricing = () => {
   ];
 
   const handleStartTrial = () => {
-    // Redirect to signup page or modal
-    console.log('Starting free trial...');
+    window.open('https://exthera-school.com/in-school/', '_blank');
   };
 
   return (
