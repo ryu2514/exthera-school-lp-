@@ -113,7 +113,7 @@ const Curriculum = () => {
                       background: '#000'
                     }}>
                       <iframe
-                        src={`https://player.vimeo.com/video/${item.vimeoId}?badge=0&autopause=0&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0&controls=1&playsinline=1`}
+                        src={`https://player.vimeo.com/video/${item.vimeoId}?badge=0&autopause=0&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1&playsinline=1`}
                         style={{
                           position: 'absolute',
                           top: 0,
@@ -168,7 +168,7 @@ const Curriculum = () => {
                   background: '#000'
                 }}>
                   <iframe
-                    src={`https://player.vimeo.com/video/1097081089?badge=0&autopause=0&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0&controls=1&playsinline=1`}
+                    src={`https://player.vimeo.com/video/1097081089?badge=0&autopause=0&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1&playsinline=1`}
                     style={{
                       position: 'absolute',
                       top: 0,
