@@ -4,7 +4,7 @@ const Curriculum = () => {
 
   const curriculumItems = [
     {
-      title: 'Weekly Articles',
+      title: '週刊記事配信',
       description: '機能解剖・運動連鎖・評価手順',
       features: ['週1回以上の新記事', '体系的な学習構成', '実践的な内容'],
       hasVideo: true,
@@ -12,27 +12,19 @@ const Curriculum = () => {
       videoTitle: '記事・ショートセミナー'
     },
     {
-      title: 'Video Library',
+      title: '動画ライブラリ',
       description: '部位別エクササイズ解説（肩・腰・骨盤帯…）',
       features: ['部位別の詳細解説', '動画による実技指導', '繰り返し学習可能'],
       hasVideo: false
     },
     {
-      title: 'Tool Kit',
-      description: 'マインドマップ・評価チェックリスト',
-      features: ['実践的なツール', 'ダウンロード可能', '臨床での活用'],
-      hasVideo: true,
-      vimeoId: '1097080842',
-      videoTitle: 'セミナー/マインドマップ'
-    },
-    {
-      title: 'Live Seminars',
+      title: 'ライブセミナー',
       description: '月1回 Zoom＋アーカイブ',
       features: ['月1回のライブ開催', 'アーカイブ見放題', 'リアルタイム質疑応答'],
       hasVideo: false
     },
     {
-      title: 'Community',
+      title: 'コミュニティ',
       description: '限定Instagram/@exthera.school & 質問BOX',
       features: ['150名超のコミュニティ', '講師への質問し放題', '仲間との情報交換'],
       hasVideo: false
