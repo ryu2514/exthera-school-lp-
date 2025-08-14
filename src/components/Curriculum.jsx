@@ -348,7 +348,6 @@ const Curriculum = () => {
             color: 'var(--text-light)',
             display: 'block'
           }}>
-            @media (max-width: 768px) { display: block; }
             💡 左右にスワイプしてすべてのコンテンツをご覧ください
           </div>
         </div>
