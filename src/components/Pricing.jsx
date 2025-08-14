@@ -199,26 +199,26 @@ const Pricing = () => {
                       </div>
                     </div>
                     <div className="price-display" style={{
-                      background: 'linear-gradient(135deg, #ffffff 0%, #f8faff 100%)',
-                      padding: '1.5rem 1rem',
-                      borderRadius: '16px',
-                      boxShadow: '0 8px 25px rgba(26, 152, 213, 0.15)',
-                      border: '3px solid var(--primary-color)',
-                      position: 'relative'
+                      textAlign: 'center',
+                      margin: '1.5rem 0'
                     }}>
-                      <span className="price-amount" style={{ 
-                        fontSize: '4rem', 
-                        color: '#1a98d5',
+                      <div style={{
+                        fontSize: '4.5rem',
                         fontWeight: '900',
-                        textShadow: '0 2px 4px rgba(26, 152, 213, 0.1)',
-                        display: 'inline-block'
-                      }}>¥25,000</span>
-                      <span className="price-period" style={{ 
-                        fontSize: '1.8rem',
-                        color: '#374151',
-                        fontWeight: '700',
-                        marginLeft: '0.5rem'
-                      }}>/年</span>
+                        color: 'var(--primary-color)',
+                        lineHeight: '1',
+                        marginBottom: '0.5rem'
+                      }}>
+                        ¥25,000
+                      </div>
+                      <div style={{
+                        fontSize: '1.5rem',
+                        fontWeight: '600',
+                        color: 'var(--text-secondary)',
+                        letterSpacing: '0.05em'
+                      }}>
+                        /年
+                      </div>
                     </div>
                     <p style={{
                       color: 'var(--primary-color)',
