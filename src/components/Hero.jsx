@@ -100,7 +100,8 @@ const Hero = () => {
               </span>
               <span className="mobile-title">
                 臨床1年目でも<br />
-                再現できる運動療法を、<br />
+                再現できる<br />
+                運動療法を、<br />
                 体系的・継続的に<br />
                 学べる<span style={{ color: 'var(--primary-color)' }}>スクール</span>
               </span>
