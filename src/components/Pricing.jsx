@@ -148,27 +148,9 @@ const Pricing = () => {
                 maxWidth: '500px'
               }}
             >
-              <div style={{
-                position: 'absolute',
-                top: '-18px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-                color: 'white',
-                padding: '0.5rem 1.5rem',
-                borderRadius: '50px',
-                fontWeight: '700',
-                fontSize: '0.85rem',
-                boxShadow: '0 4px 12px rgba(245, 158, 11, 0.3)',
-                zIndex: 10,
-                whiteSpace: 'nowrap'
-              }}>
-                🏆 最もお得
-              </div>
               
               <div className="pricing-header" style={{
-                background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)',
-                paddingTop: '2rem'
+                background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)'
               }}>
                 <span style={{ fontSize: '1.125rem', fontWeight: '700' }}>
                   年間プラン - 圧倒的にお得！
