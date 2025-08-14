@@ -44,7 +44,7 @@ const Curriculum = () => {
       description: '腰椎の詳細な分析機能を搭載したアプリ',
       features: ['腰椎専門の分析機能', '詳細な評価レポート', '臨床での活用', '効率的な腰椎評価'],
       hasVideo: true,
-      vimeoId: '1110000982/c8acf1e778',
+      vimeoId: '1110000982',
       videoTitle: '腰椎分析アプリ'
     }
   ];
