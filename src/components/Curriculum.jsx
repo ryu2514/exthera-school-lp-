@@ -25,7 +25,7 @@ const Curriculum = () => {
     },
     {
       title: 'コミュニティ',
-      description: '限定Instagram/@exthera.school & 質問BOX',
+      description: '限定オープンチャットと質問BOX',
       features: ['150名超のコミュニティ', '講師への質問し放題', '仲間との情報交換'],
       hasVideo: false
     },
@@ -177,9 +177,11 @@ const Curriculum = () => {
           </div>
 
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem'
+            display: 'flex',
+            overflowX: 'auto',
+            gap: '2rem',
+            paddingBottom: '1rem',
+            scrollSnapType: 'x mandatory'
           }}>
             {curriculumItems.map((item, index) => (
               <div key={index} style={{
@@ -190,7 +192,11 @@ const Curriculum = () => {
                 boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                minWidth: '320px',
+                maxWidth: '320px',
+                scrollSnapAlign: 'start',
+                flex: '0 0 auto'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
