@@ -200,25 +200,28 @@ const Pricing = () => {
                     </div>
                     <div className="price-display" style={{
                       textAlign: 'center',
-                      margin: '1.5rem 0'
+                      margin: '1.5rem 0',
+                      display: 'flex',
+                      alignItems: 'baseline',
+                      justifyContent: 'center',
+                      gap: '0.5rem'
                     }}>
-                      <div style={{
+                      <span style={{
                         fontSize: '4.5rem',
                         fontWeight: '900',
                         color: 'var(--primary-color)',
-                        lineHeight: '0.9',
-                        marginBottom: '1rem'
+                        lineHeight: '1'
                       }}>
                         ¥25,000
-                      </div>
-                      <div style={{
-                        fontSize: '1.5rem',
+                      </span>
+                      <span style={{
+                        fontSize: '1.8rem',
                         fontWeight: '600',
                         color: 'var(--text-secondary)',
                         letterSpacing: '0.05em'
                       }}>
                         /年
-                      </div>
+                      </span>
                     </div>
                     <p style={{
                       color: 'var(--primary-color)',
