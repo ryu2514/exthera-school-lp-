@@ -78,15 +78,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
-              <h4>お問い合わせ</h4>
-              <ul className="footer-links">
-                <li><a href="#">よくある質問</a></li>
-                <li><a href="#">利用規約</a></li>
-                <li><a href="#">プライバシーポリシー</a></li>
-                <li><a href="#">特定商取引法に基づく表記</a></li>
-              </ul>
-            </div>
           </div>
 
           <div className="footer-bottom">
