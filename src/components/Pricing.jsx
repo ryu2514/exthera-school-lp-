@@ -204,18 +204,18 @@ const Pricing = () => {
                       display: 'flex',
                       alignItems: 'baseline',
                       justifyContent: 'center',
-                      gap: '0.5rem'
+                      gap: '0.75rem'
                     }}>
                       <span style={{
-                        fontSize: '4.5rem',
+                        fontSize: '3.5rem',
                         fontWeight: '900',
                         color: 'var(--primary-color)',
-                        lineHeight: '1'
+                        lineHeight: '0.9'
                       }}>
                         ¥25,000
                       </span>
                       <span style={{
-                        fontSize: '1.8rem',
+                        fontSize: '1.5rem',
                         fontWeight: '600',
                         color: 'var(--text-secondary)',
                         letterSpacing: '0.05em'
