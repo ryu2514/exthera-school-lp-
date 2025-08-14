@@ -199,21 +199,25 @@ const Pricing = () => {
                       </div>
                     </div>
                     <div className="price-display" style={{
-                      background: 'white',
-                      padding: '1rem',
-                      borderRadius: '12px',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                      border: '2px solid var(--primary-color)'
+                      background: 'linear-gradient(135deg, #ffffff 0%, #f8faff 100%)',
+                      padding: '1.5rem 1rem',
+                      borderRadius: '16px',
+                      boxShadow: '0 8px 25px rgba(26, 152, 213, 0.15)',
+                      border: '3px solid var(--primary-color)',
+                      position: 'relative'
                     }}>
                       <span className="price-amount" style={{ 
-                        fontSize: '3.5rem', 
-                        color: 'var(--primary-color)',
-                        fontWeight: '800'
+                        fontSize: '4rem', 
+                        color: '#1a98d5',
+                        fontWeight: '900',
+                        textShadow: '0 2px 4px rgba(26, 152, 213, 0.1)',
+                        display: 'inline-block'
                       }}>¥25,000</span>
                       <span className="price-period" style={{ 
-                        fontSize: '1.5rem',
-                        color: 'var(--text-secondary)',
-                        fontWeight: '600'
+                        fontSize: '1.8rem',
+                        color: '#374151',
+                        fontWeight: '700',
+                        marginLeft: '0.5rem'
                       }}>/年</span>
                     </div>
                     <p style={{
