@@ -150,23 +150,25 @@ const Pricing = () => {
             >
               <div style={{
                 position: 'absolute',
-                top: '-12px',
+                top: '-18px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
                 color: 'white',
-                padding: '0.4rem 1.5rem',
+                padding: '0.5rem 1.5rem',
                 borderRadius: '50px',
                 fontWeight: '700',
-                fontSize: '0.8rem',
-                boxShadow: 'var(--shadow-lg)',
-                zIndex: 10
+                fontSize: '0.85rem',
+                boxShadow: '0 4px 12px rgba(245, 158, 11, 0.3)',
+                zIndex: 10,
+                whiteSpace: 'nowrap'
               }}>
                 🏆 最もお得
               </div>
               
               <div className="pricing-header" style={{
-                background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)'
+                background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)',
+                paddingTop: '2rem'
               }}>
                 <span style={{ fontSize: '1.125rem', fontWeight: '700' }}>
                   年間プラン - 圧倒的にお得！
@@ -214,9 +216,23 @@ const Pricing = () => {
                         16%OFF
                       </div>
                     </div>
-                    <div className="price-display">
-                      <span className="price-amount" style={{ fontSize: '4rem' }}>¥25,000</span>
-                      <span className="price-period" style={{ fontSize: '1.25rem' }}>/年</span>
+                    <div className="price-display" style={{
+                      background: 'white',
+                      padding: '1rem',
+                      borderRadius: '12px',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                      border: '2px solid var(--primary-color)'
+                    }}>
+                      <span className="price-amount" style={{ 
+                        fontSize: '3.5rem', 
+                        color: 'var(--primary-color)',
+                        fontWeight: '800'
+                      }}>¥25,000</span>
+                      <span className="price-period" style={{ 
+                        fontSize: '1.5rem',
+                        color: 'var(--text-secondary)',
+                        fontWeight: '600'
+                      }}>/年</span>
                     </div>
                     <p style={{
                       color: 'var(--primary-color)',

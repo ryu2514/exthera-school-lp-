@@ -113,7 +113,7 @@ const Curriculum = () => {
                       background: '#000'
                     }}>
                       <iframe
-                        src={`https://player.vimeo.com/video/${item.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1&playsinline=1`}
+                        src={`https://player.vimeo.com/video/${item.vimeoId}?badge=0&autopause=0&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0&controls=1&playsinline=1`}
                         style={{
                           position: 'absolute',
                           top: 0,
@@ -126,6 +126,7 @@ const Curriculum = () => {
                         allowFullScreen
                         webkitAllowFullScreen
                         mozAllowFullScreen
+                        loading="lazy"
                         title={item.videoTitle}
                       />
                     </div>
@@ -167,7 +168,7 @@ const Curriculum = () => {
                   background: '#000'
                 }}>
                   <iframe
-                    src={`https://player.vimeo.com/video/1097081089?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1&playsinline=1`}
+                    src={`https://player.vimeo.com/video/1097081089?badge=0&autopause=0&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0&controls=1&playsinline=1`}
                     style={{
                       position: 'absolute',
                       top: 0,
@@ -180,6 +181,7 @@ const Curriculum = () => {
                     allowFullScreen
                     webkitAllowFullScreen
                     mozAllowFullScreen
+                    loading="lazy"
                     title="足関節捻挫アプリ"
                   />
                 </div>
