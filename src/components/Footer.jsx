@@ -60,16 +60,6 @@ const Footer = () => {
       
       <footer className="footer">
         <div className="container">
-          <div className="footer-grid">
-            <div>
-              <div className="footer-title">Exthera-School</div>
-              <p className="footer-description">
-                臨床1年目でも再現できる運動療法を、体系的に・継続的に学べるオンラインスクール
-              </p>
-            </div>
-
-
-          </div>
 
         </div>
       </footer>
