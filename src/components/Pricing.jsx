@@ -131,10 +131,11 @@ const Pricing = () => {
 
 
           <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+            display: 'flex', 
+            flexDirection: 'column',
+            alignItems: 'center',
             gap: '2rem', 
-            maxWidth: '1200px', 
+            maxWidth: '800px', 
             margin: '0 auto' 
           }}>
             {/* 年間プラン（推奨） */}
@@ -142,7 +143,9 @@ const Pricing = () => {
               className="pricing-card" 
               style={{ 
                 position: 'relative', 
-                border: '3px solid var(--primary-color)'
+                border: '3px solid var(--primary-color)',
+                width: '100%',
+                maxWidth: '500px'
               }}
             >
               <div style={{
@@ -364,7 +367,10 @@ const Pricing = () => {
             </div>
 
             {/* 月額プラン */}
-            <div className="pricing-card">
+            <div className="pricing-card" style={{
+              width: '100%',
+              maxWidth: '500px'
+            }}>
               <div className="pricing-header" style={{
                 background: 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)',
                 color: 'white'

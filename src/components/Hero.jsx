@@ -50,6 +50,24 @@ const Hero = () => {
           margin-bottom: 2rem;
         }
 
+        .desktop-title {
+          display: block;
+        }
+        
+        .mobile-title {
+          display: none;
+        }
+
+        @media (max-width: 768px) {
+          .desktop-title {
+            display: none;
+          }
+          
+          .mobile-title {
+            display: block;
+          }
+        }
+
         @media (min-width: 640px) {
           .hero-cta {
             flex-direction: row;
@@ -75,9 +93,17 @@ const Hero = () => {
           
           <div className="hero-content">
             <h1>
-              臨床1年目でも再現できる運動療法を、<br />
-              体系的に・継続的に学べる<br />
-              <span style={{ color: 'var(--primary-color)' }}>オンラインスクール</span>
+              <span className="desktop-title">
+                臨床1年目でも再現できる運動療法を、<br />
+                体系的に・継続的に学べる<br />
+                <span style={{ color: 'var(--primary-color)' }}>オンラインスクール</span>
+              </span>
+              <span className="mobile-title">
+                臨床1年目でも<br />
+                再現できる運動療法を、<br />
+                体系的・継続的に<br />
+                学べる<span style={{ color: 'var(--primary-color)' }}>スクール</span>
+              </span>
             </h1>
 
             <h2>

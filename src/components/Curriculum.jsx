@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Curriculum = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const scrollContainer = document.getElementById('curriculum-scroll');
+    if (!scrollContainer) return;
+
+    const handleScroll = () => {
+      const cardWidth = 320 + 32; // カード幅 + ギャップ
+      const currentIndex = Math.round(scrollContainer.scrollLeft / cardWidth);
+      setActiveIndex(currentIndex);
+    };
+
+    scrollContainer.addEventListener('scroll', handleScroll);
+    return () => scrollContainer.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const curriculumItems = [
     {
@@ -186,14 +201,34 @@ const Curriculum = () => {
             </div>
           </div>
 
+          {/* スクロールヒント */}
           <div style={{
             display: 'flex',
-            overflowX: 'auto',
-            gap: '2rem',
-            paddingBottom: '1rem',
-            scrollSnapType: 'x mandatory'
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '1rem',
+            marginBottom: '1rem',
+            fontSize: '0.875rem',
+            color: 'var(--text-secondary)'
           }}>
-            {curriculumItems.map((item, index) => (
+            <span>← スワイプして他のコンテンツを見る →</span>
+          </div>
+
+          <div style={{ position: 'relative' }}>
+            {/* スクロールコンテナ */}
+            <div 
+              id="curriculum-scroll"
+              style={{
+                display: 'flex',
+                overflowX: 'auto',
+                gap: '2rem',
+                paddingBottom: '1rem',
+                scrollSnapType: 'x mandatory',
+                scrollbarWidth: 'thin',
+                WebkitOverflowScrolling: 'touch'
+              }}
+            >
+              {curriculumItems.map((item, index) => (
               <div key={index} style={{
                 background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
                 borderRadius: '20px',
@@ -270,6 +305,51 @@ const Curriculum = () => {
                 </ul>
               </div>
             ))}
+            </div>
+
+            {/* ナビゲーションドット */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              marginTop: '1.5rem'
+            }}>
+              {curriculumItems.map((_, index) => (
+                <div 
+                  key={index}
+                  style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    background: index === activeIndex ? 'var(--primary-color)' : 'rgba(26, 152, 213, 0.3)',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onClick={() => {
+                    const scrollContainer = document.getElementById('curriculum-scroll');
+                    if (scrollContainer) {
+                      const cardWidth = 320 + 32; // カード幅 + ギャップ
+                      scrollContainer.scrollTo({
+                        left: index * cardWidth,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* モバイル用の追加ヒント */}
+          <div style={{
+            textAlign: 'center',
+            marginTop: '1rem',
+            fontSize: '0.75rem',
+            color: 'var(--text-light)',
+            display: 'block'
+          }}>
+            @media (max-width: 768px) { display: block; }
+            💡 左右にスワイプしてすべてのコンテンツをご覧ください
           </div>
         </div>
       </section>
