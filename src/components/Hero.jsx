@@ -29,7 +29,7 @@ const Hero = () => {
           align-items: center;
         }
         .prehead { color: var(--text-secondary); font-weight: 700; letter-spacing: .2px; }
-        .title { font-size: clamp(2.2rem, 3.8vw, 3.2rem); font-weight: 800; line-height: 1.2; margin: .75rem 0 1rem; color: var(--text-primary); }
+        .title { margin: .75rem 0 1rem; color: var(--text-primary); }
         .title .em { background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         .subtitle { color: var(--text-secondary); font-size: clamp(1.05rem, 1.5vw, 1.15rem); }
         .hero-cta { display:flex; gap:12px; align-items:center; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
@@ -49,12 +49,12 @@ const Hero = () => {
         <div className="container hero-grid">
           <div>
             <div className="prehead">業界最適価の運動療法オンラインスクール</div>
-            <h1 className="title">
+            <h1 className="title heading-hero">
               実務力が身につくカリキュラムで<br />
               <span className="em">現場で使える運動療法</span>を<br />
               身につけよう！
             </h1>
-            <p className="subtitle">体系化×ライブ×コミュニティで、迷わない臨床を最短ルートで。</p>
+            <p className="subtitle subhead">体系化×ライブ×コミュニティで、迷わない臨床を最短ルートで。</p>
             <div className="hero-cta">
               <button onClick={() => window.open('https://utage-system.com/page/acfwKIRNjmv7', '_blank')} className="btn btn-pill btn-grad">無料で講座を体験する</button>
               <button onClick={() => scrollToSection('benefits')} className="btn btn-pill btn-outline">選ばれる理由を見る</button>

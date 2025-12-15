@@ -34,12 +34,8 @@ const Problems = () => {
           border-top: 1px solid #e5f0ff;
           border-bottom: 1px solid #e5f0ff;
         }
-        .head {
-          text-align: center;
-          margin-bottom: 2rem;
-        }
+        .head { text-align: center; margin-bottom: 2rem; }
         .head small { color: var(--text-secondary); font-weight: 700; letter-spacing: .2px; }
-        .head h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin-top: .5rem; font-weight: 800; }
         .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
         .card { background:#fff; border-radius: 16px; border:1px solid var(--gray-200); padding: 18px; box-shadow: var(--shadow-sm); display:grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: start; }
         .numbadge { width:64px; height:64px; border-radius: 9999px; display:grid; place-items:center; background:#eaf2ff; color:#2563eb; font-weight: 800; }
@@ -52,15 +48,15 @@ const Problems = () => {
         <div className="container">
           <div className="head">
             <small>理学療法に携わる皆さんへ</small>
-            <h2>こんなお悩み、ありませんか？</h2>
+            <h2 className="section-title">こんなお悩み、ありませんか？</h2>
           </div>
           <div className="grid">
             {items.map((it, i) => (
               <div className="card" key={i}>
                 <div className="numbadge">{it.num}</div>
                 <div>
-                  <div className="title">{it.title}</div>
-                  <p className="text">
+                  <div className="title heading-3">{it.title}</div>
+                  <p className="text body-sm">
                     {it.text}
                   </p>
                 </div>
@@ -74,4 +70,3 @@ const Problems = () => {
 };
 
 export default Problems;
-

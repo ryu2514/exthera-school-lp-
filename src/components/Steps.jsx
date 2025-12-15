@@ -12,7 +12,7 @@ const Steps = () => {
     <section id="steps" className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 700 }}>入会後の流れ</h2>
+          <h2 className="section-title">入会後の流れ</h2>
         </div>
         <div className="grid grid-4 steps-grid">
           {steps.map((s, i) => (
@@ -29,4 +29,3 @@ const Steps = () => {
 };
 
 export default Steps;
-
