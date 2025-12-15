@@ -245,20 +245,21 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
+  display: block; /* allow natural multi-line wrapping for JP text */
+  line-height: 1.35;
   color: var(--text-primary);
 }
 
 .check-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: var(--primary-color);
-  display: flex;
+  display: inline-flex; /* align inline with text */
+  vertical-align: text-top;
   align-items: center;
   justify-content: center;
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
   color: var(--white);
   font-size: 0.75rem;
   font-weight: 700;
