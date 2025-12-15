@@ -1,3 +1,4 @@
+import Header from './components/Header'
 import Hero from './components/Hero'
 import TrustBand from './components/TrustBand'
 import Benefits from './components/Benefits'
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <Header />
       {/* Google Analytics */}
       {enableAnalytics && gaId && <GoogleAnalytics measurementId={gaId} />}
       
