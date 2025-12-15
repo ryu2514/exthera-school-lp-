@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Problems from './components/Problems'
 import TrustBand from './components/TrustBand'
 import Benefits from './components/Benefits'
 import SocialProof from './components/SocialProof'
@@ -25,6 +26,7 @@ function App() {
       {enableAnalytics && gaId && <GoogleAnalytics measurementId={gaId} />}
       
       <Hero />
+      <Problems />
       <TrustBand />
       <Benefits />
       <SocialProof />
