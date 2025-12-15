@@ -37,23 +37,14 @@ const CTA = ({ variant = 'primary' }) => {
       <section className={`section ${isPrimary ? 'section-blue' : 'section-dark'}`}>
         <div className="container">
           <div style={{ textAlign: 'center' }}>
-            <h2 style={{ 
-              fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
-              fontWeight: '700',
-              lineHeight: '1.1',
-              marginBottom: '2rem'
-            }}>
+            <h2 className="heading-2" style={{ color: '#fff', marginBottom: '2rem' }}>
               {isPrimary ? 
                 '今すぐ7日間無料体験を始めましょう' : 
                 '運動療法のスキルアップを始めませんか？'
               }
             </h2>
             
-            <p style={{ 
-              color: 'rgba(255,255,255,0.8)', 
-              marginBottom: '2rem',
-              fontSize: '1.125rem'
-            }}>
+            <p className="body" style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '2rem' }}>
               {isPrimary ? 
                 'いつでも解約可能。まずは価値を体験してください。' :
                 'Exthera-Schoolで、臨床現場で迷わない理学療法を身につけましょう。'
@@ -75,10 +66,7 @@ const CTA = ({ variant = 'primary' }) => {
               >
                 7日間無料体験を始める
               </button>
-              <p style={{ 
-                color: 'rgba(255,255,255,0.8)', 
-                fontSize: '0.875rem' 
-              }}>
+              <p className="body-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 ※7日間完全無料でお試しいただけます
               </p>
             </div>

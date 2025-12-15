@@ -38,24 +38,15 @@ const FAQ = () => {
     <section className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ 
-            fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
-            fontWeight: '700',
-            lineHeight: '1.1',
-            marginBottom: '1rem'
-          }}>
-            よくある質問
-          </h2>
-          <p style={{ color: 'var(--text-secondary)' }}>
-            ご不明な点がございましたら、お気軽にお問い合わせください
-          </p>
+          <h2 className="section-title">よくある質問</h2>
+          <p className="subhead">ご不明な点がございましたら、お気軽にお問い合わせください</p>
         </div>
 
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {faqs.map((faq, index) => (
             <div key={index} className="faq-item">
               <button 
-                className="faq-question" 
+                className="faq-question heading-3" 
                 onClick={() => toggleFAQ(index)}
               >
                 <span>{faq.question}</span>
@@ -64,7 +55,7 @@ const FAQ = () => {
                 </span>
               </button>
               <div className={`faq-answer ${openFAQ === index ? 'show' : ''}`}>
-                <p>{faq.answer}</p>
+                <p className="body-sm">{faq.answer}</p>
               </div>
             </div>
           ))}

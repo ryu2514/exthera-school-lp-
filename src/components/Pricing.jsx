@@ -116,17 +116,8 @@ const Pricing = () => {
       <section id="pricing" className="section section-gray">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ 
-              fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
-              fontWeight: '700',
-              lineHeight: '1.1',
-              marginBottom: '1rem'
-            }}>
-              料金プラン
-            </h2>
-            <p style={{ color: 'var(--text-secondary)' }}>
-              年間プランなら<strong style={{ color: 'var(--primary-color)' }}>16%OFF</strong>・<strong style={{ color: 'var(--primary-color)' }}>4,760円もお得</strong>に学習できます
-            </p>
+            <h2 className="section-title">料金プラン</h2>
+            <p className="subhead">年間プランなら<strong style={{ color: 'var(--primary-color)' }}>16%OFF</strong>・<strong style={{ color: 'var(--primary-color)' }}>4,760円もお得</strong>に学習できます</p>
           </div>
 
 

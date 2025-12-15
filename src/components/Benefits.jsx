@@ -28,14 +28,7 @@ const Benefits = () => {
     <section id="benefits" className="section section-gray">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ 
-            fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
-            fontWeight: '700',
-            lineHeight: '1.1',
-            marginBottom: '1rem'
-          }}>
-            Exthera-Schoolが選ばれる5つの理由
-          </h2>
+          <h2 className="section-title">Exthera-Schoolが選ばれる5つの理由</h2>
           
           <div style={{ marginTop: '2rem' }}>
             <img 
@@ -54,11 +47,11 @@ const Benefits = () => {
         <div className="grid grid-3">
           {benefits.map((benefit, index) => (
             <div key={index} className="card">
-              <h3>
+              <h3 className="heading-3">
                 <span className="check-icon">✓</span>
                 {benefit.title}
               </h3>
-              <p style={{ color: 'var(--text-secondary)' }}>{benefit.description}</p>
+              <p className="body-sm">{benefit.description}</p>
             </div>
           ))}
         </div>
