@@ -71,20 +71,8 @@ const Curriculum = () => {
       <section className="section">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ 
-              fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
-              fontWeight: '700',
-              lineHeight: '1.1',
-              marginBottom: '1rem'
-            }}>
-              学習コンテンツ
-            </h2>
-            <p style={{ 
-              color: 'var(--text-secondary)', 
-              maxWidth: '600px', 
-              margin: '0 auto',
-              marginBottom: '3rem'
-            }}>
+            <h2 className="section-title">学習コンテンツ</h2>
+            <p className="subhead" style={{ maxWidth: '600px', margin: '0 auto', marginBottom: '3rem' }}>
               体系的に設計された学習プログラムで、確実にスキルアップできます
             </p>
 
@@ -267,19 +255,10 @@ const Curriculum = () => {
                   height: '4px',
                   background: 'linear-gradient(90deg, #1a98d5 0%, #2196f3 100%)'
                 }}></div>
-                <h3 style={{ 
-                  fontSize: '1.375rem', 
-                  fontWeight: '700', 
-                  marginBottom: '1rem',
-                  color: '#1e293b'
-                }}>
+                <h3 className="heading-3" style={{ color: '#1e293b', marginBottom: '1rem' }}>
                   {item.title}
                 </h3>
-                <p style={{ 
-                  color: '#64748b', 
-                  marginBottom: '1.5rem',
-                  lineHeight: '1.6'
-                }}>
+                <p className="body-sm" style={{ color: '#64748b', marginBottom: '1.5rem' }}>
                   {item.description}
                 </p>
                 <ul style={{

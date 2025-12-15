@@ -26,17 +26,8 @@ const Testimonials = () => {
     <section className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ 
-            fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
-            fontWeight: '700',
-            lineHeight: '1.1',
-            marginBottom: '1rem'
-          }}>
-            スクール生徒の声
-          </h2>
-          <p style={{ color: 'var(--text-secondary)' }}>
-            実際に学ばれている理学療法士の方々からいただいた声をご紹介します
-          </p>
+          <h2 className="section-title">スクール生徒の声</h2>
+          <p className="subhead">実際に学ばれている理学療法士の方々からいただいた声をご紹介します</p>
         </div>
 
         <div className="grid grid-3">
@@ -66,26 +57,15 @@ const Testimonials = () => {
                   {testimonial.initial}
                 </div>
                 <div>
-                  <div style={{ 
-                    fontWeight: '600', 
-                    color: 'var(--text-primary)' 
-                  }}>
+                  <div className="heading-3" style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
                     {testimonial.name}
                   </div>
-                  <div style={{ 
-                    fontSize: '0.875rem', 
-                    color: 'var(--text-secondary)' 
-                  }}>
+                  <div className="body-sm" style={{ color: 'var(--text-secondary)' }}>
                     {testimonial.experience}
                   </div>
                 </div>
               </div>
-              <blockquote style={{ 
-                fontStyle: 'italic', 
-                color: 'var(--text-secondary)', 
-                lineHeight: '1.6', 
-                margin: '0' 
-              }}>
+              <blockquote className="body" style={{ fontStyle: 'italic', color: 'var(--text-secondary)', margin: 0 }}>
                 「{testimonial.quote}」
               </blockquote>
             </div>
@@ -93,10 +73,7 @@ const Testimonials = () => {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <p style={{ 
-            color: 'var(--text-secondary)', 
-            fontSize: '0.875rem' 
-          }}>
+          <p className="body-sm" style={{ color: 'var(--text-secondary)' }}>
             ※個人の感想であり、効果を保証するものではありません
           </p>
         </div>
