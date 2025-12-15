@@ -60,7 +60,33 @@ const Footer = () => {
       
       <footer className="footer">
         <div className="container">
-
+          <div className="footer-grid">
+            <div className="footer-section">
+              <div className="footer-title">Exthera-School</div>
+              <p className="footer-description">
+                臨床1〜5年目のための運動療法オンラインスクール。体系化×ライブ×コミュニティで、現場の再現性を高めます。
+              </p>
+            </div>
+            <div className="footer-section">
+              <h4>リンク</h4>
+              <div className="footer-links">
+                <p><a href="#benefits">選ばれる理由</a></p>
+                <p><a href="#pricing">料金</a></p>
+                <p><a href="#faq">よくある質問</a></p>
+              </div>
+            </div>
+            <div className="footer-section">
+              <h4>サポート</h4>
+              <div className="footer-links">
+                <p><a href="#" onClick={(e)=>{e.preventDefault(); window.open('mailto:support@example.com');}}>お問い合わせ</a></p>
+                <p><a href="#" onClick={(e)=>e.preventDefault()}>特定商取引法に基づく表記</a></p>
+                <p><a href="#" onClick={(e)=>e.preventDefault()}>プライバシーポリシー</a></p>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            &copy; {new Date().getFullYear()} Exthera-School
+          </div>
         </div>
       </footer>
     </>

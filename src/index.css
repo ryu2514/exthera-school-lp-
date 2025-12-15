@@ -139,6 +139,53 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+/* Additional grids */
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Trust band */
+.trust-band {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 14px 0;
+}
+.trust-band__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+.trust-band__value { font-weight: 700; font-size: 1.25rem; }
+.trust-band__label { opacity: 0.9; font-size: 0.875rem; }
+
+/* Steps */
+.steps-grid .step-card { text-align: left; }
+.step-number { color: var(--primary-color); font-weight: 700; }
+
+/* Sticky CTA (mobile) */
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.95);
+  border-top: 1px solid var(--gray-200);
+  padding: 10px 0;
+  display: none;
+  z-index: 1000;
+}
+.sticky-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sticky-cta__label { font-weight: 600; }
+
+@media (max-width: 768px) {
+  .sticky-cta { display: block; }
+}
+
 /* Card Styles */
 .card {
   background: var(--white);

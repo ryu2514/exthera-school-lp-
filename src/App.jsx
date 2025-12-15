@@ -1,12 +1,15 @@
 import Hero from './components/Hero'
+import TrustBand from './components/TrustBand'
 import Benefits from './components/Benefits'
 import SocialProof from './components/SocialProof'
+import Steps from './components/Steps'
 import Curriculum from './components/Curriculum'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
 import CTA from './components/CTA'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
+import StickyCTA from './components/StickyCTA'
 import GoogleAnalytics from './components/GoogleAnalytics'
 
 function App() {
@@ -20,8 +23,10 @@ function App() {
       {enableAnalytics && gaId && <GoogleAnalytics measurementId={gaId} />}
       
       <Hero />
+      <TrustBand />
       <Benefits />
       <SocialProof />
+      <Steps />
       <Curriculum />
       <Testimonials />
       <Pricing />
@@ -29,6 +34,7 @@ function App() {
       <FAQ />
       <CTA variant="secondary" />
       <Footer />
+      <StickyCTA />
     </div>
   )
 }
