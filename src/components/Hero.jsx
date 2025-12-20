@@ -75,28 +75,28 @@ const Hero = () => {
     },
     badges: {
       display: 'grid',
-      gridTemplateColumns: window.innerWidth <= 480 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
-      gap: window.innerWidth <= 480 ? '8px' : '12px',
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '10px',
       marginTop: '1.5rem',
     },
     badgeCircle: {
-      width: window.innerWidth <= 480 ? '100px' : '110px',
-      height: window.innerWidth <= 480 ? '100px' : '110px',
-      borderRadius: '9999px',
-      border: window.innerWidth <= 480 ? '3px solid #60a5fa' : '4px solid #60a5fa',
+      borderRadius: '16px',
       background: 'linear-gradient(145deg, #ffffff 0%, #f0f6ff 100%)',
-      boxShadow: '0 8px 24px rgba(59, 130, 246, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.9), 0 4px 8px rgba(0, 0, 0, 0.1)',
-      display: 'grid',
-      placeItems: 'center',
+      boxShadow: '8px 8px 16px rgba(59, 130, 246, 0.15), -4px -4px 12px rgba(255, 255, 255, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '8px',
       textAlign: 'center',
-      padding: window.innerWidth <= 480 ? '4px' : '8px',
+      padding: '12px 16px',
       transform: 'translateY(0)',
       transition: 'all 0.3s ease',
-      fontSize: window.innerWidth <= 480 ? '0.75rem' : '0.8rem',
+      fontSize: '0.8rem',
+      border: '1px solid rgba(59, 130, 246, 0.15)',
     },
     badgeStrong: {
       color: '#2563eb',
-      fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.5rem',
+      fontSize: window.innerWidth <= 480 ? '1.4rem' : '1.5rem',
       fontWeight: 800,
       textShadow: '0 1px 2px rgba(37, 99, 235, 0.2)',
     },
@@ -155,16 +155,20 @@ const Hero = () => {
           </div>
           <div style={styles.badges}>
             <div style={styles.badgeCircle}>
-              <div><strong style={styles.badgeStrong}>150名+</strong><br />会員数</div>
+              <strong style={styles.badgeStrong}>150名+</strong>
+              <span style={{ color: '#64748b' }}>会員数</span>
             </div>
             <div style={styles.badgeCircle}>
-              <div><strong style={styles.badgeStrong}>40本+</strong><br />セミナー本数</div>
+              <strong style={styles.badgeStrong}>40本+</strong>
+              <span style={{ color: '#64748b' }}>セミナー</span>
             </div>
             <div style={styles.badgeCircle}>
-              <div><strong style={styles.badgeStrong}>見放題</strong><br />アーカイブ</div>
+              <strong style={styles.badgeStrong}>見放題</strong>
+              <span style={{ color: '#64748b' }}>アーカイブ</span>
             </div>
             <div style={styles.badgeCircle}>
-              <div><strong style={styles.badgeStrong}>2500人+</strong><br /><span style={{ fontSize: '0.7rem' }}>年間セミナー受講</span></div>
+              <strong style={styles.badgeStrong}>2500人+</strong>
+              <span style={{ color: '#64748b', fontSize: '0.75rem' }}>年間受講</span>
             </div>
           </div>
         </div>
