@@ -6,6 +6,7 @@ import Benefits from './components/Benefits'
 import SocialProof from './components/SocialProof'
 import Steps from './components/Steps'
 import Curriculum from './components/Curriculum'
+import LatestRelease from './components/LatestRelease'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
 import CTA from './components/CTA'
@@ -32,6 +33,7 @@ function App() {
       <Steps />
       <TrustBand />
       <Curriculum />
+      <LatestRelease />
       <Testimonials />
       <Pricing />
       <CTA variant="primary" />
