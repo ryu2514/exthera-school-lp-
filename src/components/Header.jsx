@@ -45,16 +45,18 @@ const Header = () => {
       textDecoration: 'none',
     },
     login: {
-      padding: '8px 14px',
+      padding: window.innerWidth <= 480 ? '6px 10px' : '8px 14px',
       borderRadius: '9999px',
       border: '2px solid #cfe3ff',
       color: '#2563eb',
       background: '#f0f6ff',
       fontWeight: 700,
       textDecoration: 'none',
+      whiteSpace: 'nowrap',
+      fontSize: window.innerWidth <= 480 ? '12px' : '14px',
     },
     ctaPill: {
-      padding: '10px 16px',
+      padding: window.innerWidth <= 480 ? '8px 12px' : '10px 16px',
       borderRadius: '9999px',
       color: '#fff',
       background: 'linear-gradient(135deg, #60a5fa 0%, #2563eb 100%)',
@@ -62,11 +64,14 @@ const Header = () => {
       fontWeight: 700,
       textDecoration: 'none',
       transition: 'all 0.3s ease',
+      whiteSpace: 'nowrap',
+      fontSize: window.innerWidth <= 480 ? '12px' : '14px',
     },
     navActions: {
       display: 'flex',
-      gap: '10px',
+      gap: window.innerWidth <= 480 ? '6px' : '10px',
       alignItems: 'center',
+      flexShrink: 0,
     },
   };
 

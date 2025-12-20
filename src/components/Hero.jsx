@@ -75,27 +75,28 @@ const Hero = () => {
     },
     badges: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: '12px',
+      gridTemplateColumns: window.innerWidth <= 480 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
+      gap: window.innerWidth <= 480 ? '10px' : '12px',
       marginTop: '2rem',
     },
     badgeCircle: {
-      width: '110px',
-      height: '110px',
+      width: window.innerWidth <= 480 ? '90px' : '110px',
+      height: window.innerWidth <= 480 ? '90px' : '110px',
       borderRadius: '9999px',
-      border: '4px solid #60a5fa',
+      border: window.innerWidth <= 480 ? '3px solid #60a5fa' : '4px solid #60a5fa',
       background: 'linear-gradient(145deg, #ffffff 0%, #f0f6ff 100%)',
       boxShadow: '0 8px 24px rgba(59, 130, 246, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.9), 0 4px 8px rgba(0, 0, 0, 0.1)',
       display: 'grid',
       placeItems: 'center',
       textAlign: 'center',
-      padding: '8px',
+      padding: window.innerWidth <= 480 ? '6px' : '8px',
       transform: 'translateY(0)',
       transition: 'all 0.3s ease',
+      fontSize: window.innerWidth <= 480 ? '0.7rem' : '0.8rem',
     },
     badgeStrong: {
       color: '#2563eb',
-      fontSize: '1.5rem',
+      fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.5rem',
       fontWeight: 800,
       textShadow: '0 1px 2px rgba(37, 99, 235, 0.2)',
     },
@@ -118,8 +119,8 @@ const Hero = () => {
           <div style={styles.prehead}>セラピスト向け運動療法オンラインスクール</div>
           <h1 style={{
             ...styles.title,
-            fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
-            lineHeight: 1.2,
+            fontSize: window.innerWidth <= 480 ? '1.6rem' : 'clamp(2.2rem, 3.8vw, 3.2rem)',
+            lineHeight: 1.3,
             fontWeight: 800
           }}>
             臨床力が身につく<br />
