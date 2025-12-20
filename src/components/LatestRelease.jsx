@@ -148,7 +148,7 @@ const LatestRelease = () => {
 
                         <div style={styles.cta}>
                             <a
-                                href="https://gaitknee-view.vercel.app/"
+                                href="https://utage-system.com/page/dMEvmGc3X5Rz"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{ ...styles.btn, ...styles.btnPrimary }}
@@ -161,14 +161,8 @@ const LatestRelease = () => {
                                     e.target.style.boxShadow = '0 8px 20px rgba(37, 99, 235, 0.4)';
                                 }}
                             >
-                                アプリを試す
+                                会員で体験してみる
                             </a>
-                            <button
-                                style={{ ...styles.btn, ...styles.btnSecondary }}
-                                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                            >
-                                会員になる
-                            </button>
                         </div>
                     </div>
 
