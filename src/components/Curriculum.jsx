@@ -67,13 +67,53 @@ const Curriculum = () => {
 
   return (
     <>
-      
+
       <section className="section">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 className="section-title">学習コンテンツ</h2>
-            <p className="subhead" style={{ maxWidth: '600px', margin: '0 auto', marginBottom: '3rem' }}>
-              体系的に設計された学習プログラムで、確実にスキルアップできます
+            <div style={{
+              display: 'inline-block',
+              background: 'linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)',
+              color: 'white',
+              padding: '0.5rem 1.5rem',
+              borderRadius: '50px',
+              fontSize: '0.85rem',
+              fontWeight: '600',
+              marginBottom: '1.5rem',
+              letterSpacing: '1px'
+            }}>
+              CURRICULUM
+            </div>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: 800,
+              background: 'linear-gradient(135deg, #1e293b 0%, #3b82f6 100%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              marginBottom: '1rem',
+              lineHeight: 1.2
+            }}>
+              学習コンテンツ
+            </h2>
+            <div style={{
+              width: '80px',
+              height: '4px',
+              background: 'linear-gradient(90deg, #3b82f6 0%, #0ea5e9 100%)',
+              margin: '0 auto 1.5rem',
+              borderRadius: '2px'
+            }}></div>
+            <p style={{
+              fontSize: '1.1rem',
+              color: '#64748b',
+              textAlign: 'center',
+              maxWidth: '600px',
+              margin: '0 auto',
+              marginBottom: '3rem',
+              lineHeight: 1.8
+            }}>
+              体系的に設計された学習プログラムで<br />
+              <span style={{ fontWeight: 600, color: '#1e40af' }}>確実にスキルアップ</span>できます
             </p>
 
             {/* 動画セクション */}
@@ -140,7 +180,7 @@ const Curriculum = () => {
                     </div>
                   </div>
                 ))}
-              
+
               {/* 足関節捻挫アプリの追加動画 */}
               <div style={{
                 background: 'white',
@@ -195,147 +235,6 @@ const Curriculum = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* スクロールヒント */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '1rem',
-            marginBottom: '1rem',
-            fontSize: '0.875rem',
-            color: 'var(--text-secondary)'
-          }}>
-            <span>← スワイプして他のコンテンツを見る →</span>
-          </div>
-
-          <div style={{ position: 'relative' }}>
-            {/* スクロールコンテナ */}
-            <div 
-              id="curriculum-scroll"
-              style={{
-                display: 'flex',
-                overflowX: 'auto',
-                gap: '2rem',
-                paddingBottom: '1rem',
-                scrollSnapType: 'x mandatory',
-                scrollbarWidth: 'thin',
-                WebkitOverflowScrolling: 'touch'
-              }}
-            >
-              {curriculumItems.map((item, index) => (
-              <div key={index} style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                borderRadius: '20px',
-                padding: '2rem',
-                border: '1px solid #e2e8f0',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                position: 'relative',
-                overflow: 'hidden',
-                minWidth: '320px',
-                maxWidth: '320px',
-                scrollSnapAlign: 'start',
-                flex: '0 0 auto'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(26,152,213,0.15)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
-              }}>
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: 'linear-gradient(90deg, #1a98d5 0%, #2196f3 100%)'
-                }}></div>
-                <h3 className="heading-3" style={{ color: '#1e293b', marginBottom: '1rem' }}>
-                  {item.title}
-                </h3>
-                <p className="body-sm" style={{ color: '#64748b', marginBottom: '1.5rem' }}>
-                  {item.description}
-                </p>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0
-                }}>
-                  {item.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} style={{
-                      fontSize: '0.9rem',
-                      color: '#475569',
-                      margin: '0.75rem 0',
-                      display: 'flex',
-                      alignItems: 'center',
-                      paddingLeft: '1.5rem',
-                      position: 'relative'
-                    }}>
-                      <span style={{
-                        position: 'absolute',
-                        left: 0,
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        width: '8px',
-                        height: '8px',
-                        background: 'linear-gradient(135deg, #1a98d5 0%, #2196f3 100%)',
-                        borderRadius: '50%'
-                      }}></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            </div>
-
-            {/* ナビゲーションドット */}
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '0.5rem',
-              marginTop: '1.5rem'
-            }}>
-              {curriculumItems.map((_, index) => (
-                <div 
-                  key={index}
-                  style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '50%',
-                    background: index === activeIndex ? 'var(--primary-color)' : 'rgba(26, 152, 213, 0.3)',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onClick={() => {
-                    const scrollContainer = document.getElementById('curriculum-scroll');
-                    if (scrollContainer) {
-                      const cardWidth = 320 + 32; // カード幅 + ギャップ
-                      scrollContainer.scrollTo({
-                        left: index * cardWidth,
-                        behavior: 'smooth'
-                      });
-                    }
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* モバイル用の追加ヒント */}
-          <div style={{
-            textAlign: 'center',
-            marginTop: '1rem',
-            fontSize: '0.75rem',
-            color: 'var(--text-light)',
-            display: 'block'
-          }}>
-            💡 左右にスワイプしてすべてのコンテンツをご覧ください
           </div>
         </div>
       </section>

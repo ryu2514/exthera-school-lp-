@@ -5,74 +5,175 @@ const Hero = () => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  return (
-    <>
-      <style jsx>{`
-        .hero {
-          padding: 3rem 0 5rem;
-          background: linear-gradient(135deg, rgba(96, 165, 250, 0.10) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(59, 130, 246, 0.06) 100%);
-          position: relative;
-          overflow: hidden;
-        }
-        .hero::before {
-          content: '';
-          position: absolute;
-          width: 420px; height: 420px;
-          right: -120px; top: -120px;
-          border-radius: 50%;
-          background: radial-gradient(closest-side, rgba(59,130,246,.12), transparent);
-        }
-        .hero-grid {
-          display: grid;
-          grid-template-columns: 1.1fr .9fr;
-          gap: 2rem;
-          align-items: center;
-        }
-        .prehead { color: var(--text-secondary); font-weight: 700; letter-spacing: .2px; }
-        .title { margin: .75rem 0 1rem; color: var(--text-primary); }
-        .title .em { background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .subtitle { color: var(--text-secondary); font-size: clamp(1.05rem, 1.5vw, 1.15rem); }
-        .hero-cta { display:flex; gap:12px; align-items:center; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
-        .btn-pill { border-radius: 9999px; padding: 12px 18px; font-weight: 800; }
-        .btn-grad { color:#fff; background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); box-shadow: var(--shadow-lg); }
-        .btn-grad:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-        .btn-outline { border:2px solid #cfe3ff; color:#2563eb; background:#f0f6ff; }
-        .badges { display:flex; gap:14px; flex-wrap: wrap; margin-top: 2rem; }
-        .badge-circle { width: 140px; height: 140px; border-radius: 9999px; border: 3px solid #cfe3ff; background: #fff; box-shadow: var(--shadow-sm); display:grid; place-items:center; text-align:center; padding: 8px; }
-        .badge-circle strong { color:#2563eb; font-size: 1.35rem; }
-        .visual { position: relative; }
-        .visual .frame { border-radius: 24px; border: 10px solid #e6f0ff; overflow: hidden; box-shadow: var(--shadow-xl); }
-        @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } .badges { justify-content: center; } }
-      `}</style>
+  const styles = {
+    hero: {
+      padding: '3rem 0 5rem',
+      background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.10) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(59, 130, 246, 0.06) 100%)',
+      position: 'relative',
+      overflow: 'hidden',
+    },
+    heroBefore: {
+      content: '""',
+      position: 'absolute',
+      width: '420px',
+      height: '420px',
+      right: '-120px',
+      top: '-120px',
+      borderRadius: '50%',
+      background: 'radial-gradient(closest-side, rgba(59,130,246,.12), transparent)',
+      pointerEvents: 'none',
+    },
+    heroGrid: {
+      display: 'grid',
+      gridTemplateColumns: window.innerWidth > 960 ? '1.1fr .9fr' : '1fr',
+      gap: '2rem',
+      alignItems: 'center',
+    },
+    prehead: {
+      color: 'var(--text-secondary)',
+      fontWeight: 700,
+      letterSpacing: '.2px',
+    },
+    title: {
+      margin: '.75rem 0 1rem',
+      color: 'var(--text-primary)',
+    },
+    titleEm: {
+      background: 'linear-gradient(135deg, #60a5fa 0%, #2563eb 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+    },
+    subtitle: {
+      color: 'var(--text-secondary)',
+      fontSize: 'clamp(1.05rem, 1.5vw, 1.15rem)',
+    },
+    heroCta: {
+      display: 'flex',
+      gap: '12px',
+      alignItems: 'center',
+      margin: '1.5rem 0 1rem',
+      flexWrap: 'wrap',
+    },
+    btnPill: {
+      borderRadius: '9999px',
+      padding: '12px 18px',
+      fontWeight: 800,
+      border: 'none',
+      cursor: 'pointer',
+      transition: 'all 0.3s ease',
+    },
+    btnGrad: {
+      color: '#fff',
+      background: 'linear-gradient(135deg, #60a5fa 0%, #2563eb 100%)',
+      boxShadow: 'var(--shadow-lg)',
+    },
+    btnOutline: {
+      border: '2px solid #cfe3ff',
+      color: '#2563eb',
+      background: '#f0f6ff',
+    },
+    badges: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: '12px',
+      marginTop: '2rem',
+    },
+    badgeCircle: {
+      width: '110px',
+      height: '110px',
+      borderRadius: '9999px',
+      border: '4px solid #60a5fa',
+      background: 'linear-gradient(145deg, #ffffff 0%, #f0f6ff 100%)',
+      boxShadow: '0 8px 24px rgba(59, 130, 246, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.9), 0 4px 8px rgba(0, 0, 0, 0.1)',
+      display: 'grid',
+      placeItems: 'center',
+      textAlign: 'center',
+      padding: '8px',
+      transform: 'translateY(0)',
+      transition: 'all 0.3s ease',
+    },
+    badgeStrong: {
+      color: '#2563eb',
+      fontSize: '1.5rem',
+      fontWeight: 800,
+      textShadow: '0 1px 2px rgba(37, 99, 235, 0.2)',
+    },
+    visual: {
+      position: 'relative',
+    },
+    frame: {
+      borderRadius: '24px',
+      border: '10px solid #e6f0ff',
+      overflow: 'hidden',
+      boxShadow: 'var(--shadow-xl)',
+    },
+  };
 
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <div className="prehead">業界最適価の運動療法オンラインスクール</div>
-            <h1 className="title heading-hero">
-              実務力が身につくカリキュラムで<br />
-              <span className="em">現場で使える運動療法</span>を<br />
-              身につけよう！
-            </h1>
-            <p className="subtitle subhead">体系化×ライブ×コミュニティで、迷わない臨床を最短ルートで。</p>
-            <div className="hero-cta">
-              <button onClick={() => window.open('https://utage-system.com/page/acfwKIRNjmv7', '_blank')} className="btn btn-pill btn-grad">無料で講座を体験する</button>
-              <button onClick={() => scrollToSection('benefits')} className="btn btn-pill btn-outline">選ばれる理由を見る</button>
-            </div>
-            <div className="badges">
-              <div className="badge-circle"><div>業界<br /><strong>最適価</strong></div></div>
-              <div className="badge-circle"><div>会員<br /><strong>150名+</strong></div></div>
-              <div className="badge-circle"><div>アーカイブ<br /><strong>見放題</strong></div></div>
-            </div>
+  return (
+    <section style={styles.hero}>
+      <div style={styles.heroBefore} />
+      <div className="container" style={styles.heroGrid}>
+        <div>
+          <div style={styles.prehead}>セラピスト向け運動療法オンラインスクール</div>
+          <h1 style={{
+            ...styles.title,
+            fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
+            lineHeight: 1.2,
+            fontWeight: 800
+          }}>
+            臨床力が身につく<br />
+            <span style={styles.titleEm}>体系化された学び</span>で<br />
+            運動療法を習得しよう！
+          </h1>
+          <p style={{
+            ...styles.subtitle,
+            color: 'var(--text-secondary)'
+          }}>体系化×ライブ×コミュニティで、迷わない臨床を最短ルートで。</p>
+          <div style={styles.heroCta}>
+            <button
+              onClick={() => window.open('https://utage-system.com/page/dMEvmGc3X5Rz', '_blank')}
+              style={{ ...styles.btnPill, ...styles.btnGrad }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = 'var(--shadow-xl)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'var(--shadow-lg)';
+              }}
+            >
+              無料で体験する
+            </button>
+            <button
+              onClick={() => scrollToSection('benefits')}
+              style={{ ...styles.btnPill, ...styles.btnOutline }}
+            >
+              選ばれる理由を見る
+            </button>
           </div>
-          <div className="visual">
-            <div className="frame">
-              <img src="/assets/1.png" alt="Exthera School オンラインスクール" style={{ display:'block', width:'100%', height:'auto' }} />
+          <div style={styles.badges}>
+            <div style={styles.badgeCircle}>
+              <div><strong style={styles.badgeStrong}>150名+</strong><br />会員数</div>
+            </div>
+            <div style={styles.badgeCircle}>
+              <div><strong style={styles.badgeStrong}>40本+</strong><br />セミナー本数</div>
+            </div>
+            <div style={styles.badgeCircle}>
+              <div><strong style={styles.badgeStrong}>見放題</strong><br />アーカイブ</div>
+            </div>
+            <div style={styles.badgeCircle}>
+              <div><strong style={styles.badgeStrong}>2500人+</strong><br /><span style={{ fontSize: '0.7rem' }}>年間セミナー受講</span></div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+        <div style={styles.visual}>
+          <div style={styles.frame}>
+            <img src="/assets/1.png" alt="Exthera School オンラインスクール" style={{ display: 'block', width: '100%', height: 'auto' }} />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -23,49 +23,97 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="section">
+    <section style={{
+      background: '#ffffff',
+      padding: '5rem 0'
+    }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 className="section-title">スクール生徒の声</h2>
-          <p className="subhead">実際に学ばれている理学療法士の方々からいただいた声をご紹介します</p>
+          <div style={{
+            display: 'inline-block',
+            background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+            color: '#fff',
+            padding: '10px 24px',
+            borderRadius: '50px',
+            fontWeight: 700,
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+            boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)',
+          }}>💬 受講生の声</div>
+          <h2 className="section-title" style={{
+            color: '#1e293b',
+            marginTop: '1rem',
+            fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
+          }}>
+            <span style={{
+              background: 'linear-gradient(transparent 60%, #86efac 60%)',
+              fontWeight: '900'
+            }}>スクール生徒</span>の声
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            color: '#475569',
+            textAlign: 'center',
+            marginTop: '1rem'
+          }}>実際に学ばれている理学療法士の方々からいただいた声をご紹介します</p>
         </div>
 
         <div className="grid grid-3">
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="card" 
-              style={{ borderLeft: '4px solid var(--primary-color)' }}
+            <div
+              key={index}
+              className="card"
+              style={{
+                borderLeft: '5px solid #10b981',
+                background: '#fff',
+                boxShadow: '0 10px 30px rgba(16, 185, 129, 0.15)'
+              }}
             >
-              <div style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                marginBottom: '1rem' 
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '1rem'
               }}>
                 <div style={{
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)',
+                  background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'white',
                   fontWeight: '700',
-                  marginRight: '1rem'
+                  marginRight: '1rem',
+                  boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)'
                 }}>
                   {testimonial.initial}
                 </div>
                 <div>
-                  <div className="heading-3" style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
+                  <div style={{
+                    fontSize: 'clamp(1.05rem, 1.6vw, 1.25rem)',
+                    lineHeight: 1.35,
+                    fontWeight: 600,
+                    color: 'var(--text-primary)'
+                  }}>
                     {testimonial.name}
                   </div>
-                  <div className="body-sm" style={{ color: 'var(--text-secondary)' }}>
+                  <div style={{
+                    fontSize: '0.95rem',
+                    lineHeight: 1.8,
+                    color: 'var(--text-secondary)'
+                  }}>
                     {testimonial.experience}
                   </div>
                 </div>
               </div>
-              <blockquote className="body" style={{ fontStyle: 'italic', color: 'var(--text-secondary)', margin: 0 }}>
+              <blockquote style={{
+                fontSize: '1rem',
+                lineHeight: 1.6,
+                fontStyle: 'italic',
+                color: 'var(--text-secondary)',
+                margin: 0
+              }}>
                 「{testimonial.quote}」
               </blockquote>
             </div>
@@ -73,7 +121,11 @@ const Testimonials = () => {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <p className="body-sm" style={{ color: 'var(--text-secondary)' }}>
+          <p style={{
+            fontSize: '0.95rem',
+            lineHeight: 1.8,
+            color: 'var(--text-secondary)'
+          }}>
             ※個人の感想であり、効果を保証するものではありません
           </p>
         </div>

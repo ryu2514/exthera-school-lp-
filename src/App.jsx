@@ -24,13 +24,13 @@ function App() {
       <Header />
       {/* Google Analytics */}
       {enableAnalytics && gaId && <GoogleAnalytics measurementId={gaId} />}
-      
+
       <Hero />
       <Problems />
-      <TrustBand />
       <Benefits />
       <SocialProof />
       <Steps />
+      <TrustBand />
       <Curriculum />
       <Testimonials />
       <Pricing />

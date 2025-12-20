@@ -1,70 +1,103 @@
 import React from 'react';
 
 const SocialProof = () => {
+  const styles = {
+    container: {
+      display: 'grid',
+      gridTemplateColumns: window.innerWidth > 768 ? '1fr 1.5fr' : '1fr',
+      gap: '3rem',
+      alignItems: 'center',
+    },
+    imageWrapper: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    instructorImage: {
+      width: '280px',
+      height: '280px',
+      borderRadius: '50%',
+      objectFit: 'cover',
+      border: '5px solid rgba(255, 255, 255, 0.3)',
+      boxShadow: '0 15px 40px rgba(0, 0, 0, 0.3)',
+    },
+    content: {
+      textAlign: window.innerWidth > 768 ? 'left' : 'center',
+    },
+    name: {
+      fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+      fontWeight: 700,
+      color: '#fff',
+      marginBottom: '0.5rem',
+    },
+    title: {
+      color: 'rgba(255,255,255,0.8)',
+      fontSize: '1.1rem',
+      marginBottom: '1.5rem',
+    },
+    bio: {
+      color: 'rgba(255,255,255,0.9)',
+      fontSize: '1rem',
+      lineHeight: 1.8,
+      marginBottom: '1.5rem',
+    },
+    stats: {
+      display: 'flex',
+      gap: '2rem',
+      flexWrap: 'wrap',
+      justifyContent: window.innerWidth > 768 ? 'flex-start' : 'center',
+    },
+    statItem: {
+      textAlign: 'center',
+    },
+    statNumber: {
+      fontSize: '2rem',
+      fontWeight: 700,
+      color: '#fff',
+      display: 'block',
+    },
+    statLabel: {
+      fontSize: '0.85rem',
+      color: 'rgba(255,255,255,0.7)',
+    },
+  };
+
   return (
-    <>
-      <style jsx="true">{`
-        .follower-count {
-          font-size: clamp(3rem, 8vw, 5rem);
-          font-weight: 700;
-          background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          margin-bottom: 0.5rem;
-          display: block;
-        }
-
-        .follower-label {
-          color: rgba(255,255,255,0.9);
-          font-size: 1.25rem;
-          font-weight: 600;
-          margin-bottom: 0.5rem;
-        }
-
-        .follower-description {
-          color: rgba(255,255,255,0.7);
-          font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-          .follower-label {
-            font-size: 1.1rem;
-          }
-          .follower-description {
-            font-size: 0.9rem;
-          }
-        }
-      `}</style>
-      
-      <section id="social-proof" className="section section-blue">
-        <div className="container">
-          <div style={{ textAlign: 'center' }}>
-            <div className="follower-count">35,000</div>
-            <div className="follower-label">SNS総フォロワー数</div>
-            <p className="follower-description">
-              各SNSプラットフォームで理学療法士コミュニティを形成
+    <section id="social-proof" className="section section-blue">
+      <div className="container">
+        <div style={styles.container}>
+          <div style={styles.imageWrapper}>
+            <img
+              src="/assets/instructor.png"
+              alt="小林龍二"
+              style={styles.instructorImage}
+            />
+          </div>
+          <div style={styles.content}>
+            <h2 style={styles.name}>小林 龍樹</h2>
+            <p style={styles.title}>理学療法士 / Exthera-School 代表</p>
+            <p style={styles.bio}>
+              整形外科クリニック勤務を経て、運動療法に特化したオンラインスクールを設立。
+              「現場で使える運動療法」をテーマに、体系化された学びを提供しています。
+              SNSでは理学療法に関する情報発信を行い、多くのセラピストに支持されています。
             </p>
-            
-            {/* Instagram プロフィール画像 */}
-            <div style={{ marginTop: '2rem' }}>
-              <img 
-                src="/assets/instagram-profile.png" 
-                alt="Instagram プロフィール" 
-                style={{
-                  width: '300px',
-                  maxWidth: '90%',
-                  height: 'auto',
-                  borderRadius: '20px',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-                  border: '3px solid rgba(255, 255, 255, 0.2)'
-                }}
-              />
+            <div style={styles.stats}>
+              <div style={styles.statItem}>
+                <span style={styles.statNumber}>35,000+</span>
+                <span style={styles.statLabel}>SNS総フォロワー</span>
+              </div>
+              <div style={styles.statItem}>
+                <span style={styles.statNumber}>2,500+</span>
+                <span style={styles.statLabel}>年間セミナー受講者</span>
+              </div>
+              <div style={styles.statItem}>
+                <span style={styles.statNumber}>150+</span>
+                <span style={styles.statLabel}>スクール会員</span>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
