@@ -95,8 +95,9 @@ const Footer = () => {
             <div style={styles.footerLinks}>
               <p>
                 <a
-                  href="#"
-                  onClick={(e)=>{e.preventDefault(); window.open('mailto:support@example.com');}}
+                  href="https://exthera-school.com/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={styles.footerLink}
                   onMouseEnter={(e) => e.target.style.color = 'var(--primary-color)'}
                   onMouseLeave={(e) => e.target.style.color = 'var(--text-light)'}
@@ -106,8 +107,9 @@ const Footer = () => {
               </p>
               <p>
                 <a
-                  href="#"
-                  onClick={(e)=>e.preventDefault()}
+                  href="https://exthera-school.com/legal"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={styles.footerLink}
                   onMouseEnter={(e) => e.target.style.color = 'var(--primary-color)'}
                   onMouseLeave={(e) => e.target.style.color = 'var(--text-light)'}
@@ -117,8 +119,9 @@ const Footer = () => {
               </p>
               <p>
                 <a
-                  href="#"
-                  onClick={(e)=>e.preventDefault()}
+                  href="https://exthera-school.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={styles.footerLink}
                   onMouseEnter={(e) => e.target.style.color = 'var(--primary-color)'}
                   onMouseLeave={(e) => e.target.style.color = 'var(--text-light)'}
