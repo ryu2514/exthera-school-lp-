@@ -130,11 +130,16 @@ const Hero = () => {
       gap: '8px',
       textAlign: 'center',
       padding: '14px 12px',
-      transition: 'all 0.3s ease',
+      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
       fontSize: '0.8rem',
       border: '1px solid rgba(59, 130, 246, 0.1)',
       whiteSpace: 'nowrap',
     },
+    badgeAnimated: (index) => ({
+      opacity: animate ? 1 : 0,
+      transform: animate ? 'translateY(0)' : 'translateY(20px)',
+      transitionDelay: `${0.6 + index * 0.1}s`,
+    }),
     badgeStrong: {
       color: '#2563eb',
       fontSize: window.innerWidth <= 480 ? '1.4rem' : '1.5rem',
@@ -207,19 +212,19 @@ const Hero = () => {
             </button>
           </div>
           <div style={styles.badges}>
-            <div style={styles.badgeCircle}>
+            <div style={{ ...styles.badgeCircle, ...styles.badgeAnimated(0) }}>
               <strong style={styles.badgeStrong}>150名+</strong>
               <span style={{ color: '#64748b' }}>会員数</span>
             </div>
-            <div style={styles.badgeCircle}>
+            <div style={{ ...styles.badgeCircle, ...styles.badgeAnimated(1) }}>
               <strong style={styles.badgeStrong}>40本+</strong>
               <span style={{ color: '#64748b' }}>セミナー</span>
             </div>
-            <div style={styles.badgeCircle}>
+            <div style={{ ...styles.badgeCircle, ...styles.badgeAnimated(2) }}>
               <strong style={styles.badgeStrong}>見放題</strong>
               <span style={{ color: '#64748b' }}>アーカイブ</span>
             </div>
-            <div style={styles.badgeCircle}>
+            <div style={{ ...styles.badgeCircle, ...styles.badgeAnimated(3) }}>
               <strong style={styles.badgeStrong}>5000人+</strong>
               <span style={{ color: '#64748b', fontSize: '0.75rem' }}>累計受講</span>
             </div>
