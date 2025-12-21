@@ -86,8 +86,8 @@ const SocialProof = () => {
                 <span style={styles.statLabel}>SNS総フォロワー</span>
               </div>
               <div style={styles.statItem}>
-                <span style={styles.statNumber}>2,500+</span>
-                <span style={styles.statLabel}>年間セミナー受講者</span>
+                <span style={styles.statNumber}>5,000+</span>
+                <span style={styles.statLabel}>累計セミナー受講者</span>
               </div>
               <div style={styles.statItem}>
                 <span style={styles.statNumber}>150+</span>

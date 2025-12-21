@@ -21,7 +21,7 @@ const Benefits = () => {
       icon: '📚'
     },
     {
-      title: '2024年セミナー受講人数2500名超',
+      title: '2年間累計セミナー受講人数5000名超',
       description: '圧倒的な参加人数と継続率',
       color: '#ef4444',
       icon: '👥'

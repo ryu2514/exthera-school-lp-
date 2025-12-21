@@ -168,8 +168,8 @@ const Hero = () => {
               <span style={{ color: '#64748b' }}>アーカイブ</span>
             </div>
             <div style={styles.badgeCircle}>
-              <strong style={styles.badgeStrong}>2500人+</strong>
-              <span style={{ color: '#64748b', fontSize: '0.75rem' }}>年間受講</span>
+              <strong style={styles.badgeStrong}>5000人+</strong>
+              <span style={{ color: '#64748b', fontSize: '0.75rem' }}>累計受講</span>
             </div>
           </div>
         </div>

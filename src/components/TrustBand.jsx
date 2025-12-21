@@ -19,12 +19,12 @@ const TrustBand = () => {
       setCounts({
         members: Math.floor(150 * progress),
         seminars: Math.floor(40 * progress),
-        attendees: Math.floor(2500 * progress)
+        attendees: Math.floor(5000 * progress)
       });
 
       if (currentStep >= steps) {
         clearInterval(timer);
-        setCounts({ members: 150, seminars: 40, attendees: 2500 });
+        setCounts({ members: 150, seminars: 40, attendees: 5000 });
       }
     }, interval);
 
@@ -45,7 +45,7 @@ const TrustBand = () => {
       value: '見放題',
     },
     {
-      label: '年間セミナー受講',
+      label: '累計セミナー受講',
       value: `${counts.attendees}人+`,
     },
   ];
