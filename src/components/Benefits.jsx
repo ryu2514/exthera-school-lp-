@@ -62,17 +62,17 @@ const Benefits = () => {
     },
     grid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '2rem',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+      gap: '1.25rem',
       maxWidth: '1200px',
       margin: '0 auto',
     },
     card: {
       background: '#fff',
-      borderRadius: '24px',
-      padding: '2rem',
+      borderRadius: '20px',
+      padding: '1.25rem 1.5rem',
       border: '3px solid',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
       transition: 'all 0.3s ease',
       position: 'relative',
       overflow: 'hidden',
@@ -86,14 +86,14 @@ const Benefits = () => {
       display: 'inline-block',
       background: '#10b981',
       color: '#fff',
-      width: '32px',
-      height: '32px',
+      width: '28px',
+      height: '28px',
       borderRadius: '50%',
       textAlign: 'center',
-      lineHeight: '32px',
+      lineHeight: '28px',
       fontWeight: 'bold',
-      fontSize: '1.2rem',
-      marginBottom: '1rem',
+      fontSize: '1rem',
+      marginBottom: '0.75rem',
     },
   };
 
@@ -158,18 +158,19 @@ const Benefits = () => {
               >
                 <div style={styles.checkBadge}>✓</div>
                 <h3 style={{
-                  fontSize: '1.25rem',
-                  lineHeight: 1.4,
+                  fontSize: '1.15rem',
+                  lineHeight: 1.35,
                   fontWeight: 700,
                   color: '#1e293b',
-                  marginBottom: '0.75rem'
+                  marginBottom: '0.5rem'
                 }}>
                   {benefit.title}
                 </h3>
                 <p style={{
-                  fontSize: '0.95rem',
-                  lineHeight: 1.7,
-                  color: '#64748b'
+                  fontSize: '0.9rem',
+                  lineHeight: 1.6,
+                  color: '#64748b',
+                  margin: 0
                 }}>
                   {benefit.description}
                 </p>
