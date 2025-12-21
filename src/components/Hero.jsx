@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimate(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -33,13 +40,47 @@ const Hero = () => {
       color: 'var(--text-secondary)',
       fontWeight: 700,
       letterSpacing: '.2px',
+      marginBottom: '0.5rem',
     },
-    title: {
-      margin: '.75rem 0 1rem',
-      color: 'var(--text-primary)',
+    animatedLine: {
+      position: 'relative',
+      display: 'inline-block',
+      paddingBottom: '6px',
+    },
+    underline: {
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      height: '4px',
+      background: 'linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%)',
+      borderRadius: '2px',
+      width: animate ? '100%' : '0%',
+      transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+    },
+    underlineBlue: {
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      height: '5px',
+      background: 'linear-gradient(90deg, #2563eb 0%, #3b82f6 100%)',
+      borderRadius: '3px',
+      width: animate ? '100%' : '0%',
+      transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+      transitionDelay: '0.2s',
+    },
+    underlineLast: {
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      height: '4px',
+      background: 'linear-gradient(90deg, #1d4ed8 0%, #3b82f6 100%)',
+      borderRadius: '2px',
+      width: animate ? '100%' : '0%',
+      transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+      transitionDelay: '0.4s',
     },
     titleEm: {
-      background: 'linear-gradient(135deg, #60a5fa 0%, #2563eb 100%)',
+      background: 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
       WebkitBackgroundClip: 'text',
       backgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
@@ -89,7 +130,6 @@ const Hero = () => {
       gap: '8px',
       textAlign: 'center',
       padding: '14px 12px',
-      transform: 'translateY(0)',
       transition: 'all 0.3s ease',
       fontSize: '0.8rem',
       border: '1px solid rgba(59, 130, 246, 0.1)',
@@ -119,14 +159,26 @@ const Hero = () => {
         <div>
           <div style={styles.prehead}>セラピスト向け運動療法オンラインスクール</div>
           <h1 style={{
-            ...styles.title,
             fontSize: window.innerWidth <= 480 ? '1.85rem' : 'clamp(2.2rem, 3.8vw, 3.2rem)',
-            lineHeight: 1.25,
-            fontWeight: 800
+            lineHeight: 1.4,
+            fontWeight: 800,
+            color: '#1e293b',
+            margin: '.75rem 0 1rem',
           }}>
-            臨床力が身につく<br />
-            <span style={styles.titleEm}>体系化された学び</span>で<br />
-            運動療法を習得しよう！
+            <span style={styles.animatedLine}>
+              臨床力が身につく
+              <span style={styles.underline} />
+            </span>
+            <br />
+            <span style={{ ...styles.animatedLine, paddingBottom: '8px' }}>
+              <span style={styles.titleEm}>体系化された学び</span>で
+              <span style={styles.underlineBlue} />
+            </span>
+            <br />
+            <span style={styles.animatedLine}>
+              運動療法を習得しよう！
+              <span style={styles.underlineLast} />
+            </span>
           </h1>
           <p style={{
             ...styles.subtitle,
