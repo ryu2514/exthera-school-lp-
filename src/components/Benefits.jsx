@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { AnimatedTitle } from '../hooks/useScrollAnimation';
 
 const Benefits = () => {
+  const [visibleCards, setVisibleCards] = useState([]);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.dataset.index);
+            setVisibleCards((prev) => [...new Set([...prev, index])]);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const benefits = [
     {
       title: '圧倒的な満足度 4.60 / 5.0',
@@ -34,6 +57,16 @@ const Benefits = () => {
       icon: '💬'
     }
   ];
+
+  const getCardAnimation = (index) => {
+    const isVisible = visibleCards.includes(index);
+    const fromLeft = index % 2 === 0;
+    return {
+      opacity: isVisible ? 1 : 0,
+      transform: isVisible ? 'translateX(0)' : `translateX(${fromLeft ? '-50px' : '50px'})`,
+      transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`,
+    };
+  };
 
   const styles = {
     section: {
@@ -150,10 +183,13 @@ const Benefits = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
+                ref={(el) => (cardRefs.current[index] = el)}
+                data-index={index}
                 className="benefit-card"
                 style={{
                   ...styles.card,
                   borderColor: benefit.color,
+                  ...getCardAnimation(index),
                 }}
               >
                 <div style={styles.checkBadge}>✓</div>
