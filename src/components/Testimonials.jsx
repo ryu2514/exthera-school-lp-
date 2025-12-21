@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnimatedTitle } from '../hooks/useScrollAnimation';
 
 const Testimonials = () => {
   const testimonials = [
@@ -45,10 +46,10 @@ const Testimonials = () => {
             marginTop: '1rem',
             fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
           }}>
-            <span style={{
+            <AnimatedTitle style={{
               background: 'linear-gradient(transparent 60%, #86efac 60%)',
               fontWeight: '900'
-            }}>スクール生徒</span>の声
+            }}>スクール生徒</AnimatedTitle>の声
           </h2>
           <p style={{
             fontSize: '1rem',

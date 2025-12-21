@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnimatedTitle } from '../hooks/useScrollAnimation';
 
 const Benefits = () => {
   const benefits = [
@@ -126,10 +127,9 @@ const Benefits = () => {
               fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
             }}>
               Exthera-Schoolが<br />
-              <span style={{
-                background: 'linear-gradient(transparent 60%, #86efac 60%)',
-                fontWeight: '900'
-              }}>選ばれる5つの理由</span>
+              <AnimatedTitle style={{ background: 'linear-gradient(transparent 60%, #86efac 60%)', fontWeight: '900' }}>
+                選ばれる5つの理由
+              </AnimatedTitle>
             </h2>
 
             <div style={styles.imageWrapper}>

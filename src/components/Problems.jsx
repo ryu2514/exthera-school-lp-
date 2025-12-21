@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnimatedTitle } from '../hooks/useScrollAnimation';
 
 const Problems = () => {
   const items = [
@@ -138,10 +139,10 @@ const Problems = () => {
               marginTop: '0.5rem',
               fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
             }}>
-              あなたも<span style={{
+              あなたも<AnimatedTitle style={{
                 background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
                 fontWeight: '900'
-              }}>こんなお悩み</span>、<br />ありませんか？
+              }}>こんなお悩み</AnimatedTitle>、<br />ありませんか？
             </h2>
           </div>
           <div style={styles.grid}>

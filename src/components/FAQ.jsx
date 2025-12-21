@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AnimatedTitle } from '../hooks/useScrollAnimation';
 
 const FAQ = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -57,10 +58,10 @@ const FAQ = () => {
             marginTop: '1rem',
             fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
           }}>
-            <span style={{
+            <AnimatedTitle style={{
               background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
               fontWeight: '900'
-            }}>よくある質問</span>
+            }}>よくある質問</AnimatedTitle>
           </h2>
           <p style={{
             fontSize: '1rem',
@@ -102,9 +103,9 @@ const FAQ = () => {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <p style={{ 
-            color: 'var(--text-secondary)', 
-            marginBottom: '1.5rem' 
+          <p style={{
+            color: 'var(--text-secondary)',
+            marginBottom: '1.5rem'
           }}>
             その他のご質問がございましたら、お気軽にお問い合わせください
           </p>
