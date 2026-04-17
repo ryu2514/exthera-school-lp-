@@ -1,6 +1,8 @@
 import React from 'react';
 
 const LatestRelease = () => {
+    const isWide = typeof window !== 'undefined' && window.innerWidth > 900;
+
     const styles = {
         section: {
             padding: '5rem 0',
@@ -41,14 +43,32 @@ const LatestRelease = () => {
             margin: '0 auto 2rem',
             lineHeight: 1.8,
         },
+        appBlock: {
+            marginBottom: '4rem',
+        },
         grid: {
             display: 'grid',
-            gridTemplateColumns: window.innerWidth > 900 ? '1fr 1.2fr' : '1fr',
+            gridTemplateColumns: isWide ? '1fr 1.2fr' : '1fr',
+            gap: '3rem',
+            alignItems: 'center',
+        },
+        gridReverse: {
+            display: 'grid',
+            gridTemplateColumns: isWide ? '1.2fr 1fr' : '1fr',
             gap: '3rem',
             alignItems: 'center',
         },
         content: {
-            textAlign: window.innerWidth > 900 ? 'left' : 'center',
+            textAlign: isWide ? 'left' : 'center',
+        },
+        appLabel: {
+            display: 'inline-block',
+            fontSize: '0.75rem',
+            letterSpacing: '0.2em',
+            color: '#d4a68c',
+            fontWeight: 600,
+            marginBottom: '0.75rem',
+            textTransform: 'uppercase',
         },
         videoWrapper: {
             position: 'relative',
@@ -76,7 +96,7 @@ const LatestRelease = () => {
             flexWrap: 'wrap',
             gap: '1rem',
             marginTop: '2rem',
-            justifyContent: window.innerWidth > 900 ? 'flex-start' : 'center',
+            justifyContent: isWide ? 'flex-start' : 'center',
         },
         featureTag: {
             background: 'rgba(59, 130, 246, 0.2)',
@@ -92,7 +112,7 @@ const LatestRelease = () => {
             display: 'flex',
             gap: '1rem',
             flexWrap: 'wrap',
-            justifyContent: window.innerWidth > 900 ? 'flex-start' : 'center',
+            justifyContent: isWide ? 'flex-start' : 'center',
         },
         btn: {
             padding: '14px 28px',
@@ -103,16 +123,36 @@ const LatestRelease = () => {
             cursor: 'pointer',
             transition: 'all 0.3s ease',
             textDecoration: 'none',
+            display: 'inline-block',
         },
         btnPrimary: {
             background: 'linear-gradient(135deg, #60a5fa 0%, #2563eb 100%)',
             color: '#fff',
             boxShadow: '0 8px 20px rgba(37, 99, 235, 0.4)',
         },
-        btnSecondary: {
-            background: 'transparent',
-            color: '#60a5fa',
-            border: '2px solid rgba(96, 165, 250, 0.5)',
+        btnClinicalRoute: {
+            background: 'linear-gradient(135deg, #f4a261 0%, #b45533 100%)',
+            color: '#fff',
+            boxShadow: '0 8px 20px rgba(180, 85, 51, 0.4)',
+        },
+        // Clinical Route サムネイル
+        crThumbWrapper: {
+            position: 'relative',
+            borderRadius: '20px',
+            overflow: 'hidden',
+            background: 'linear-gradient(135deg, #1c1917 0%, #2a2420 50%, #3d2b22 100%)',
+            boxShadow: '0 25px 50px rgba(0, 0, 0, 0.4)',
+            border: '4px solid rgba(212, 166, 140, 0.25)',
+            padding: '1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+        crThumbImage: {
+            width: '100%',
+            height: 'auto',
+            display: 'block',
+            borderRadius: '8px',
         },
     };
 
@@ -125,56 +165,111 @@ const LatestRelease = () => {
                         会員限定<span style={styles.titleHighlight}>最新アプリ</span>
                     </h2>
                     <p style={styles.subtitle}>
-                        会員の皆様に無料で提供される最新の評価アプリをご紹介します
+                        会員の皆様に無料で提供される最新の臨床支援アプリをご紹介します
                     </p>
                 </div>
 
-                <div style={styles.grid}>
-                    <div style={styles.content}>
-                        <h3 style={{ color: '#fff', fontSize: '1.8rem', fontWeight: 700, marginBottom: '1rem' }}>
-                            GaitKnee-View
-                        </h3>
-                        <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, marginBottom: '1rem' }}>
-                            膝関節のラテラルスラストを定量的に評価できる歩行分析アプリ。<br />
-                            スマホで撮影した動画をアップロードするだけで、AIが自動で解析します。
-                        </p>
+                {/* Clinical Route */}
+                <div style={styles.appBlock}>
+                    <div style={styles.grid}>
+                        <div style={styles.content}>
+                            <div style={styles.appLabel}>Thinking Support Tool</div>
+                            <h3 style={{ color: '#fff', fontSize: '1.8rem', fontWeight: 700, marginBottom: '1rem' }}>
+                                Clinical Route
+                            </h3>
+                            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, marginBottom: '1rem' }}>
+                                所見を運動療法に接続する、臨床思考の支援ツール。<br />
+                                「ここからどうする？」と迷う場面で、思考の道筋を整理できます。
+                            </p>
 
-                        <div style={styles.features}>
-                            <span style={styles.featureTag}>📊 定量評価</span>
-                            <span style={styles.featureTag}>📱 スマホ対応</span>
-                            <span style={styles.featureTag}>🤖 AI解析</span>
-                            <span style={styles.featureTag}>⚡ 即時結果</span>
+                            <div style={styles.features}>
+                                <span style={styles.featureTag}>📌 主訴別フロー</span>
+                                <span style={styles.featureTag}>🤖 AIフロー生成</span>
+                                <span style={styles.featureTag}>📁 症例管理</span>
+                                <span style={styles.featureTag}>✨ 会員はPro機能</span>
+                            </div>
+
+                            <div style={styles.cta}>
+                                <a
+                                    href="https://utage-system.com/page/dMEvmGc3X5Rz"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ ...styles.btn, ...styles.btnClinicalRoute }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.transform = 'translateY(-2px)';
+                                        e.target.style.boxShadow = '0 12px 25px rgba(180, 85, 51, 0.5)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.transform = 'translateY(0)';
+                                        e.target.style.boxShadow = '0 8px 20px rgba(180, 85, 51, 0.4)';
+                                    }}
+                                >
+                                    会員で体験してみる
+                                </a>
+                            </div>
                         </div>
 
-                        <div style={styles.cta}>
-                            <a
-                                href="https://utage-system.com/page/dMEvmGc3X5Rz"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ ...styles.btn, ...styles.btnPrimary }}
-                                onMouseEnter={(e) => {
-                                    e.target.style.transform = 'translateY(-2px)';
-                                    e.target.style.boxShadow = '0 12px 25px rgba(37, 99, 235, 0.5)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.transform = 'translateY(0)';
-                                    e.target.style.boxShadow = '0 8px 20px rgba(37, 99, 235, 0.4)';
-                                }}
-                            >
-                                会員で体験してみる
-                            </a>
+                        <div style={styles.crThumbWrapper}>
+                            <img
+                                src="/assets/clinical-route-mock.png"
+                                alt="Clinical Route — PC・スマホ対応の臨床思考支援ツール"
+                                style={styles.crThumbImage}
+                                loading="lazy"
+                            />
                         </div>
                     </div>
+                </div>
 
-                    <div style={styles.videoWrapper}>
-                        <div style={styles.videoContainer}>
-                            <iframe
-                                src="https://player.vimeo.com/video/1148296410?badge=0&autopause=0&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0&controls=1&playsinline=1"
-                                style={styles.iframe}
-                                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                                allowFullScreen
-                                title="GaitKnee-View デモ"
-                            />
+                {/* GaitKnee-View */}
+                <div style={styles.appBlock}>
+                    <div style={styles.grid}>
+                        <div style={styles.content}>
+                            <div style={styles.appLabel}>Gait Analysis</div>
+                            <h3 style={{ color: '#fff', fontSize: '1.8rem', fontWeight: 700, marginBottom: '1rem' }}>
+                                GaitKnee-View
+                            </h3>
+                            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, marginBottom: '1rem' }}>
+                                膝関節のラテラルスラストを定量的に評価できる歩行分析アプリ。<br />
+                                スマホで撮影した動画をアップロードするだけで、AIが自動で解析します。
+                            </p>
+
+                            <div style={styles.features}>
+                                <span style={styles.featureTag}>📊 定量評価</span>
+                                <span style={styles.featureTag}>📱 スマホ対応</span>
+                                <span style={styles.featureTag}>🤖 AI解析</span>
+                                <span style={styles.featureTag}>⚡ 即時結果</span>
+                            </div>
+
+                            <div style={styles.cta}>
+                                <a
+                                    href="https://utage-system.com/page/dMEvmGc3X5Rz"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ ...styles.btn, ...styles.btnPrimary }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.transform = 'translateY(-2px)';
+                                        e.target.style.boxShadow = '0 12px 25px rgba(37, 99, 235, 0.5)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.transform = 'translateY(0)';
+                                        e.target.style.boxShadow = '0 8px 20px rgba(37, 99, 235, 0.4)';
+                                    }}
+                                >
+                                    会員で体験してみる
+                                </a>
+                            </div>
+                        </div>
+
+                        <div style={styles.videoWrapper}>
+                            <div style={styles.videoContainer}>
+                                <iframe
+                                    src="https://player.vimeo.com/video/1148296410?badge=0&autopause=0&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0&controls=1&playsinline=1"
+                                    style={styles.iframe}
+                                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                                    allowFullScreen
+                                    title="GaitKnee-View デモ"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
