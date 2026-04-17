@@ -19,7 +19,7 @@ const Pricing = () => {
   ];
 
   const handleStartTrial = () => {
-    window.open('https://utage-system.com/page/dMEvmGc3X5Rz', '_blank');
+    window.open('https://exthera-school.com/seminar-special/', '_blank');
   };
 
   const styles = {
