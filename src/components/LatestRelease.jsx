@@ -191,7 +191,7 @@ const LatestRelease = () => {
 
                             <div style={styles.cta}>
                                 <a
-                                    href="https://exthera-school.com/seminar-special/"
+                                    href="https://exthera-school.com/in-school/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ ...styles.btn, ...styles.btnClinicalRoute }}
@@ -242,7 +242,7 @@ const LatestRelease = () => {
 
                             <div style={styles.cta}>
                                 <a
-                                    href="https://exthera-school.com/seminar-special/"
+                                    href="https://exthera-school.com/in-school/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ ...styles.btn, ...styles.btnPrimary }}

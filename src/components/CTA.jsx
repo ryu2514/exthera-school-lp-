@@ -4,7 +4,7 @@ const CTA = ({ variant = 'primary' }) => {
   const isPrimary = variant === 'primary';
 
   const handleStartTrial = () => {
-    window.open('https://exthera-school.com/seminar-special/', '_blank');
+    window.open('https://exthera-school.com/in-school/', '_blank');
   };
 
   const styles = {

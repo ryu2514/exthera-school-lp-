@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   const openTrial = (e) => {
     e.preventDefault();
-    window.open('https://exthera-school.com/seminar-special/', '_blank');
+    window.open('https://exthera-school.com/in-school/', '_blank');
   };
 
   const styles = {

@@ -191,7 +191,7 @@ const Hero = () => {
           }}>体系化×ライブ×コミュニティで、迷わない臨床を最短ルートで。</p>
           <div style={styles.heroCta}>
             <button
-              onClick={() => window.open('https://exthera-school.com/seminar-special/', '_blank')}
+              onClick={() => window.open('https://exthera-school.com/in-school/', '_blank')}
               style={{ ...styles.btnPill, ...styles.btnGrad }}
               onMouseEnter={(e) => {
                 e.target.style.transform = 'translateY(-2px)';
