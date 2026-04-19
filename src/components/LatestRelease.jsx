@@ -160,12 +160,13 @@ const LatestRelease = () => {
         <section id="latest-release" style={styles.section}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <div style={styles.badge}>🚀 NEW RELEASE</div>
+                    <div style={styles.badge}>🎁 MEMBER BENEFIT</div>
                     <h2 style={styles.title}>
-                        会員限定<span style={styles.titleHighlight}>最新アプリ</span>
+                        学びを現場で使える形に変える<br /><span style={styles.titleHighlight}>会員特典ツール</span>
                     </h2>
                     <p style={styles.subtitle}>
-                        会員の皆様に無料で提供される最新の臨床支援アプリをご紹介します
+                        思考整理や評価を補助する会員限定機能。<br />
+                        学んだ内容を、臨床実装までつなげやすくします。
                     </p>
                 </div>
 

@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Problems from './components/Problems'
+import Future from './components/Future'
 import TrustBand from './components/TrustBand'
 import Benefits from './components/Benefits'
 import SocialProof from './components/SocialProof'
@@ -34,6 +35,7 @@ function App() {
       <TrustBand />
       <Curriculum />
       <LatestRelease />
+      <Future />
       <Testimonials />
       <Pricing />
       <CTA variant="primary" />

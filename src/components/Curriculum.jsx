@@ -112,8 +112,8 @@ const Curriculum = () => {
               marginBottom: '3rem',
               lineHeight: 1.8
             }}>
-              体系的に設計された学習プログラムで<br />
-              <span style={{ fontWeight: 600, color: '#1e40af' }}>確実にスキルアップ</span>できます
+              記事・動画・ライブ・コミュニティ・ツールが、<br />
+              <span style={{ fontWeight: 600, color: '#1e40af' }}>迷わない臨床を再現可能にする一本の流れ</span>になっています
             </p>
 
             {/* 動画セクション */}

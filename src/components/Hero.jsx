@@ -171,24 +171,24 @@ const Hero = () => {
             margin: '.75rem 0 1rem',
           }}>
             <span style={styles.animatedLine}>
-              臨床力が身につく
+              評価から介入まで、
               <span style={styles.underline} />
             </span>
             <br />
             <span style={{ ...styles.animatedLine, paddingBottom: '8px' }}>
-              <span style={styles.titleEm}>体系化された学び</span>で
+              <span style={styles.titleEm}>迷わない臨床</span>を
               <span style={styles.underlineBlue} />
             </span>
             <br />
             <span style={styles.animatedLine}>
-              運動療法を習得しよう！
+              若手のうちに習得する。
               <span style={styles.underlineLast} />
             </span>
           </h1>
           <p style={{
             ...styles.subtitle,
             color: 'var(--text-secondary)'
-          }}>体系化×ライブ×コミュニティで、迷わない臨床を最短ルートで。</p>
+          }}>体系化された学び × ライブ × コミュニティ。若手でも、根拠を持って運動療法を組み立てられる。</p>
           <div style={styles.heroCta}>
             <button
               onClick={() => window.open('https://exthera-school.com/in-school/', '_blank')}

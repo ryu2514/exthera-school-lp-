@@ -1,35 +1,87 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AnimatedTitle } from '../hooks/useScrollAnimation';
 
 const Problems = () => {
+  const [visibleCards, setVisibleCards] = useState([]);
+  const cardRefs = useRef([]);
+
   const items = [
     {
       num: '01',
-      title: '評価から介入がつながらない',
-      text: '評価データはあるのに、\nなぜその運動を選ぶのか説明できない。\n根拠の言語化に不安がある。',
+      title: '評価は揃ったのに、次の一手が出てこない',
+      text: 'ROM制限・筋力低下・動作の崩れ…\n所見は取れたのに、\n「で、何をやらせよう？」で止まる。',
+      image: '/assets/problems/01.png?v=3',
     },
     {
       num: '02',
-      title: '患者さんへ上手く説明できない',
-      text: '「なぜこの運動療法なのか？」に対して\n図と言葉で納得感のある説明ができない。',
+      title: '気づけば毎回「鉄板メニュー」',
+      text: '腰痛ならドローイン、\n膝ならパテラセッティング…\n教科書の定番から抜け出せない。',
+      image: '/assets/problems/02.png?v=3',
     },
     {
       num: '03',
-      title: 'ケースごとの再現性が低い',
-      text: '同じ所見でも判断がブレる。\n思考プロセスが可視化できていない。',
+      title: '痛みが出た瞬間、代替案が浮かばない',
+      text: '「この運動で痛い」と言われると\nそこで思考停止。\n何を減らし、何に替えるか決められない。',
+      image: '/assets/problems/03.png?v=3',
     },
     {
       num: '04',
-      title: '症例発表・指導が苦手',
-      text: '「どう考えたか」を\n整理して人に伝えるのが難しい。',
+      title: '負荷量・回数・頻度が決めきれない',
+      text: '「10回×3セット」を\nとりあえず出している。\nその人の適正負荷かの根拠がない。',
+      image: '/assets/problems/04.png?v=3',
+    },
+    {
+      num: '05',
+      title: '続けるか変えるか、判断できない',
+      text: '2週経ったけど合ってる？\n所見が変わったとき、\n次の一手が浮かばない。',
+      image: '/assets/problems/05.png?v=3',
+    },
+    {
+      num: '06',
+      title: '患者ごとにアレンジできず、テンプレ処方に',
+      text: '年齢も生活背景も違うのに、\n同じような処方。\n「その人だけの運動」にできない。',
+      image: '/assets/problems/06.png?v=3',
     },
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.dataset.index);
+            setVisibleCards((prev) => [...new Set([...prev, index])]);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const getCardAnimation = (index) => {
+    const isVisible = visibleCards.includes(index);
+    const fromLeft = index % 2 === 0;
+    return {
+      opacity: isVisible ? 1 : 0,
+      transform: isVisible
+        ? 'translate3d(0, 0, 0) scale(1)'
+        : `translate3d(${fromLeft ? '-60px' : '60px'}, 30px, 0) scale(0.95)`,
+      transition: `opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.08}s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.08}s`,
+    };
+  };
 
   const styles = {
     problems: {
       background: 'linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%)',
       padding: '4.5rem 0',
       position: 'relative',
+      overflow: 'hidden',
     },
     head: {
       textAlign: 'center',
@@ -43,62 +95,71 @@ const Problems = () => {
     },
     grid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
       gap: '2rem',
-      maxWidth: '900px',
+      maxWidth: '1100px',
       margin: '0 auto',
     },
     card: {
-      background: '#0284c7',
-      borderRadius: '30px',
-      padding: '2rem 1.5rem',
-      boxShadow: '0 8px 20px rgba(2, 132, 199, 0.3)',
+      background: '#ffffff',
+      borderRadius: '24px',
+      padding: '1.5rem',
+      boxShadow: '0 10px 30px rgba(2, 132, 199, 0.15)',
       position: 'relative',
-      transition: 'all 0.3s ease',
+      border: '1px solid rgba(2, 132, 199, 0.1)',
     },
-    cardArrow: {
-      position: 'absolute',
-      bottom: '-15px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: 0,
-      height: 0,
-      borderLeft: '15px solid transparent',
-      borderRight: '15px solid transparent',
-      borderTop: '15px solid #0284c7',
+    imageWrapper: {
+      width: '70%',
+      maxWidth: '220px',
+      aspectRatio: '1 / 1',
+      borderRadius: '14px',
+      overflow: 'hidden',
+      background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+      margin: '0 auto 1rem',
+    },
+    image: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      display: 'block',
     },
     numbadge: {
       display: 'inline-block',
-      background: '#fbbf24',
+      background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
       color: '#78350f',
-      padding: '8px 20px',
+      padding: '6px 16px',
       borderRadius: '50px',
       fontWeight: 800,
-      fontSize: '1rem',
-      marginBottom: '1rem',
-      boxShadow: '0 4px 10px rgba(251, 191, 36, 0.4)',
+      fontSize: '0.85rem',
+      marginBottom: '0.75rem',
+      boxShadow: '0 3px 8px rgba(251, 191, 36, 0.35)',
+      letterSpacing: '0.05em',
     },
     title: {
-      fontWeight: 700,
-      marginBottom: '1rem',
-      color: '#ffffff',
-      fontSize: '1.25rem',
-      lineHeight: '1.4',
+      fontWeight: 800,
+      marginBottom: '0.75rem',
+      color: '#0c4a6e',
+      fontSize: '1.15rem',
+      lineHeight: '1.45',
     },
     text: {
-      color: '#e0f2fe',
+      color: '#475569',
       lineHeight: '1.8',
       whiteSpace: 'pre-line',
-      fontSize: '0.95rem',
+      fontSize: '0.92rem',
+      margin: 0,
     },
   };
 
   return (
     <>
       <style>{`
+        .problem-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
         .problem-card:hover {
-          transform: translateY(-5px) scale(1.02);
-          box-shadow: 0 12px 30px rgba(2, 132, 199, 0.4);
+          transform: translateY(-6px) !important;
+          box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25) !important;
         }
 
         @keyframes float {
@@ -109,26 +170,17 @@ const Problems = () => {
         .decorative-circle {
           position: absolute;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.35);
           animation: float 3s ease-in-out infinite;
         }
       `}</style>
 
       <section style={styles.problems} id="problems">
-        {/* Decorative elements */}
         <div className="decorative-circle" style={{
-          width: '100px',
-          height: '100px',
-          top: '10%',
-          left: '5%',
-          animationDelay: '0s'
+          width: '120px', height: '120px', top: '8%', left: '4%', animationDelay: '0s'
         }}></div>
         <div className="decorative-circle" style={{
-          width: '60px',
-          height: '60px',
-          top: '70%',
-          right: '8%',
-          animationDelay: '1s'
+          width: '70px', height: '70px', top: '70%', right: '6%', animationDelay: '1s'
         }}></div>
 
         <div className="container">
@@ -139,17 +191,31 @@ const Problems = () => {
               marginTop: '0.5rem',
               fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
             }}>
-              あなたも<AnimatedTitle style={{
+              運動療法の組み立てで、<br />
+              <AnimatedTitle style={{
                 background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
                 fontWeight: '900'
-              }}>こんなお悩み</AnimatedTitle>、<br />ありませんか？
+              }}>こんな場面</AnimatedTitle>、ありませんか？
             </h2>
           </div>
           <div style={styles.grid}>
             {items.map((it, i) => (
-              <div style={styles.card} className="problem-card" key={i}>
-                <div style={styles.cardArrow}></div>
-                <span style={styles.numbadge}>{it.num}</span>
+              <div
+                key={i}
+                ref={(el) => (cardRefs.current[i] = el)}
+                data-index={i}
+                className="problem-card"
+                style={{ ...styles.card, ...getCardAnimation(i) }}
+              >
+                <div style={styles.imageWrapper}>
+                  <img
+                    src={it.image}
+                    alt={it.title}
+                    style={styles.image}
+                    loading="lazy"
+                  />
+                </div>
+                <span style={styles.numbadge}>CASE {it.num}</span>
                 <div style={styles.title}>{it.title}</div>
                 <p style={styles.text}>{it.text}</p>
               </div>
