@@ -95,7 +95,7 @@ const Footer = () => {
             <div style={styles.footerLinks}>
               <p>
                 <a
-                  href="https://exthera-school.com/contact"
+                  href="https://ryuju-portfolio.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={styles.footerLink}
@@ -107,7 +107,7 @@ const Footer = () => {
               </p>
               <p>
                 <a
-                  href="https://exthera-school.com/legal"
+                  href="https://exthera-school.com/specified/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={styles.footerLink}
@@ -119,7 +119,7 @@ const Footer = () => {
               </p>
               <p>
                 <a
-                  href="https://exthera-school.com/privacy"
+                  href="https://exthera-school.com/privacy-policy-2/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={styles.footerLink}
