@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import CampaignBanner from './components/CampaignBanner'
 import Hero from './components/Hero'
 import Problems from './components/Problems'
 import Future from './components/Future'
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <CampaignBanner />
       <Header />
       {/* Google Analytics */}
       {enableAnalytics && gaId && <GoogleAnalytics measurementId={gaId} />}

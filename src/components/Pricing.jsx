@@ -1,4 +1,5 @@
 import React from 'react';
+import { campaign } from '../config/campaign';
 
 const Pricing = () => {
   const features = [
@@ -317,7 +318,7 @@ const Pricing = () => {
                     color: '#475569',
                     fontWeight: '600'
                   }}>
-                    ⏰ 24時間 申し込み受付中
+                    ⏰ {campaign.deadlineShort}まで申込受付中
                   </div>
                 </div>
 
@@ -488,7 +489,7 @@ const Pricing = () => {
                     color: '#475569',
                     fontWeight: '600'
                   }}>
-                    ⏰ 24時間 申し込み受付中
+                    ⏰ {campaign.deadlineShort}まで申込受付中
                   </div>
                 </div>
 
