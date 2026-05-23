@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const isMobile = window.innerWidth <= 768;
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -41,6 +42,9 @@ const Hero = () => {
       fontWeight: 700,
       letterSpacing: '.2px',
       marginBottom: '0.5rem',
+      fontSize: isMobile ? '0.95rem' : '1rem',
+      lineHeight: 1.65,
+      overflowWrap: 'anywhere',
     },
     animatedLine: {
       position: 'relative',
@@ -116,7 +120,7 @@ const Hero = () => {
     },
     badges: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(2, 1fr)',
+      gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
       gap: '10px',
       marginTop: '1.5rem',
     },
@@ -133,7 +137,8 @@ const Hero = () => {
       transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
       fontSize: '0.8rem',
       border: '1px solid rgba(59, 130, 246, 0.1)',
-      whiteSpace: 'nowrap',
+      whiteSpace: isMobile ? 'normal' : 'nowrap',
+      minWidth: 0,
     },
     badgeAnimated: (index) => ({
       opacity: animate ? 1 : 0,
@@ -154,6 +159,8 @@ const Hero = () => {
       border: '10px solid #e6f0ff',
       overflow: 'hidden',
       boxShadow: 'var(--shadow-xl)',
+      width: '100%',
+      boxSizing: 'border-box',
     },
   };
 
@@ -162,9 +169,13 @@ const Hero = () => {
       <div style={styles.heroBefore} />
       <div className="container" style={styles.heroGrid}>
         <div>
-          <div style={styles.prehead}>セラピスト向け運動療法オンラインスクール</div>
+          <div style={styles.prehead}>
+            理学療法士・柔道整復師・トレーナー・インストラクター向け
+            <br />
+            運動療法オンラインスクール
+          </div>
           <h1 style={{
-            fontSize: window.innerWidth <= 480 ? '1.85rem' : 'clamp(2.2rem, 3.8vw, 3.2rem)',
+            fontSize: isMobile ? '1.7rem' : 'clamp(2.2rem, 3.8vw, 3.2rem)',
             lineHeight: 1.4,
             fontWeight: 800,
             color: '#1e293b',
@@ -181,14 +192,15 @@ const Hero = () => {
             </span>
             <br />
             <span style={styles.animatedLine}>
-              若手のうちに習得する。
+              現場で使える形にする。
               <span style={styles.underlineLast} />
             </span>
           </h1>
           <p style={{
             ...styles.subtitle,
-            color: 'var(--text-secondary)'
-          }}>体系化された学び × ライブ × コミュニティ。若手でも、根拠を持って運動療法を組み立てられる。</p>
+            color: 'var(--text-secondary)',
+            overflowWrap: 'anywhere',
+          }}>体系化された学び × ライブ × コミュニティ。臨床・施術・運動指導の現場で、根拠を持って運動療法を組み立てられる。</p>
           <div style={styles.heroCta}>
             <button
               onClick={() => window.open('https://exthera-school.com/in-school/', '_blank')}

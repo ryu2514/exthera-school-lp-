@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { campaign, getDaysRemaining, isCampaignActive } from '../config/campaign';
+import React from 'react';
+import { campaign, isCampaignActive } from '../config/campaign';
 
 const StickyCTA = () => {
-  const [daysRemaining, setDaysRemaining] = useState(getDaysRemaining());
-
-  useEffect(() => {
-    const timer = setInterval(() => setDaysRemaining(getDaysRemaining()), 60 * 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   const active = isCampaignActive();
 
   return (
@@ -31,8 +24,6 @@ const StickyCTA = () => {
               verticalAlign: 'middle',
               boxShadow: '0 2px 6px rgba(30, 58, 138, 0.35)',
             }}>
-              残<span style={{ fontSize: '1.05rem', fontWeight: 900 }}>{daysRemaining}</span>日
-              <span style={{ opacity: 0.7 }}>|</span>
               残席<span style={{ fontSize: '1.05rem', fontWeight: 900 }}>{campaign.remainingCount}</span>名
             </span>
           )}
@@ -44,4 +35,3 @@ const StickyCTA = () => {
 };
 
 export default StickyCTA;
-

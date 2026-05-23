@@ -1,6 +1,4 @@
 import React from 'react';
-import { campaign } from '../config/campaign';
-
 const Pricing = () => {
   const features = [
     '記事・動画・ツール集への無制限アクセス',
@@ -318,7 +316,7 @@ const Pricing = () => {
                     color: '#475569',
                     fontWeight: '600'
                   }}>
-                    ⏰ {campaign.deadlineShort}まで申込受付中
+                    🔄 いつでも解約可能
                   </div>
                 </div>
 
@@ -489,7 +487,7 @@ const Pricing = () => {
                     color: '#475569',
                     fontWeight: '600'
                   }}>
-                    ⏰ {campaign.deadlineShort}まで申込受付中
+                    🔄 いつでも解約可能
                   </div>
                 </div>
 

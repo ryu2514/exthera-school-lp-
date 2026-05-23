@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { campaign, getDaysRemaining, isCampaignActive } from '../config/campaign';
+import React from 'react';
+import { campaign, isCampaignActive } from '../config/campaign';
 
 const CampaignBanner = () => {
-  const [daysRemaining, setDaysRemaining] = useState(getDaysRemaining());
-
-  useEffect(() => {
-    const timer = setInterval(() => setDaysRemaining(getDaysRemaining()), 60 * 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   if (!isCampaignActive()) return null;
 
   const scrollToPricing = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const isUrgent = daysRemaining <= 7;
   const lowCapacity = campaign.remainingCount <= 10;
 
   const styles = {
@@ -83,16 +75,6 @@ const CampaignBanner = () => {
       fontWeight: 800,
       opacity: 0.95,
     },
-    deadlineText: {
-      fontWeight: 800,
-      fontSize: '1rem',
-    },
-    deadlineStrong: {
-      fontSize: '1.25rem',
-      fontWeight: 900,
-      color: '#fef3c7',
-      textShadow: '0 2px 6px rgba(0,0,0,0.3)',
-    },
   };
 
   return (
@@ -106,17 +88,6 @@ const CampaignBanner = () => {
       <div style={styles.wrapper} onClick={scrollToPricing} role="button" tabIndex={0}>
         <div className="container" style={styles.inner}>
           <span style={styles.label}>{campaign.label}</span>
-
-          <span style={styles.deadlineText}>
-            申込締切 <span style={styles.deadlineStrong}>{campaign.deadlineShort}</span>
-          </span>
-
-          <div style={{ ...styles.tile, ...(isUrgent ? styles.tileUrgent : {}) }}>
-            <span style={styles.tileLabel}>残り</span>
-            <span style={styles.tileNumber}>{daysRemaining}</span>
-            <span style={styles.tileUnit}>日</span>
-          </div>
-
           <div style={{ ...styles.tile, ...(lowCapacity ? styles.tileUrgent : {}) }}>
             <span style={styles.tileLabel}>残席</span>
             <span style={styles.tileNumber}>{campaign.remainingCount}</span>

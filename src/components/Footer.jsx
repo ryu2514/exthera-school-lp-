@@ -52,7 +52,7 @@ const Footer = () => {
           <div>
             <div style={styles.footerTitle}>Exthera-School</div>
             <p style={styles.footerDescription}>
-              臨床1〜5年目のための運動療法オンラインスクール。体系化×ライブ×コミュニティで、現場の再現性を高めます。
+              理学療法士・柔道整復師・トレーナー・インストラクターのための運動療法オンラインスクール。体系化×ライブ×コミュニティで、現場の再現性を高めます。
             </p>
           </div>
           <div>

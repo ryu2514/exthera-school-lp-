@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Header = () => {
+  const isMobile = window.innerWidth <= 768;
+
   const openTrial = (e) => {
     e.preventDefault();
     window.open('https://exthera-school.com/in-school/', '_blank');
@@ -20,6 +22,7 @@ const Header = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
       height: '64px',
+      gap: '0.75rem',
     },
     brand: {
       display: 'flex',
@@ -27,6 +30,8 @@ const Header = () => {
       gap: '10px',
       fontWeight: 800,
       letterSpacing: '.2px',
+      minWidth: 0,
+      flexShrink: 1,
     },
     brandMark: {
       width: '26px',
@@ -45,7 +50,8 @@ const Header = () => {
       textDecoration: 'none',
     },
     login: {
-      padding: window.innerWidth <= 480 ? '6px 10px' : '8px 14px',
+      display: isMobile ? 'none' : 'inline-flex',
+      padding: '8px 14px',
       borderRadius: '9999px',
       border: '2px solid #cfe3ff',
       color: '#2563eb',
@@ -53,10 +59,10 @@ const Header = () => {
       fontWeight: 700,
       textDecoration: 'none',
       whiteSpace: 'nowrap',
-      fontSize: window.innerWidth <= 480 ? '12px' : '14px',
+      fontSize: '14px',
     },
     ctaPill: {
-      padding: window.innerWidth <= 480 ? '8px 12px' : '10px 16px',
+      padding: isMobile ? '8px 10px' : '10px 16px',
       borderRadius: '9999px',
       color: '#fff',
       background: 'linear-gradient(135deg, #60a5fa 0%, #2563eb 100%)',
@@ -65,7 +71,7 @@ const Header = () => {
       textDecoration: 'none',
       transition: 'all 0.3s ease',
       whiteSpace: 'nowrap',
-      fontSize: window.innerWidth <= 480 ? '12px' : '14px',
+      fontSize: isMobile ? '12px' : '14px',
     },
     navActions: {
       display: 'flex',
@@ -109,7 +115,7 @@ const Header = () => {
               e.target.style.transform = 'translateY(0)';
             }}
           >
-            無料で体験する
+            {isMobile ? '無料体験' : '無料で体験する'}
           </a>
         </div>
       </div>
@@ -118,4 +124,3 @@ const Header = () => {
 };
 
 export default Header;
-

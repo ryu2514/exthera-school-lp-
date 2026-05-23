@@ -68,7 +68,7 @@ const SocialProof = () => {
           <div style={styles.imageWrapper}>
             <img
               src="/assets/instructor.png"
-              alt="小林龍二"
+              alt="小林龍樹"
               style={styles.instructorImage}
             />
           </div>
@@ -78,7 +78,7 @@ const SocialProof = () => {
             <p style={styles.bio}>
               整形外科クリニック勤務を経て、運動療法に特化したオンラインスクールを設立。
               「現場で使える運動療法」をテーマに、体系化された学びを提供しています。
-              SNSでは理学療法に関する情報発信を行い、多くのセラピストに支持されています。
+              SNSでは運動療法・臨床推論に関する情報発信を行い、多くのセラピストや運動指導者に支持されています。
             </p>
             <div style={styles.stats}>
               <div style={styles.statItem}>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AnimatedTitle } from '../hooks/useScrollAnimation';
 
 const Problems = () => {
+  const isMobile = window.innerWidth <= 768;
   const [visibleCards, setVisibleCards] = useState([]);
   const cardRefs = useRef([]);
 
@@ -185,7 +186,7 @@ const Problems = () => {
 
         <div className="container">
           <div style={styles.head}>
-            <div style={styles.headSmall}>理学療法に携わる皆さんへ</div>
+            <div style={styles.headSmall}>臨床・施術・運動指導に携わる皆さんへ</div>
             <h2 className="section-title" style={{
               color: '#0369a1',
               marginTop: '0.5rem',
@@ -195,7 +196,7 @@ const Problems = () => {
               <AnimatedTitle style={{
                 background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
                 fontWeight: '900'
-              }}>こんな場面</AnimatedTitle>、ありませんか？
+              }}>こんな場面</AnimatedTitle>{isMobile ? <br /> : '、'}ありませんか？
             </h2>
           </div>
           <div style={styles.grid}>

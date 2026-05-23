@@ -73,7 +73,7 @@ const CTA = ({ variant = 'primary' }) => {
           }}>
             {isPrimary ?
               'いつでも解約可能。まずは価値を体験してください。' :
-              'Exthera-Schoolで、臨床現場で迷わない理学療法を身につけましょう。'
+              'Exthera-Schoolで、臨床・施術・運動指導の現場で迷わない運動療法を身につけましょう。'
             }
           </p>
 
