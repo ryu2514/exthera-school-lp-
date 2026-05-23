@@ -9,7 +9,7 @@ const Future = () => {
     {
       num: '01',
       before: '評価は揃ったのに、次の一手が出てこない',
-      after: '評価後、迷わず3つの介入候補が浮かぶ',
+      after: '評価後、迷わず3つの運動候補が浮かぶ',
       text: '機能解剖と運動連鎖から、\n「なぜこの運動か」を即答できる。\n所見がそのまま処方につながる。',
       image: '/assets/future/01.png',
     },
@@ -24,14 +24,14 @@ const Future = () => {
       num: '03',
       before: '痛みが出た瞬間、代替案が浮かばない',
       after: '痛みが出ても、即座に代替案に切り替えられる',
-      text: '何を減らし、何に替えるかの\n判断軸が身につく。\n患者を不安にさせない。',
+      text: '何を減らし、何に替えるかの\n判断軸が身につく。\n相手を不安にさせない。',
       image: '/assets/future/03.png',
     },
     {
       num: '04',
       before: '負荷量・回数・頻度が決めきれない',
       after: '負荷設定を「根拠」を持って決められる',
-      text: '「なぜ10回×3セットなのか」を\n説明できる。\n患者から信頼される処方ができる。',
+      text: '「なぜ10回×3セットなのか」を\n説明できる。\n相手から信頼される処方ができる。',
       image: '/assets/future/04.png',
     },
     {
@@ -43,7 +43,7 @@ const Future = () => {
     },
     {
       num: '06',
-      before: '患者ごとにアレンジできず、テンプレ処方に',
+      before: '対象者ごとにアレンジできず、テンプレ処方に',
       after: '「あなたのための運動」を提案できる',
       text: '同僚や後輩から\n「あの症例どう考える？」と\n相談される側になる。',
       image: '/assets/future/06.png',
@@ -225,7 +225,7 @@ const Future = () => {
               <AnimatedTitle style={{
                 background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
                 fontWeight: '900'
-              }}>迷わない臨床</AnimatedTitle>を手にした、<br />
+              }}>迷わない現場判断</AnimatedTitle>を手にした、<br />
               3〜6ヶ月後のあなた。
             </h2>
             <p style={{

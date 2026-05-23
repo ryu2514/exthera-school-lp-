@@ -113,7 +113,7 @@ const Curriculum = () => {
               lineHeight: 1.8
             }}>
               記事・動画・ライブ・コミュニティ・ツールが、<br />
-              <span style={{ fontWeight: 600, color: '#1e40af' }}>迷わない臨床を再現可能にする一本の流れ</span>になっています
+              <span style={{ fontWeight: 600, color: '#1e40af' }}>評価から運動指導まで再現可能にする一本の流れ</span>になっています
             </p>
 
             {/* 動画セクション */}

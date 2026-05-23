@@ -46,6 +46,30 @@ const Hero = () => {
       lineHeight: 1.65,
       overflowWrap: 'anywhere',
     },
+    targetList: {
+      display: isMobile ? 'grid' : 'flex',
+      gridTemplateColumns: isMobile ? 'repeat(2, minmax(0, 1fr))' : undefined,
+      flexWrap: 'wrap',
+      gap: isMobile ? '0.45rem' : '0.4rem',
+      margin: '0.75rem 0 0',
+      maxWidth: isMobile ? '320px' : 'none',
+    },
+    targetBadge: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      border: '1px solid #cfe3ff',
+      borderRadius: '999px',
+      background: '#f0f6ff',
+      color: '#2563eb',
+      fontSize: isMobile ? '0.78rem' : '0.84rem',
+      fontWeight: 800,
+      padding: isMobile ? '4px 8px' : '5px 10px',
+      lineHeight: 1.2,
+      minWidth: 0,
+      boxSizing: 'border-box',
+      whiteSpace: 'nowrap',
+    },
     animatedLine: {
       position: 'relative',
       display: 'inline-block',
@@ -170,9 +194,12 @@ const Hero = () => {
       <div className="container" style={styles.heroGrid}>
         <div>
           <div style={styles.prehead}>
-            理学療法士・柔道整復師・トレーナー・インストラクター向け
-            <br />
-            運動療法オンラインスクール
+            運動療法を学ぶ専門職へ
+            <div style={styles.targetList}>
+              {['理学療法士', '柔道整復師', 'トレーナー', 'インストラクター'].map((target) => (
+                <span key={target} style={styles.targetBadge}>{target}</span>
+              ))}
+            </div>
           </div>
           <h1 style={{
             fontSize: isMobile ? '1.7rem' : 'clamp(2.2rem, 3.8vw, 3.2rem)',
@@ -182,17 +209,17 @@ const Hero = () => {
             margin: '.75rem 0 1rem',
           }}>
             <span style={styles.animatedLine}>
-              評価から介入まで、
+              評価から運動指導まで、
               <span style={styles.underline} />
             </span>
             <br />
             <span style={{ ...styles.animatedLine, paddingBottom: '8px' }}>
-              <span style={styles.titleEm}>迷わない臨床</span>を
+              <span style={styles.titleEm}>迷わない現場判断</span>を
               <span style={styles.underlineBlue} />
             </span>
             <br />
             <span style={styles.animatedLine}>
-              現場で使える形にする。
+              身につける。
               <span style={styles.underlineLast} />
             </span>
           </h1>
@@ -200,7 +227,11 @@ const Hero = () => {
             ...styles.subtitle,
             color: 'var(--text-secondary)',
             overflowWrap: 'anywhere',
-          }}>体系化された学び × ライブ × コミュニティ。臨床・施術・運動指導の現場で、根拠を持って運動療法を組み立てられる。</p>
+          }}>
+            体系化された学び × ライブ × コミュニティ。<br />
+            臨床・施術・運動指導の現場で、<br />
+            根拠を持って運動療法を組み立てられる。
+          </p>
           <div style={styles.heroCta}>
             <button
               onClick={() => window.open('https://exthera-school.com/in-school/', '_blank')}

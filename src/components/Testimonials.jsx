@@ -5,19 +5,22 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: 'スクール生 A様',
+      role: '理学療法士',
       experience: '臨床経験 2年目',
       quote: 'わかりやすい記事と様々な運動方法について学ぶことができます！',
       initial: 'A'
     },
     {
       name: 'スクール生 B様',
-      experience: '臨床経験 3年目',
+      role: '柔道整復師',
+      experience: '施術と運動指導を担当',
       quote: '情報が整理されていてとても分かりやすく日々の臨床とつながる感じがしました。自分で運動療法を組み立てて考えられるようになりたくて入会しました。',
       initial: 'B'
     },
     {
       name: 'スクール生 C様',
-      experience: '臨床経験 1年目',
+      role: 'トレーナー',
+      experience: '運動指導の学び直し',
       quote: '1年目の時に勉強方法がわからなかった。見やすいかつわかりやすく、記事や講義で勉強したい！と思い入会を決意しました。',
       initial: 'C'
     }
@@ -56,7 +59,7 @@ const Testimonials = () => {
             color: '#475569',
             textAlign: 'center',
             marginTop: '1rem'
-          }}>実際に運動療法を学ばれている方々からいただいた声をご紹介します</p>
+          }}>理学療法士・柔道整復師・トレーナーなど、運動療法を学ぶ方々からいただいた声をご紹介します</p>
         </div>
 
         <div className="grid grid-3">
@@ -101,7 +104,15 @@ const Testimonials = () => {
                   </div>
                   <div style={{
                     fontSize: '0.95rem',
-                    lineHeight: 1.8,
+                    lineHeight: 1.6,
+                    color: '#059669',
+                    fontWeight: 700
+                  }}>
+                    {testimonial.role}
+                  </div>
+                  <div style={{
+                    fontSize: '0.9rem',
+                    lineHeight: 1.6,
                     color: 'var(--text-secondary)'
                   }}>
                     {testimonial.experience}

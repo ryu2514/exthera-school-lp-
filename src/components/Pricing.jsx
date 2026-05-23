@@ -47,6 +47,13 @@ const Pricing = () => {
       justifyContent: 'center',
       marginBottom: '1.5rem',
     },
+    trialNote: {
+      color: '#64748b',
+      fontSize: '0.82rem',
+      lineHeight: 1.7,
+      maxWidth: '360px',
+      margin: '0.75rem auto 0',
+    },
   };
 
   return (
@@ -327,6 +334,9 @@ const Pricing = () => {
                 }}>
                   ✨ 7日以内なら完全無料
                 </p>
+                <p style={styles.trialNote}>
+                  7日以内に解約すれば料金は発生しません。無料体験終了後は年額25,000円の年間プランに移行します。
+                </p>
               </div>
             </div>
           </div>
@@ -497,6 +507,9 @@ const Pricing = () => {
                   marginTop: '0.5rem'
                 }}>
                   ✨ 7日以内なら完全無料
+                </p>
+                <p style={styles.trialNote}>
+                  7日以内に解約すれば料金は発生しません。無料体験終了後は月額2,480円の月額プランに移行します。
                 </p>
               </div>
             </div>

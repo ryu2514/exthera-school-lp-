@@ -162,11 +162,11 @@ const LatestRelease = () => {
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                     <div style={styles.badge}>🎁 MEMBER BENEFIT</div>
                     <h2 style={styles.title}>
-                        学びを現場で使える形に変える<br /><span style={styles.titleHighlight}>会員特典ツール</span>
+                        学びを現場判断に落とし込む<br /><span style={styles.titleHighlight}>会員特典ツール</span>
                     </h2>
                     <p style={styles.subtitle}>
                         思考整理や評価を補助する会員限定機能。<br />
-                        学んだ内容を、臨床実装までつなげやすくします。
+                        学んだ内容を、施術・運動指導の現場実装までつなげやすくします。
                     </p>
                 </div>
 
@@ -179,7 +179,7 @@ const LatestRelease = () => {
                                 Clinical Route
                             </h3>
                             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, marginBottom: '1rem' }}>
-                                所見を運動療法に接続する、臨床思考の支援ツール。<br />
+                                所見を運動療法に接続する、現場思考の支援ツール。<br />
                                 「ここからどうする？」と迷う場面で、思考の道筋を整理できます。
                             </p>
 
@@ -213,7 +213,7 @@ const LatestRelease = () => {
                         <div style={styles.crThumbWrapper}>
                             <img
                                 src="/assets/clinical-route-mock.png"
-                                alt="Clinical Route — PC・スマホ対応の臨床思考支援ツール"
+                                alt="Clinical Route — PC・スマホ対応の現場思考支援ツール"
                                 style={styles.crThumbImage}
                                 loading="lazy"
                             />
