@@ -1,11 +1,8 @@
 import React from 'react';
+import { TRIAL_URL } from '../config/links';
 
 const CTA = ({ variant = 'primary' }) => {
   const isPrimary = variant === 'primary';
-
-  const handleStartTrial = () => {
-    window.open('https://exthera-school.com/in-school/', '_blank');
-  };
 
   const styles = {
     featuresGrid: {
@@ -78,8 +75,10 @@ const CTA = ({ variant = 'primary' }) => {
           </p>
 
           <div style={{ maxWidth: '450px', margin: '0 auto 2rem' }}>
-            <button
-              onClick={handleStartTrial}
+            <a
+              href={TRIAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 background: isPrimary ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
                 color: '#fff',
@@ -93,7 +92,11 @@ const CTA = ({ variant = 'primary' }) => {
                 boxShadow: isPrimary ? '0 10px 30px rgba(16, 185, 129, 0.3)' : '0 10px 30px rgba(245, 158, 11, 0.3)',
                 transition: 'all 0.3s ease',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textDecoration: 'none'
               }}
               onMouseEnter={(e) => {
                 e.target.style.transform = 'translateY(-3px)';
@@ -105,7 +108,7 @@ const CTA = ({ variant = 'primary' }) => {
               }}
             >
               ▶ 7日間無料体験を始める
-            </button>
+            </a>
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,

@@ -2,6 +2,8 @@ import Header from './components/Header'
 import CampaignBanner from './components/CampaignBanner'
 import Hero from './components/Hero'
 import Problems from './components/Problems'
+import EvidenceMedia from './components/EvidenceMedia'
+import InteractiveDemo from './components/InteractiveDemo'
 import Future from './components/Future'
 import TrustBand from './components/TrustBand'
 import Benefits from './components/Benefits'
@@ -31,6 +33,8 @@ function App() {
 
       <Hero />
       <Problems />
+      <EvidenceMedia />
+      <InteractiveDemo />
       <Benefits />
       <SocialProof />
       <Steps />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const Steps = () => {
   const steps = [
@@ -96,8 +97,7 @@ const Steps = () => {
     },
   };
 
-  // Check if mobile
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   if (isMobile) {
     // Vertical layout for mobile

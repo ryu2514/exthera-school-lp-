@@ -1,7 +1,9 @@
 import React from 'react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import { TRIAL_URL } from '../config/links';
 
 const LatestRelease = () => {
-    const isWide = typeof window !== 'undefined' && window.innerWidth > 900;
+    const isWide = useMediaQuery('(min-width: 901px)');
 
     const styles = {
         section: {
@@ -192,7 +194,7 @@ const LatestRelease = () => {
 
                             <div style={styles.cta}>
                                 <a
-                                    href="https://exthera-school.com/in-school/"
+                                    href={TRIAL_URL}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ ...styles.btn, ...styles.btnClinicalRoute }}
@@ -243,7 +245,7 @@ const LatestRelease = () => {
 
                             <div style={styles.cta}>
                                 <a
-                                    href="https://exthera-school.com/in-school/"
+                                    href={TRIAL_URL}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ ...styles.btn, ...styles.btnPrimary }}

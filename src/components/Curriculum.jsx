@@ -1,22 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Curriculum = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const scrollContainer = document.getElementById('curriculum-scroll');
-    if (!scrollContainer) return;
-
-    const handleScroll = () => {
-      const cardWidth = 320 + 32; // カード幅 + ギャップ
-      const currentIndex = Math.round(scrollContainer.scrollLeft / cardWidth);
-      setActiveIndex(currentIndex);
-    };
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-    return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const curriculumItems = [
     {
       title: '週刊記事配信',
@@ -68,7 +52,7 @@ const Curriculum = () => {
   return (
     <>
 
-      <section className="section">
+      <section className="section" id="curriculum">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{

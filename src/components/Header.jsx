@@ -1,12 +1,11 @@
 import React from 'react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import { TRIAL_URL } from '../config/links';
 
 const Header = () => {
-  const isMobile = window.innerWidth <= 768;
-
-  const openTrial = (e) => {
-    e.preventDefault();
-    window.open('https://exthera-school.com/in-school/', '_blank');
-  };
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isCompact = useMediaQuery('(max-width: 480px)');
+  const hideNav = useMediaQuery('(max-width: 860px)');
 
   const styles = {
     header: {
@@ -75,7 +74,7 @@ const Header = () => {
     },
     navActions: {
       display: 'flex',
-      gap: window.innerWidth <= 480 ? '6px' : '10px',
+      gap: isCompact ? '6px' : '10px',
       alignItems: 'center',
       flexShrink: 0,
     },
@@ -88,7 +87,7 @@ const Header = () => {
           <img src="/assets/logo.png" alt="Exthera-School" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
           <span>Exthera-School</span>
         </div>
-        <nav style={{ ...styles.nav, ...(window.innerWidth <= 860 && { display: 'none' }) }}>
+        <nav style={{ ...styles.nav, ...(hideNav && { display: 'none' }) }}>
           <a href="#curriculum" style={styles.navLink}>コース一覧</a>
           <a href="#benefits" style={styles.navLink}>選ばれる理由</a>
           <a href="#faq" style={styles.navLink}>よくある質問</a>
@@ -104,8 +103,9 @@ const Header = () => {
           </a>
           <a
             style={styles.ctaPill}
-            href="#"
-            onClick={openTrial}
+            href={TRIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={(e) => {
               e.target.style.boxShadow = 'var(--shadow-lg)';
               e.target.style.transform = 'translateY(-1px)';

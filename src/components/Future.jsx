@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { AnimatedTitle } from '../hooks/useScrollAnimation';
+import AnimatedTitle from './AnimatedTitle';
 
 const Future = () => {
   const [visibleCards, setVisibleCards] = useState([]);

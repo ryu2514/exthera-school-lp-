@@ -1,5 +1,6 @@
 import React from 'react';
 import { campaign, isCampaignActive } from '../config/campaign';
+import { TRIAL_URL } from '../config/links';
 
 const StickyCTA = () => {
   const active = isCampaignActive();
@@ -28,7 +29,7 @@ const StickyCTA = () => {
             </span>
           )}
         </span>
-        <a href="#" onClick={(e) => { e.preventDefault(); window.open('https://exthera-school.com/in-school/', '_blank'); }} className="btn btn-primary">7日間無料体験</a>
+        <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">7日間無料体験</a>
       </div>
     </div>
   );

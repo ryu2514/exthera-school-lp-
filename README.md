@@ -121,8 +121,8 @@ Ready for Google Analytics, GTM, and Facebook Pixel integration.
 ### Environment Variables
 Create `.env` file for custom configuration:
 ```env
-VITE_ZAPIER_WEBHOOK_URL=your_webhook_url
-VITE_GA_TRACKING_ID=your_ga_id
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+VITE_ENABLE_ANALYTICS=true
 ```
 
 ### Content Updates

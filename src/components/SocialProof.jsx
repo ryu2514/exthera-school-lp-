@@ -1,10 +1,13 @@
 import React from 'react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const SocialProof = () => {
+  const isWide = useMediaQuery('(min-width: 769px)');
+
   const styles = {
     container: {
       display: 'grid',
-      gridTemplateColumns: window.innerWidth > 768 ? '1fr 1.5fr' : '1fr',
+      gridTemplateColumns: isWide ? '1fr 1.5fr' : '1fr',
       gap: '3rem',
       alignItems: 'center',
     },
@@ -21,7 +24,7 @@ const SocialProof = () => {
       boxShadow: '0 15px 40px rgba(0, 0, 0, 0.3)',
     },
     content: {
-      textAlign: window.innerWidth > 768 ? 'left' : 'center',
+      textAlign: isWide ? 'left' : 'center',
     },
     name: {
       fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
@@ -44,7 +47,7 @@ const SocialProof = () => {
       display: 'flex',
       gap: '2rem',
       flexWrap: 'wrap',
-      justifyContent: window.innerWidth > 768 ? 'flex-start' : 'center',
+      justifyContent: isWide ? 'flex-start' : 'center',
     },
     statItem: {
       textAlign: 'center',

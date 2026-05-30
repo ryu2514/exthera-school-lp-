@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatedTitle } from '../hooks/useScrollAnimation';
+import AnimatedTitle from './AnimatedTitle';
 
 const Testimonials = () => {
   const testimonials = [

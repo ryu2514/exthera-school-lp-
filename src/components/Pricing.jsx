@@ -1,4 +1,6 @@
 import React from 'react';
+import { TRIAL_URL } from '../config/links';
+
 const Pricing = () => {
   const features = [
     '記事・動画・ツール集への無制限アクセス',
@@ -16,10 +18,6 @@ const Pricing = () => {
     '月額換算2,083円の圧倒的コスパ',
     '学習継続率が向上'
   ];
-
-  const handleStartTrial = () => {
-    window.open('https://exthera-school.com/in-school/', '_blank');
-  };
 
   const styles = {
     pricingCard: {
@@ -280,8 +278,10 @@ const Pricing = () => {
               </div>
 
               <div style={{ textAlign: 'center' }}>
-                <button
-                  onClick={handleStartTrial}
+                <a
+                  href={TRIAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
                   style={{
                     width: '100%',
@@ -292,7 +292,7 @@ const Pricing = () => {
                   }}
                 >
                   ▶ 年間プランで7日間無料体験を始める
-                </button>
+                </a>
 
                 <div style={{
                   display: 'flex',
@@ -454,8 +454,10 @@ const Pricing = () => {
               </div>
 
               <div style={{ textAlign: 'center' }}>
-                <button
-                  onClick={handleStartTrial}
+                <a
+                  href={TRIAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-secondary"
                   style={{
                     width: '100%',
@@ -466,7 +468,7 @@ const Pricing = () => {
                   }}
                 >
                   ▶ 月額プランで7日間無料体験を始める
-                </button>
+                </a>
 
                 <div style={{
                   display: 'flex',

@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { AnimatedTitle } from '../hooks/useScrollAnimation';
+import AnimatedTitle from './AnimatedTitle';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const Problems = () => {
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const [visibleCards, setVisibleCards] = useState([]);
   const cardRefs = useRef([]);
 
@@ -68,11 +69,15 @@ const Problems = () => {
   const getCardAnimation = (index) => {
     const isVisible = visibleCards.includes(index);
     const fromLeft = index % 2 === 0;
+    const hiddenTransform = isMobile
+      ? 'translate3d(0, 24px, 0) scale(0.98)'
+      : `translate3d(${fromLeft ? '-60px' : '60px'}, 30px, 0) scale(0.95)`;
+
     return {
       opacity: isVisible ? 1 : 0,
       transform: isVisible
         ? 'translate3d(0, 0, 0) scale(1)'
-        : `translate3d(${fromLeft ? '-60px' : '60px'}, 30px, 0) scale(0.95)`,
+        : hiddenTransform,
       transition: `opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.08}s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.08}s`,
     };
   };

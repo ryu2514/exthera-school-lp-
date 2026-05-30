@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AnimatedTitle } from '../hooks/useScrollAnimation';
+import AnimatedTitle from './AnimatedTitle';
 
 const FAQ = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -31,12 +31,8 @@ const FAQ = () => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  const handleStartTrial = () => {
-    window.open('https://www.instagram.com/ryuju.pt', '_blank');
-  };
-
   return (
-    <section style={{
+    <section id="faq" style={{
       background: '#f8fafc',
       padding: '5rem 0'
     }}>
@@ -109,8 +105,10 @@ const FAQ = () => {
           }}>
             その他のご質問がございましたら、お気軽にお問い合わせください
           </p>
-          <button
-            onClick={handleStartTrial}
+          <a
+            href="https://ryuju-portfolio.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary"
             style={{
               background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
@@ -120,7 +118,7 @@ const FAQ = () => {
             }}
           >
             📧 お問い合わせ
-          </button>
+          </a>
         </div>
       </div>
     </section>
