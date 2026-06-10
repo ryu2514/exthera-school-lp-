@@ -16,14 +16,14 @@ const StickyCTA = () => {
               alignItems: 'center',
               gap: '6px',
               marginLeft: '10px',
-              background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)',
+              background: 'var(--brand)',
               color: '#fff',
               padding: '4px 12px',
               borderRadius: '999px',
               fontSize: '0.82rem',
               fontWeight: 800,
               verticalAlign: 'middle',
-              boxShadow: '0 2px 6px rgba(30, 58, 138, 0.35)',
+              boxShadow: '0 2px 6px rgba(26, 152, 213, 0.35)',
             }}>
               残席<span style={{ fontSize: '1.05rem', fontWeight: 900 }}>{campaign.remainingCount}</span>名
             </span>

@@ -16,7 +16,7 @@ const AnimatedTitle = ({ children, className = '', style = {} }) => {
         bottom: '0',
         left: '0',
         height: '4px',
-        background: 'linear-gradient(90deg, #2563eb 0%, #60a5fa 100%)',
+        background: 'linear-gradient(90deg, #1576a8 0%, #1a98d5 100%)',
         borderRadius: '2px',
         width: isVisible ? '100%' : '0%',
         transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',

@@ -1,576 +1,174 @@
 import React from 'react';
 import { TRIAL_URL } from '../config/links';
 
+const features = [
+  '記事・動画・ツール集への無制限アクセス',
+  '質問BOXで講師に質問し放題',
+  '月1回のライブセミナー無料参加',
+  'アーカイブ動画 見放題',
+  '150名超のコミュニティ参加',
+  '会員限定の評価アプリ利用',
+];
+
+const CheckIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+       style={{ flexShrink: 0, marginTop: '0.2rem' }}>
+    <circle cx="12" cy="12" r="12" fill="var(--brand)" />
+    <path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.4-1.4z" fill="#fff" transform="translate(0.5 0)" />
+  </svg>
+);
+
 const Pricing = () => {
-  const features = [
-    '記事・動画・ツール集への無制限アクセス',
-    '質問BOXでの講師への質問し放題',
-    'ライブセミナー無料参加',
-    'アーカイブ動画見放題',
-    '150名超のコミュニティ参加',
-    '専用評価アプリの利用',
-    '毎月の新コンテンツ追加'
-  ];
-
-  const annualPlanBenefits = [
-    '16%割引（4,760円お得）',
-    '年1回決済で支払い管理が楽',
-    '月額換算2,083円の圧倒的コスパ',
-    '学習継続率が向上'
-  ];
-
-  const styles = {
-    pricingCard: {
-      background: 'var(--white)',
-      borderRadius: '1.5rem',
-      boxShadow: 'var(--shadow-xl)',
-      overflow: 'hidden',
-      maxWidth: '600px',
-      margin: '0 auto',
-      border: '1px solid var(--gray-200)',
-    },
-    pricingHeader: {
-      background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)',
-      color: 'var(--white)',
-      padding: '1.5rem',
-      textAlign: 'center',
-      fontWeight: 600,
-    },
-    pricingBody: {
-      padding: '3rem 2.5rem',
-    },
-    priceDisplay: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '1.5rem',
-    },
-    trialNote: {
-      color: '#64748b',
-      fontSize: '0.82rem',
-      lineHeight: 1.7,
-      maxWidth: '360px',
-      margin: '0.75rem auto 0',
-    },
-  };
-
   return (
-    <section id="pricing" style={{
-      background: '#ffffff',
-      padding: '5rem 0',
-    }}>
-      <div className="container">
+    <section id="pricing" style={{ background: '#fff', padding: '5rem 0' }}>
+      <div className="container" style={{ maxWidth: '880px' }}>
+        {/* head */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <div style={{
+          <span style={{
             display: 'inline-block',
-            background: '#ffffff',
-            color: '#10b981',
-            padding: '14px 32px',
-            borderRadius: '50px',
-            fontWeight: 800,
-            fontSize: '1.1rem',
-            marginBottom: '2rem',
-            boxShadow: '0 4px 20px rgba(16, 185, 129, 0.2)',
-            border: '3px solid #10b981'
-          }}>✓ 縛りなし・いつでも解約可能</div>
-
-          <h2 style={{
-            fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
-            lineHeight: 1.4,
+            fontSize: '0.85rem',
             fontWeight: 700,
-            color: '#1e293b',
-            marginBottom: '1rem'
-          }}>
-            合わなければ<br />
-            <span style={{
-              background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
-              fontWeight: '900',
-              fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)'
-            }}>7日以内で解約してもOK</span>です
+            color: 'var(--brand-dark)',
+            background: 'var(--brand-soft)',
+            border: '1px solid var(--brand-border)',
+            padding: '7px 18px',
+            borderRadius: '999px',
+            marginBottom: '1.25rem',
+          }}>縛りなし・いつでも解約可能</span>
+
+          <h2 className="section-title" style={{ color: 'var(--ink)', lineHeight: 1.4 }}>
+            合わなければ
+            <span style={{ boxShadow: 'inset 0 -10px 0 #d8eef9' }}>7日以内の解約で料金は0円</span>
           </h2>
-
-          <p style={{
-            fontSize: '1.05rem',
-            color: '#64748b',
-            textAlign: 'center',
-            marginTop: '1.5rem',
-            fontWeight: 500
-          }}>完全無料でお試しいただけます。</p>
+          <p style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '1rem' }}>
+            まずは中身をすべて確認してから、続けるか決められます。
+          </p>
         </div>
 
-
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '2rem',
-          maxWidth: '800px',
-          margin: '0 auto'
-        }}>
+        {/* plans */}
+        <style>{`
+          .pricing-plans { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center; }
+          @media (min-width: 760px) {
+            .pricing-plans { grid-template-columns: 1.25fr 0.75fr; gap: 1rem; }
+            .plan-annual { transform: scale(1.05); z-index: 1; }
+            .plan-monthly { transform: scale(0.99); }
+          }
+        `}</style>
+        <div className="pricing-plans">
           {/* 年間プラン（推奨） */}
-          <div
-            style={{
-              ...styles.pricingCard,
-              position: 'relative',
-              border: '3px solid var(--primary-color)',
-              width: '100%',
-              maxWidth: '500px'
-            }}
-          >
-
-            <div style={{
-              ...styles.pricingHeader,
-              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-            }}>
-              <span style={{ fontSize: '1.125rem', fontWeight: '700' }}>
-                ⭐ 年間プラン - 圧倒的にお得！
-              </span>
-            </div>
-
-            <div style={styles.pricingBody}>
-              <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <h3 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem'
-                }}>
-                  Exthera-School 年間メンバーシップ
-                </h3>
-
-                <div style={{
-                  background: '#f8fafc',
-                  borderRadius: '16px',
-                  padding: '2rem 1.5rem',
-                  marginBottom: '1.5rem'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: '1rem',
-                    marginBottom: '0.5rem'
-                  }}>
-                    <div style={{
-                      textDecoration: 'line-through',
-                      color: '#94a3b8',
-                      fontSize: '1.5rem',
-                      fontWeight: '600'
-                    }}>
-                      ¥29,760
-                    </div>
-                    <div style={{
-                      background: '#dc2626',
-                      color: 'white',
-                      padding: '0.35rem 1rem',
-                      borderRadius: '50px',
-                      fontSize: '1rem',
-                      fontWeight: '800'
-                    }}>
-                      16%OFF
-                    </div>
-                  </div>
-                  <div style={{
-                    textAlign: 'center',
-                    margin: '1rem 0',
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    justifyContent: 'center',
-                    gap: '0.5rem'
-                  }}>
-                    <span style={{
-                      fontSize: 'clamp(3.5rem, 8vw, 5rem)',
-                      fontWeight: '900',
-                      color: '#1e293b',
-                      lineHeight: '0.9',
-                      letterSpacing: '-0.02em'
-                    }}>
-                      25,000
-                    </span>
-                    <div style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'flex-start'
-                    }}>
-                      <span style={{
-                        fontSize: '1.5rem',
-                        fontWeight: '700',
-                        color: '#64748b'
-                      }}>円</span>
-                      <span style={{
-                        fontSize: '1.2rem',
-                        fontWeight: '600',
-                        color: '#94a3b8'
-                      }}>/年</span>
-                    </div>
-                  </div>
-                  <div style={{
-                    display: 'inline-block',
-                    background: '#e0f2fe',
-                    color: '#0369a1',
-                    padding: '8px 20px',
-                    borderRadius: '50px',
-                    fontSize: '1rem',
-                    fontWeight: '700',
-                    marginBottom: '0.75rem'
-                  }}>
-                    💰 1日あたり 約69円
-                  </div>
-                  <p style={{
-                    color: '#10b981',
-                    fontWeight: '700',
-                    fontSize: '1.15rem',
-                    marginTop: '0.5rem'
-                  }}>
-                    月額換算：わずか¥2,083/月
-                  </p>
-                  <p style={{
-                    color: '#64748b',
-                    fontSize: '0.95rem',
-                    marginTop: '0.5rem'
-                  }}>
-                    ☕ コーヒー1杯分以下の投資
-                  </p>
-                </div>
-              </div>
-
-              <div style={{
-                background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
-                border: '2px solid #10b981',
-                borderRadius: '16px',
-                padding: '2rem 1.5rem',
-                marginBottom: '2rem'
-              }}>
-                <h4 style={{
-                  color: '#065f46',
-                  fontWeight: '800',
-                  fontSize: '1.3rem',
-                  marginBottom: '1.5rem',
-                  textAlign: 'center'
-                }}>
-                  🏆 年間プランだけの特別メリット
-                </h4>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0
-                }}>
-                  {annualPlanBenefits.map((benefit, index) => (
-                    <li key={index} style={{
-                      color: '#065f46',
-                      padding: '0.75rem 0',
-                      display: 'flex',
-                      alignItems: 'center',
-                      fontSize: '1.05rem',
-                      fontWeight: '600',
-                      borderBottom: index < annualPlanBenefits.length - 1 ? '1px solid rgba(16, 185, 129, 0.2)' : 'none'
-                    }}>
-                      <span style={{
-                        color: '#10b981',
-                        fontWeight: 'bold',
-                        marginRight: '1rem',
-                        fontSize: '1.25rem',
-                        flexShrink: 0
-                      }}>✓</span>
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div style={{ textAlign: 'center' }}>
-                <a
-                  href={TRIAL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                  style={{
-                    width: '100%',
-                    maxWidth: '400px',
-                    marginBottom: '1.5rem',
-                    fontSize: '1.125rem',
-                    padding: '1.25rem 2rem'
-                  }}
-                >
-                  ▶ 年間プランで7日間無料体験を始める
-                </a>
-
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  gap: '1rem',
-                  flexWrap: 'wrap',
-                  marginBottom: '0.5rem'
-                }}>
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    background: '#f1f5f9',
-                    padding: '8px 16px',
-                    borderRadius: '50px',
-                    fontSize: '0.875rem',
-                    color: '#475569',
-                    fontWeight: '600'
-                  }}>
-                    🛡️ 入会金・違約金 0円
-                  </div>
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    background: '#f1f5f9',
-                    padding: '8px 16px',
-                    borderRadius: '50px',
-                    fontSize: '0.875rem',
-                    color: '#475569',
-                    fontWeight: '600'
-                  }}>
-                    🔄 いつでも解約可能
-                  </div>
-                </div>
-
-                <p style={{
-                  color: '#64748b',
-                  fontSize: '0.875rem',
-                  marginTop: '0.5rem'
-                }}>
-                  ✨ 7日以内なら完全無料
-                </p>
-                <p style={styles.trialNote}>
-                  7日以内に解約すれば料金は発生しません。無料体験終了後は年額25,000円の年間プランに移行します。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* 月額プラン */}
-          <div style={{
-            ...styles.pricingCard,
-            width: '100%',
-            maxWidth: '500px'
+          <div className="plan-annual" style={{
+            position: 'relative',
+            background: 'linear-gradient(180deg, #eef8fe 0%, #ffffff 55%)',
+            border: '2.5px solid var(--brand)',
+            borderRadius: 'var(--r-card)',
+            padding: '2.5rem 1.9rem 2.1rem',
+            boxShadow: '0 26px 60px rgba(26, 152, 213, 0.30)',
           }}>
             <div style={{
-              ...styles.pricingHeader,
-              background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)',
-              color: 'white'
-            }}>
-              <span style={{ fontSize: '1.125rem', fontWeight: '700' }}>📅 月額プラン</span>
+              position: 'absolute', top: '-14px', left: '50%', transform: 'translateX(-50%)',
+              whiteSpace: 'nowrap',
+              fontSize: '0.8rem', fontWeight: 800, color: '#fff', letterSpacing: '0.02em',
+              background: 'var(--brand)', padding: '6px 18px', borderRadius: '999px',
+              boxShadow: '0 6px 16px rgba(26, 152, 213, 0.35)',
+            }}>いちばん選ばれているプラン</div>
+
+            <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--ink)', margin: '0.5rem 0 0.9rem' }}>
+              年間メンバーシップ
+            </h3>
+            <div style={{ marginBottom: '0.4rem' }}>
+              <span style={{ textDecoration: 'line-through', color: '#a9b6bf', fontSize: '1rem', marginRight: '8px' }}>¥29,760</span>
+              <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--brand-dark)', background: 'var(--brand-soft)', padding: '3px 10px', borderRadius: '6px' }}>16%OFF</span>
             </div>
-
-            <div style={styles.pricingBody}>
-              <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <h3 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem'
-                }}>
-                  Exthera-School 月額メンバーシップ
-                </h3>
-
-                <div style={{
-                  background: '#f8fafc',
-                  borderRadius: '16px',
-                  padding: '2rem 1.5rem',
-                  marginBottom: '1.5rem'
-                }}>
-                  <div style={{
-                    textAlign: 'center',
-                    margin: '1rem 0',
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    justifyContent: 'center',
-                    gap: '0.5rem'
-                  }}>
-                    <span style={{
-                      fontSize: 'clamp(3.5rem, 8vw, 5rem)',
-                      fontWeight: '900',
-                      color: '#1e293b',
-                      lineHeight: '0.9',
-                      letterSpacing: '-0.02em'
-                    }}>
-                      2,480
-                    </span>
-                    <div style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'flex-start'
-                    }}>
-                      <span style={{
-                        fontSize: '1.5rem',
-                        fontWeight: '700',
-                        color: '#64748b'
-                      }}>円</span>
-                      <span style={{
-                        fontSize: '1.2rem',
-                        fontWeight: '600',
-                        color: '#94a3b8'
-                      }}>/月</span>
-                    </div>
-                  </div>
-                  <div style={{
-                    display: 'inline-block',
-                    background: '#e0f2fe',
-                    color: '#0369a1',
-                    padding: '8px 20px',
-                    borderRadius: '50px',
-                    fontSize: '1rem',
-                    fontWeight: '700',
-                    marginBottom: '0.75rem'
-                  }}>
-                    💰 1日あたり 約83円
-                  </div>
-                  <p style={{
-                    color: '#64748b',
-                    fontSize: '0.95rem',
-                    marginTop: '0.5rem'
-                  }}>
-                    年間合計：¥29,760
-                  </p>
-                </div>
-              </div>
-
-
-              <div style={{
-                background: '#fef2f2',
-                border: '1px solid #fecaca',
-                borderRadius: 'var(--border-radius)',
-                padding: '1.5rem',
-                marginBottom: '2rem',
-                textAlign: 'center'
-              }}>
-                <h4 style={{
-                  color: '#dc2626',
-                  fontWeight: '700',
-                  marginBottom: '0.5rem'
-                }}>
-                  ⚠️ 年間プランとの比較
-                </h4>
-                <p style={{
-                  color: '#dc2626',
-                  fontSize: '0.875rem',
-                  margin: '0'
-                }}>
-                  年間プランより<strong>4,760円高く</strong>なります<br />
-                  月額換算で<strong>約400円の差</strong>
-                </p>
-              </div>
-
-              <div style={{ textAlign: 'center' }}>
-                <a
-                  href={TRIAL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                  style={{
-                    width: '100%',
-                    maxWidth: '400px',
-                    marginBottom: '1.5rem',
-                    fontSize: '1.125rem',
-                    padding: '1.25rem 2rem'
-                  }}
-                >
-                  ▶ 月額プランで7日間無料体験を始める
-                </a>
-
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  gap: '1rem',
-                  flexWrap: 'wrap',
-                  marginBottom: '0.5rem'
-                }}>
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    background: '#f1f5f9',
-                    padding: '8px 16px',
-                    borderRadius: '50px',
-                    fontSize: '0.875rem',
-                    color: '#475569',
-                    fontWeight: '600'
-                  }}>
-                    🛡️ 入会金・違約金 0円
-                  </div>
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    background: '#f1f5f9',
-                    padding: '8px 16px',
-                    borderRadius: '50px',
-                    fontSize: '0.875rem',
-                    color: '#475569',
-                    fontWeight: '600'
-                  }}>
-                    🔄 いつでも解約可能
-                  </div>
-                </div>
-
-                <p style={{
-                  color: '#64748b',
-                  fontSize: '0.875rem',
-                  marginTop: '0.5rem'
-                }}>
-                  ✨ 7日以内なら完全無料
-                </p>
-                <p style={styles.trialNote}>
-                  7日以内に解約すれば料金は発生しません。無料体験終了後は月額2,480円の月額プランに移行します。
-                </p>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '0.4rem' }}>
+              <span style={{ fontSize: '3.25rem', fontWeight: 900, color: 'var(--ink)', letterSpacing: '-0.02em', lineHeight: 1 }}>25,000</span>
+              <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--muted)' }}>円 / 年</span>
             </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--muted)', marginBottom: '0.9rem' }}>
+              月額換算 2,083円。臨床で迷う時間を減らすための投資です。
+            </p>
+            <div style={{
+              display: 'inline-block', fontSize: '0.85rem', fontWeight: 700,
+              color: 'var(--brand-dark)', background: 'var(--brand-soft)',
+              border: '1px solid var(--brand-border)', borderRadius: '8px',
+              padding: '7px 12px', marginBottom: '1.5rem',
+            }}>月額プランより 年間4,760円おトク</div>
+
+            <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer"
+               style={{
+                 display: 'block', textAlign: 'center', fontWeight: 700, fontSize: '1.05rem',
+                 color: '#fff', background: 'var(--brand)', padding: '16px',
+                 borderRadius: 'var(--r-cta)', textDecoration: 'none', marginBottom: '0.9rem',
+                 boxShadow: '0 10px 24px rgba(26, 152, 213, 0.28)',
+               }}>
+              年間プランで無料体験を始める
+            </a>
+            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', textAlign: 'center', lineHeight: 1.6 }}>
+              入会金・違約金 0円／7日以内の解約で課金なし
+            </p>
           </div>
 
-          {/* 共通サービス内容 */}
-          <div style={{
-            background: 'var(--gray-50)',
-            borderRadius: '12px',
-            padding: '1.5rem',
-            marginTop: '2rem',
-            border: '1px solid var(--gray-200)'
+          {/* 月額プラン（サブ） */}
+          <div className="plan-monthly" style={{
+            background: 'var(--soft)',
+            border: '1px solid var(--line)',
+            borderRadius: 'var(--r-card)',
+            padding: '1.75rem 1.5rem',
           }}>
-            <h4 style={{
-              fontSize: '1rem',
-              fontWeight: '600',
-              marginBottom: '1rem',
-              color: 'var(--text-primary)',
-              textAlign: 'center'
-            }}>
-              📋 どちらのプランでも利用できるサービス
-            </h4>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '0.5rem',
-              fontSize: '0.875rem'
-            }}>
-              {features.map((feature, index) => (
-                <div key={index} style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  color: 'var(--text-secondary)',
-                  padding: '0.25rem 0'
-                }}>
-                  <span style={{
-                    color: 'var(--primary-color)',
-                    marginRight: '0.5rem',
-                    fontSize: '0.75rem'
-                  }}>✓</span>
-                  {feature}
-                </div>
-              ))}
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                color: 'var(--text-secondary)',
-                padding: '0.25rem 0'
-              }}>
-                <span style={{
-                  color: 'var(--primary-color)',
-                  marginRight: '0.5rem',
-                  fontSize: '0.75rem'
-                }}>✓</span>
-                7日間無料体験
-              </div>
+            <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--muted)', marginBottom: '0.3rem' }}>
+              月額メンバーシップ
+            </h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', marginBottom: '0.9rem' }}>
+              まず短期で試したい方向け
+            </p>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '0.4rem' }}>
+              <span style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--muted)', letterSpacing: '-0.02em', lineHeight: 1 }}>2,480</span>
+              <span style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--muted)' }}>円 / 月</span>
             </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--muted)', marginBottom: '1.6rem' }}>
+              年間合計 29,760円（年間プランより4,760円割高）。
+            </p>
+
+            <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer"
+               style={{
+                 display: 'block', textAlign: 'center', fontWeight: 700, fontSize: '1rem',
+                 color: 'var(--brand-dark)', background: '#fff', border: '1.5px solid var(--brand-border)',
+                 padding: '14px', borderRadius: 'var(--r-cta)', textDecoration: 'none', marginBottom: '0.9rem',
+               }}>
+              月額プランで無料体験を始める
+            </a>
+            <p style={{ fontSize: '0.8rem', color: 'var(--muted)', textAlign: 'center', lineHeight: 1.6 }}>
+              入会金・違約金 0円／7日以内の解約で課金なし
+            </p>
           </div>
         </div>
+
+        {/* 共通サービス内容 */}
+        <div style={{
+          marginTop: '1.5rem',
+          background: 'var(--soft)',
+          border: '1px solid var(--line)',
+          borderRadius: '14px',
+          padding: '1.75rem 1.75rem 1.5rem',
+        }}>
+          <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--muted)', marginBottom: '1.1rem', textAlign: 'center' }}>
+            どちらのプランでも利用できるもの
+          </h4>
+          <ul style={{
+            listStyle: 'none', padding: 0, margin: 0,
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.7rem 1.5rem',
+          }}>
+            {features.map((f, i) => (
+              <li key={i} style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontSize: '0.92rem', color: 'var(--ink)' }}>
+                <CheckIcon />
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p style={{ textAlign: 'center', marginTop: '1.75rem', fontSize: '0.85rem', color: 'var(--muted)' }}>
+          7日以内に解約すれば料金は発生しません。退会はマイページからワンクリックです。
+        </p>
       </div>
     </section>
   );

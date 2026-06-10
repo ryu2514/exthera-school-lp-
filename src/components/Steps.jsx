@@ -33,7 +33,7 @@ const Steps = () => {
     titleText: {
       fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
       fontWeight: 700,
-      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+      background: 'linear-gradient(135deg, #1576a8 0%, #1a98d5 100%)',
       WebkitBackgroundClip: 'text',
       backgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
@@ -54,14 +54,14 @@ const Steps = () => {
       borderRadius: '20px',
       padding: '2rem 1.5rem',
       textAlign: 'center',
-      boxShadow: '0 4px 20px rgba(59, 130, 246, 0.1)',
-      border: '2px solid #e0e7ff',
+      boxShadow: '0 4px 20px rgba(26, 152, 213, 0.1)',
+      border: '2px solid #d8eef9',
       transition: 'all 0.3s ease',
       width: '200px',
       minHeight: '180px',
     },
     stepNumber: {
-      background: 'linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)',
+      background: 'linear-gradient(135deg, #1a98d5 0%, #1576a8 100%)',
       color: '#fff',
       width: '44px',
       height: '44px',
@@ -71,7 +71,7 @@ const Steps = () => {
       justifyContent: 'center',
       fontWeight: 700,
       fontSize: '1.1rem',
-      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
+      boxShadow: '0 4px 12px rgba(26, 152, 213, 0.3)',
       margin: '0 auto 1rem',
     },
     cardTitle: {
@@ -86,7 +86,7 @@ const Steps = () => {
       lineHeight: 1.6,
     },
     arrow: {
-      color: '#3b82f6',
+      color: '#1a98d5',
       fontSize: '2rem',
       fontWeight: 700,
       margin: '0 0.5rem',
@@ -114,13 +114,13 @@ const Steps = () => {
                   style={{ ...styles.card, width: '90%', maxWidth: '300px', minHeight: 'auto' }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 12px 30px rgba(59, 130, 246, 0.2)';
-                    e.currentTarget.style.borderColor = '#3b82f6';
+                    e.currentTarget.style.boxShadow = '0 12px 30px rgba(26, 152, 213, 0.2)';
+                    e.currentTarget.style.borderColor = '#1a98d5';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(59, 130, 246, 0.1)';
-                    e.currentTarget.style.borderColor = '#e0e7ff';
+                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(26, 152, 213, 0.1)';
+                    e.currentTarget.style.borderColor = '#d8eef9';
                   }}
                 >
                   <div style={styles.stepNumber}>{i + 1}</div>
@@ -128,7 +128,7 @@ const Steps = () => {
                   <p style={styles.cardDesc}>{s.desc}</p>
                 </div>
                 {i < steps.length - 1 && (
-                  <div style={{ color: '#3b82f6', fontSize: '1.5rem', fontWeight: 700 }}>↓</div>
+                  <div style={{ color: '#1a98d5', fontSize: '1.5rem', fontWeight: 700 }}>↓</div>
                 )}
               </React.Fragment>
             ))}
@@ -152,13 +152,13 @@ const Steps = () => {
                 style={styles.card}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.boxShadow = '0 12px 30px rgba(59, 130, 246, 0.2)';
-                  e.currentTarget.style.borderColor = '#3b82f6';
+                  e.currentTarget.style.boxShadow = '0 12px 30px rgba(26, 152, 213, 0.2)';
+                  e.currentTarget.style.borderColor = '#1a98d5';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(59, 130, 246, 0.1)';
-                  e.currentTarget.style.borderColor = '#e0e7ff';
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(26, 152, 213, 0.1)';
+                  e.currentTarget.style.borderColor = '#d8eef9';
                 }}
               >
                 <div style={styles.stepNumber}>{i + 1}</div>

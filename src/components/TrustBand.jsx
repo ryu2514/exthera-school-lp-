@@ -52,7 +52,7 @@ const TrustBand = () => {
 
   const styles = {
     section: {
-      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #0ea5e9 100%)',
+      background: 'linear-gradient(135deg, #1576a8 0%, #1a98d5 50%, #1a98d5 100%)',
       padding: '4rem 0',
       position: 'relative',
       overflow: 'hidden',

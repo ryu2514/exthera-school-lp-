@@ -40,22 +40,22 @@ const FAQ = () => {
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <div style={{
             display: 'inline-block',
-            background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-            color: '#fff',
-            padding: '10px 24px',
-            borderRadius: '50px',
+            background: 'var(--brand-soft)',
+            color: 'var(--brand-dark)',
+            border: '1px solid var(--brand-border)',
+            padding: '8px 20px',
+            borderRadius: '999px',
             fontWeight: 700,
-            fontSize: '0.9rem',
+            fontSize: '0.85rem',
             marginBottom: '1rem',
-            boxShadow: '0 4px 12px rgba(245, 158, 11, 0.3)',
-          }}>❓ よくある質問</div>
+          }}>よくある質問</div>
           <h2 className="section-title" style={{
-            color: '#1e293b',
+            color: 'var(--ink)',
             marginTop: '1rem',
             fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
           }}>
             <AnimatedTitle style={{
-              background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
+              background: 'linear-gradient(transparent 60%, #d8eef9 60%)',
               fontWeight: '900'
             }}>よくある質問</AnimatedTitle>
           </h2>
@@ -111,13 +111,13 @@ const FAQ = () => {
             rel="noopener noreferrer"
             className="btn btn-primary"
             style={{
-              background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+              background: 'var(--brand)',
               color: '#fff',
               padding: '1rem 2.5rem',
               fontSize: '1.1rem'
             }}
           >
-            📧 お問い合わせ
+            お問い合わせ
           </a>
         </div>
       </div>

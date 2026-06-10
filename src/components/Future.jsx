@@ -83,7 +83,7 @@ const Future = () => {
 
   const styles = {
     section: {
-      background: 'linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%)',
+      background: 'linear-gradient(180deg, #f5f9fc 0%, #eaf4fb 100%)',
       padding: '5rem 0',
       position: 'relative',
       overflow: 'hidden',
@@ -93,7 +93,7 @@ const Future = () => {
       marginBottom: '3rem',
     },
     headSmall: {
-      color: '#b45309',
+      color: 'var(--brand-dark)',
       fontWeight: 700,
       letterSpacing: '.2px',
       fontSize: '0.95rem',
@@ -109,9 +109,9 @@ const Future = () => {
       background: '#ffffff',
       borderRadius: '20px',
       padding: '1.75rem',
-      boxShadow: '0 12px 30px rgba(245, 158, 11, 0.18)',
+      boxShadow: '0 12px 30px rgba(26, 152, 213, 0.12)',
       position: 'relative',
-      border: '1px solid rgba(245, 158, 11, 0.18)',
+      border: '1px solid rgba(26, 152, 213, 0.14)',
     },
     imageWrapper: {
       width: '70%',
@@ -119,7 +119,7 @@ const Future = () => {
       aspectRatio: '1 / 1',
       borderRadius: '14px',
       overflow: 'hidden',
-      background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+      background: 'linear-gradient(135deg, #f5f9fc 0%, #eaf4fb 100%)',
       margin: '0 auto 1rem',
     },
     image: {
@@ -130,14 +130,14 @@ const Future = () => {
     },
     numbadge: {
       display: 'inline-block',
-      background: 'linear-gradient(135deg, #f59e0b 0%, #ea580c 100%)',
+      background: 'var(--brand)',
       color: '#ffffff',
       padding: '6px 16px',
       borderRadius: '50px',
       fontWeight: 800,
       fontSize: '0.8rem',
       marginBottom: '1rem',
-      boxShadow: '0 3px 8px rgba(234, 88, 12, 0.35)',
+      boxShadow: '0 3px 8px rgba(26, 152, 213, 0.30)',
       letterSpacing: '0.05em',
     },
     beforeRow: {
@@ -153,14 +153,14 @@ const Future = () => {
     },
     arrow: {
       textAlign: 'center',
-      color: '#f59e0b',
+      color: 'var(--brand)',
       fontSize: '1.4rem',
       marginBottom: '0.6rem',
       lineHeight: 1,
     },
     afterTitle: {
       fontWeight: 800,
-      color: '#9a3412',
+      color: 'var(--brand-dark)',
       fontSize: '1.1rem',
       lineHeight: 1.45,
       marginBottom: '0.75rem',
@@ -170,7 +170,7 @@ const Future = () => {
     },
     checkIcon: {
       flexShrink: 0,
-      color: '#10b981',
+      color: 'var(--brand)',
       fontWeight: 900,
       fontSize: '1.15rem',
       lineHeight: 1.3,
@@ -192,7 +192,7 @@ const Future = () => {
         }
         .future-card:hover {
           transform: translateY(-6px) !important;
-          box-shadow: 0 22px 45px rgba(245, 158, 11, 0.28) !important;
+          box-shadow: 0 22px 45px rgba(26, 152, 213, 0.22) !important;
         }
         @keyframes futureFloat {
           0%, 100% { transform: translateY(0); }
@@ -218,18 +218,18 @@ const Future = () => {
           <div style={styles.head}>
             <div style={styles.headSmall}>BEFORE → AFTER</div>
             <h2 className="section-title" style={{
-              color: '#9a3412',
+              color: 'var(--ink)',
               marginTop: '0.5rem',
               fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
             }}>
               <AnimatedTitle style={{
-                background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
+                background: 'linear-gradient(transparent 60%, #d8eef9 60%)',
                 fontWeight: '900'
               }}>迷わない現場判断</AnimatedTitle>を手にした、<br />
               3〜6ヶ月後のあなた。
             </h2>
             <p style={{
-              color: '#78350f',
+              color: 'var(--muted)',
               marginTop: '1rem',
               fontSize: '1rem',
               lineHeight: 1.7,

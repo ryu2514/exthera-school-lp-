@@ -57,7 +57,7 @@ const Curriculum = () => {
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{
               display: 'inline-block',
-              background: 'linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)',
+              background: 'linear-gradient(135deg, #1a98d5 0%, #1576a8 100%)',
               color: 'white',
               padding: '0.5rem 1.5rem',
               borderRadius: '50px',
@@ -71,7 +71,7 @@ const Curriculum = () => {
             <h2 style={{
               fontSize: 'clamp(2rem, 5vw, 3rem)',
               fontWeight: 800,
-              background: 'linear-gradient(135deg, #1e293b 0%, #3b82f6 100%)',
+              background: 'linear-gradient(135deg, #1e293b 0%, #1a98d5 100%)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -83,7 +83,7 @@ const Curriculum = () => {
             <div style={{
               width: '80px',
               height: '4px',
-              background: 'linear-gradient(90deg, #3b82f6 0%, #0ea5e9 100%)',
+              background: 'linear-gradient(90deg, #1a98d5 0%, #1a98d5 100%)',
               margin: '0 auto 1.5rem',
               borderRadius: '2px'
             }}></div>
@@ -97,7 +97,7 @@ const Curriculum = () => {
               lineHeight: 1.8
             }}>
               記事・動画・ライブ・コミュニティ・ツールが、<br />
-              <span style={{ fontWeight: 600, color: '#1e40af' }}>評価から運動指導まで再現可能にする一本の流れ</span>になっています
+              <span style={{ fontWeight: 600, color: '#1576a8' }}>評価から運動指導まで再現可能にする一本の流れ</span>になっています
             </p>
 
             {/* 動画セクション */}

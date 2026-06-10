@@ -131,14 +131,14 @@ const Problems = () => {
     },
     numbadge: {
       display: 'inline-block',
-      background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
-      color: '#78350f',
+      background: 'var(--brand)',
+      color: '#ffffff',
       padding: '6px 16px',
       borderRadius: '50px',
       fontWeight: 800,
       fontSize: '0.85rem',
       marginBottom: '0.75rem',
-      boxShadow: '0 3px 8px rgba(251, 191, 36, 0.35)',
+      boxShadow: '0 3px 8px rgba(26, 152, 213, 0.30)',
       letterSpacing: '0.05em',
     },
     title: {
@@ -199,7 +199,7 @@ const Problems = () => {
             }}>
               運動療法の組み立てで、<br />
               <AnimatedTitle style={{
-                background: 'linear-gradient(transparent 60%, #fbbf24 60%)',
+                background: 'linear-gradient(transparent 60%, #d8eef9 60%)',
                 fontWeight: '900'
               }}>こんな場面</AnimatedTitle>{isMobile ? <br /> : '、'}ありませんか？
             </h2>

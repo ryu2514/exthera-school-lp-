@@ -27,36 +27,32 @@ const Benefits = () => {
     return () => observer.disconnect();
   }, []);
 
+  const brand = '#1a98d5';
   const benefits = [
     {
       title: '体系化された学びで迷わない',
       description: '基礎→応用まで学ぶ順番が整理されている。バラバラの知識が臨床で一本化される',
-      color: '#0ea5e9',
-      icon: '🧭'
+      color: brand,
     },
     {
       title: '評価→運動指導までつながる思考が身につく',
       description: '「なぜその運動か」を根拠を持って説明できる。判断がブレなくなる',
-      color: '#10b981',
-      icon: '🧠'
+      color: brand,
     },
     {
       title: 'ライブ・質問・コミュニティで実践に落ちる',
       description: '学んで終わらない。質問は24h以内に解決、現場にそのまま接続できる',
-      color: '#8b5cf6',
-      icon: '💬'
+      color: brand,
     },
     {
-      title: '満足度 4.60 / 5.0・累計5000名の実績',
-      description: '200件超のレビューと継続率が、学びの厚みを裏付けます',
-      color: '#ef4444',
-      icon: '⭐'
+      title: '累計5000名が受講した実績',
+      description: '継続率の高さが、学びの厚みと現場での使いやすさを裏付けます',
+      color: brand,
     },
     {
       title: '会員限定アプリ・ツールで実装を加速',
       description: '学んだ内容を現場で使いやすくする会員特典。思考整理と評価を補助します',
-      color: '#f59e0b',
-      icon: '📱'
+      color: brand,
     }
   ];
 
@@ -86,14 +82,14 @@ const Benefits = () => {
     },
     badge: {
       display: 'inline-block',
-      background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
-      color: '#78350f',
-      padding: '10px 24px',
-      borderRadius: '50px',
+      background: 'var(--brand-soft)',
+      color: 'var(--brand-dark)',
+      border: '1px solid var(--brand-border)',
+      padding: '8px 20px',
+      borderRadius: '999px',
       fontWeight: 700,
-      fontSize: '0.9rem',
+      fontSize: '0.85rem',
       marginBottom: '1rem',
-      boxShadow: '0 4px 12px rgba(251, 191, 36, 0.3)',
     },
     imageWrapper: {
       marginTop: '2rem',
@@ -123,7 +119,7 @@ const Benefits = () => {
     },
     checkBadge: {
       display: 'inline-block',
-      background: '#10b981',
+      background: 'var(--brand)',
       color: '#fff',
       width: '28px',
       height: '28px',
@@ -159,14 +155,14 @@ const Benefits = () => {
       <section id="benefits" style={styles.section}>
         <div className="container">
           <div style={styles.header}>
-            <span style={styles.badge}>🎯 選ばれる理由</span>
+            <span style={styles.badge}>選ばれる理由</span>
             <h2 className="section-title" style={{
               color: '#1e293b',
               marginTop: '1rem',
               fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
             }}>
               Exthera-Schoolが<br />
-              <AnimatedTitle style={{ background: 'linear-gradient(transparent 60%, #86efac 60%)', fontWeight: '900' }}>
+              <AnimatedTitle style={{ background: 'linear-gradient(transparent 60%, #d8eef9 60%)', fontWeight: '900' }}>
                 選ばれる5つの理由
               </AnimatedTitle>
             </h2>
@@ -216,15 +212,6 @@ const Benefits = () => {
                 }}>
                   {benefit.description}
                 </p>
-                <div style={{
-                  position: 'absolute',
-                  bottom: '1rem',
-                  right: '1rem',
-                  fontSize: '3rem',
-                  opacity: 0.1,
-                }}>
-                  {benefit.icon}
-                </div>
               </div>
             ))}
           </div>

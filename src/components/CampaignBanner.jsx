@@ -12,13 +12,13 @@ const CampaignBanner = () => {
 
   const styles = {
     wrapper: {
-      background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 45%, #2563eb 100%)',
+      background: 'linear-gradient(135deg, #1576a8 0%, #1a98d5 100%)',
       color: '#fff',
       padding: '14px 0',
       position: 'sticky',
       top: 0,
       zIndex: 100,
-      boxShadow: '0 4px 14px rgba(30, 58, 138, 0.35)',
+      boxShadow: '0 4px 14px rgba(26, 152, 213, 0.35)',
       cursor: 'pointer',
       borderBottom: '3px solid #fbbf24',
     },
