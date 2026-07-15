@@ -9,13 +9,14 @@ const Hero = () => {
           <div className="school-hero__panel">
             <div className="school-hero__content">
               <div className="school-hero__copy">
-                <p className="school-hero__eyebrow">臨床1-3年目で、運動療法に迷うあなたへ</p>
+                <p className="school-hero__eyebrow">若手セラピストのための実践学習</p>
                 <h1 className="school-hero__title">
-                  <span>評価の次に、</span>
-                  <span>何を見るかが分かる。</span>
+                  <span>運動療法が学べる</span>
+                  <span>オンラインスクール</span>
                 </h1>
                 <p className="school-hero__lead">
-                  種目を覚えるだけで終わらない。評価・仮説・運動選択を、症例の順番で学べます。
+                  <span>評価から運動選択・負荷設定まで。</span>
+                  <span>症例動画、月1ライブ、質問コミュニティで学べます。</span>
                 </p>
 
                 <div className="school-hero__actions">
@@ -28,6 +29,11 @@ const Hero = () => {
                 </div>
               </div>
             </div>
+            <img
+              className="school-hero__mobile-media"
+              src="/assets/seminar-lumbar-flex-breathing.jpg"
+              alt="Exthera-Schoolのオンラインセミナー画面"
+            />
           </div>
         </div>
       </section>
