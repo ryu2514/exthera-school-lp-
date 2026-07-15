@@ -215,7 +215,7 @@ const LatestRelease = () => {
                         <div style={styles.crThumbWrapper}>
                             <img
                                 src="/assets/clinical-route-mock.png"
-                                alt="Clinical Route — PC・スマホ対応の現場思考支援ツール"
+                                alt="Clinical Route - PC・スマホ対応の現場思考支援ツール"
                                 style={styles.crThumbImage}
                                 loading="lazy"
                             />

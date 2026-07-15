@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { campaign, isCampaignActive } from '../config/campaign';
 import { TRIAL_URL } from '../config/links';
 
 const StickyCTA = () => {
   const active = isCampaignActive();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const hero = document.querySelector('.school-hero');
+    if (!hero) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(!entry.isIntersecting),
+      { threshold: 0.08 }
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="sticky-cta">
+    <div className={`sticky-cta${isVisible ? ' sticky-cta--visible' : ''}`}>
       <div className="container sticky-cta__inner">
         <span className="sticky-cta__label">
           Exthera-School

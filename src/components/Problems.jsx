@@ -1,48 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
-import AnimatedTitle from './AnimatedTitle';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const Problems = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const reduceMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
   const [visibleCards, setVisibleCards] = useState([]);
   const cardRefs = useRef([]);
 
   const items = [
     {
       num: '01',
-      title: '評価は揃ったのに、次の一手が出てこない',
-      text: 'ROM制限・筋力低下・動作の崩れ…\n所見は取れたのに、\n「で、何をやらせよう？」で止まる。',
-      image: '/assets/problems/01.png?v=3',
+      title: '所見は取れた。でも次の一手が出ない',
+      text: '評価項目は埋まったのに、どの情報を運動選択につなげるかが曖昧。',
+      image: '/assets/image2/problems/01.jpg',
     },
     {
       num: '02',
-      title: '気づけば毎回「鉄板メニュー」',
-      text: '腰痛ならドローイン、\n膝ならパテラセッティング…\n教科書の定番から抜け出せない。',
-      image: '/assets/problems/02.png?v=3',
+      title: 'いつも同じ運動を選んでしまう',
+      text: '腰痛ならこの種目、膝ならこの種目。目の前の人に合わせる余裕がない。',
+      image: '/assets/image2/problems/02.jpg',
     },
     {
       num: '03',
-      title: '痛みが出た瞬間、代替案が浮かばない',
-      text: '「この運動で痛い」と言われると\nそこで思考停止。\n何を減らし、何に替えるか決められない。',
-      image: '/assets/problems/03.png?v=3',
+      title: '痛みが出ると、そこで止まる',
+      text: '負荷を下げるのか、動きを変えるのか。安全な代替案をすぐに判断できない。',
+      image: '/assets/image2/problems/03.jpg',
     },
     {
       num: '04',
-      title: '負荷量・回数・頻度が決めきれない',
-      text: '「10回×3セット」を\nとりあえず出している。\nその人の適正負荷かの根拠がない。',
-      image: '/assets/problems/04.png?v=3',
+      title: '回数と負荷に根拠が持てない',
+      text: '10回3セットを何となく選び、患者さんに理由を説明しきれない。',
+      image: '/assets/image2/problems/04.jpg',
     },
     {
       num: '05',
-      title: '続けるか変えるか、判断できない',
-      text: '2週経ったけど合ってる？\n所見が変わったとき、\n次の一手が浮かばない。',
-      image: '/assets/problems/05.png?v=3',
+      title: '続けるか変えるか迷う',
+      text: '再評価しても、何を基準に継続や変更を決めるか整理できない。',
+      image: '/assets/image2/problems/05.jpg',
     },
     {
       num: '06',
-      title: '対象者ごとにアレンジできず、テンプレ処方に',
-      text: '年齢も生活背景も違うのに、\n同じような処方。\n「その人だけの運動」にできない。',
-      image: '/assets/problems/06.png?v=3',
+      title: '症例ごとの考え方がまとまらない',
+      text: '年齢、生活、目標が違うのに、同じ見方と運動になってしまう。',
+      image: '/assets/image2/problems/06.jpg',
     },
   ];
 
@@ -67,6 +67,7 @@ const Problems = () => {
   }, []);
 
   const getCardAnimation = (index) => {
+    if (reduceMotion) return { opacity: 1, transform: 'none' };
     const isVisible = visibleCards.includes(index);
     const fromLeft = index % 2 === 0;
     const hiddenTransform = isMobile
@@ -82,154 +83,44 @@ const Problems = () => {
     };
   };
 
-  const styles = {
-    problems: {
-      background: 'linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%)',
-      padding: '4.5rem 0',
-      position: 'relative',
-      overflow: 'hidden',
-    },
-    head: {
-      textAlign: 'center',
-      marginBottom: '3rem',
-    },
-    headSmall: {
-      color: '#0369a1',
-      fontWeight: 700,
-      letterSpacing: '.2px',
-      fontSize: '0.95rem',
-    },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '2rem',
-      maxWidth: '1100px',
-      margin: '0 auto',
-    },
-    card: {
-      background: '#ffffff',
-      borderRadius: '24px',
-      padding: '1.5rem',
-      boxShadow: '0 10px 30px rgba(2, 132, 199, 0.15)',
-      position: 'relative',
-      border: '1px solid rgba(2, 132, 199, 0.1)',
-    },
-    imageWrapper: {
-      width: '70%',
-      maxWidth: '220px',
-      aspectRatio: '1 / 1',
-      borderRadius: '14px',
-      overflow: 'hidden',
-      background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
-      margin: '0 auto 1rem',
-    },
-    image: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      display: 'block',
-    },
-    numbadge: {
-      display: 'inline-block',
-      background: 'var(--brand)',
-      color: '#ffffff',
-      padding: '6px 16px',
-      borderRadius: '50px',
-      fontWeight: 800,
-      fontSize: '0.85rem',
-      marginBottom: '0.75rem',
-      boxShadow: '0 3px 8px rgba(26, 152, 213, 0.30)',
-      letterSpacing: '0.05em',
-    },
-    title: {
-      fontWeight: 800,
-      marginBottom: '0.75rem',
-      color: '#0c4a6e',
-      fontSize: '1.15rem',
-      lineHeight: '1.45',
-    },
-    text: {
-      color: '#475569',
-      lineHeight: '1.8',
-      whiteSpace: 'pre-line',
-      fontSize: '0.92rem',
-      margin: 0,
-    },
-  };
-
   return (
-    <>
-      <style>{`
-        .problem-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .problem-card:hover {
-          transform: translateY(-6px) !important;
-          box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25) !important;
-        }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-
-        .decorative-circle {
-          position: absolute;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.35);
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
-
-      <section style={styles.problems} id="problems">
-        <div className="decorative-circle" style={{
-          width: '120px', height: '120px', top: '8%', left: '4%', animationDelay: '0s'
-        }}></div>
-        <div className="decorative-circle" style={{
-          width: '70px', height: '70px', top: '70%', right: '6%', animationDelay: '1s'
-        }}></div>
-
+      <section className="problems-v2" id="problems">
         <div className="container">
-          <div style={styles.head}>
-            <div style={styles.headSmall}>臨床・施術・運動指導に携わる皆さんへ</div>
-            <h2 className="section-title" style={{
-              color: '#0369a1',
-              marginTop: '0.5rem',
-              fontSize: 'clamp(1.8rem, 3vw, 2.5rem)'
-            }}>
-              運動療法の組み立てで、<br />
-              <AnimatedTitle style={{
-                background: 'linear-gradient(transparent 60%, #d8eef9 60%)',
-                fontWeight: '900'
-              }}>こんな場面</AnimatedTitle>{isMobile ? <br /> : '、'}ありませんか？
+          <div className="problems-v2__head">
+            <p>知識は増えた。でも、現場では迷う。</p>
+            <h2 className="section-title">
+              <span>その迷いは、</span>
+              <span>学び方で変えられる。</span>
             </h2>
           </div>
-          <div style={styles.grid}>
+          <div className="problems-v2__grid">
             {items.map((it, i) => (
-              <div
-                key={i}
+              <article
+                key={it.num}
                 ref={(el) => (cardRefs.current[i] = el)}
                 data-index={i}
                 className="problem-card"
-                style={{ ...styles.card, ...getCardAnimation(i) }}
+                style={getCardAnimation(i)}
               >
-                <div style={styles.imageWrapper}>
+                <div className="problem-card__image">
                   <img
                     src={it.image}
                     alt={it.title}
-                    style={styles.image}
                     loading="lazy"
+                    width="768"
+                    height="768"
                   />
                 </div>
-                <span style={styles.numbadge}>CASE {it.num}</span>
-                <div style={styles.title}>{it.title}</div>
-                <p style={styles.text}>{it.text}</p>
-              </div>
+                <div className="problem-card__body">
+                  <span>悩み {it.num}</span>
+                  <h3>{it.title}</h3>
+                  <p>{it.text}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
-    </>
   );
 };
 

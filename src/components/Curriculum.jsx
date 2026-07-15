@@ -136,8 +136,6 @@ const Curriculum = () => {
                         }}
                         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                         allowFullScreen
-                        webkitAllowFullScreen
-                        mozAllowFullScreen
                         loading="lazy"
                         title={item.videoTitle}
                       />
@@ -191,8 +189,6 @@ const Curriculum = () => {
                     }}
                     allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                     allowFullScreen
-                    webkitAllowFullScreen
-                    mozAllowFullScreen
                     loading="lazy"
                     title="足関節捻挫アプリ"
                   />
