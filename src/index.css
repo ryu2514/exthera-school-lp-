@@ -839,10 +839,10 @@ body {
   .school-hero__mobile-media {
     display: block;
     width: 100%;
-    aspect-ratio: 2990 / 1508;
+    aspect-ratio: 16 / 9;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     object-fit: cover;
-    object-position: center;
+    object-position: center 42%;
   }
 
   .school-proof__stats {

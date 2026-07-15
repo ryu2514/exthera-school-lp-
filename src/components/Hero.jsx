@@ -31,8 +31,8 @@ const Hero = () => {
             </div>
             <img
               className="school-hero__mobile-media"
-              src="/assets/seminar-lumbar-flex-breathing.jpg"
-              alt="Exthera-Schoolのオンラインセミナー画面"
+              src="/assets/hero-training-bg.jpg"
+              alt="講師がセラピストへ実技指導を行う様子"
             />
           </div>
         </div>
