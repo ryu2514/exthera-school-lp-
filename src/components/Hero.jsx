@@ -9,14 +9,14 @@ const Hero = () => {
           <div className="school-hero__panel">
             <div className="school-hero__content">
               <div className="school-hero__copy">
-                <p className="school-hero__eyebrow">若手セラピストのための実践学習</p>
+                <p className="school-hero__eyebrow">若手セラピスト向けのオンラインスクール</p>
                 <h1 className="school-hero__title">
-                  <span>運動療法が学べる</span>
-                  <span>オンラインスクール</span>
+                  <span>運動療法を、</span>
+                  <span>症例から学ぶ。</span>
                 </h1>
                 <p className="school-hero__lead">
                   <span>評価から運動選択・負荷設定まで。</span>
-                  <span>症例動画、月1ライブ、質問コミュニティで学べます。</span>
+                  <span>実際の症例に沿って、考え方を一つずつ整理します。</span>
                 </p>
 
                 <div className="school-hero__actions">
@@ -24,7 +24,7 @@ const Hero = () => {
                     7日間無料で体験
                   </a>
                   <a className="school-hero__secondary" href="#interactive-demo">
-                    1分デモを見る
+                    授業デモを見る
                   </a>
                 </div>
               </div>

@@ -14,7 +14,6 @@ const Header = () => {
       zIndex: 50,
       background: '#fff',
       borderBottom: '1px solid var(--gray-200)',
-      backdropFilter: 'saturate(150%) blur(4px)',
     },
     headerRow: {
       display: 'flex',
@@ -51,10 +50,10 @@ const Header = () => {
     login: {
       display: isMobile ? 'none' : 'inline-flex',
       padding: '8px 14px',
-      borderRadius: '9999px',
-      border: '2px solid #cfe6f4',
+      borderRadius: '6px',
+      border: '1px solid #cfe6f4',
       color: '#1576a8',
-      background: '#f0f8fc',
+      background: '#fff',
       fontWeight: 700,
       textDecoration: 'none',
       whiteSpace: 'nowrap',
@@ -62,13 +61,12 @@ const Header = () => {
     },
     ctaPill: {
       padding: isMobile ? '8px 10px' : '10px 16px',
-      borderRadius: '9999px',
+      borderRadius: '6px',
       color: '#fff',
-      background: 'linear-gradient(135deg, #5cc3ef 0%, #1576a8 100%)',
-      boxShadow: 'var(--shadow-md)',
+      background: '#167eae',
       fontWeight: 700,
       textDecoration: 'none',
-      transition: 'all 0.3s ease',
+      transition: 'opacity 0.2s ease',
       whiteSpace: 'nowrap',
       fontSize: isMobile ? '12px' : '14px',
     },
@@ -106,14 +104,6 @@ const Header = () => {
             href={TRIAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={(e) => {
-              e.target.style.boxShadow = 'var(--shadow-lg)';
-              e.target.style.transform = 'translateY(-1px)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.boxShadow = 'var(--shadow-md)';
-              e.target.style.transform = 'translateY(0)';
-            }}
           >
             {isMobile ? '無料体験' : '無料で体験する'}
           </a>
